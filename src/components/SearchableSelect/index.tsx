@@ -1,0 +1,77 @@
+"use client";
+import { components } from "react-select";
+import dynamic from 'next/dynamic';
+
+import Icons from "@/Icons";
+import Icon from "../Common/Icon";
+
+//css
+import { useTheme } from "styled-components";
+
+const options = [
+  { value: "apple", label: "Apple" },
+  { value: "banana", label: "Banana" },
+  { value: "cherry", label: "Cherry" },
+  { value: "date", label: "Date" },
+  { value: "grape", label: "Grape" },
+];
+
+const SearchSelect = dynamic(() => import('react-select'), { ssr: false });
+
+/*
+  * CustomControl component
+  * @param {any} props - The props passed to the component.
+  * @returns {JSX.Element} - A custom control component for the select input.
+*/
+const CustomControl = (props: any) => (
+  <components.Control {...props}>
+    <span className="ml-3 mr-2">
+      <Icon src={Icons.Search} alt="search" width={20} height={20} />
+    </span>
+    {props.children}
+  </components.Control>
+);
+
+/*
+  * SearchableSelect component
+  * @returns {JSX.Element} - A searchable select component with custom styles and functionality.
+*/
+const SearchableSelect = () => {
+  const theme = useTheme();
+  const handleChange = (selectedOption: any) => {
+    console.log("Selected:", selectedOption);
+  };
+
+  return (
+    <SearchSelect
+      options={options}
+      onChange={handleChange}
+      placeholder="All Categories"
+      isSearchable
+      components={{
+        Control: CustomControl,
+        DropdownIndicator: () => null,
+        IndicatorSeparator: () => null,
+      }}
+      styles={{
+        control: (base, state) => ({
+          ...base,
+          border: "none",
+          width: "100%",
+          borderColor: 'none' 
+        }),
+        placeholder: (base) => ({
+          ...base,
+          color: theme.colors.secondary,
+          fontWeight: theme.fontWeights.bold
+        }),
+        input: (base) => ({
+            ...base,
+            border: 'none'
+        }),
+      }}
+    />
+  );
+}
+
+export default SearchableSelect;

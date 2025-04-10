@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@import '../styles/fonts.css';
+
+body {
+  font-family: var(--font-raleway);
+}
+
+h1 {
+  font-family: 'Beauty-Rachela';
+}

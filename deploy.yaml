@@ -1,0 +1,104 @@
+name: Next.js CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - develop
+      - qa
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: 
+      name: ${{ github.ref == 'refs/heads/main' && 'production' || github.ref == 'refs/heads/qa' && 'qa' || 'development' }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy
+        run: |
+          if [[ "${{ github.ref }}" == "refs/heads/develop" ]]; then
+            echo "Awaiting approval for DEV deployment..."
+          elif [[ "${{ github.ref }}" == "refs/heads/qa" ]]; then
+            echo "Awaiting approval for QA deployment..."
+          elif [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
+            echo "Awaiting approval for Production deployment..."
+          fi
+
+  approval:
+    needs: deploy
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ github.ref == 'refs/heads/main' && 'production' || github.ref == 'refs/heads/qa' && 'qa' || 'development' }}
+    steps:
+      - name: Approval
+        run: echo "Approval required before deploying to ${GITHUB_REF}"
+
+  post-merge-build:
+    runs-on: ubuntu-latest
+    needs: deploy  # This will only run after the deploy job succeeds
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/qa' || github.ref == 'refs/heads/main')  # Only for merges to qa and main
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Post-merge build complete
+        run: echo "Build has completed successfully after the merge."
