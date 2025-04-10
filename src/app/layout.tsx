@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Raleway } from 'next/font/google'
+import { Raleway } from "next/font/google";
 
 import ThemeProvider from "@/Providers/ThemeProvider";
 
 //css
 import "./globals.css";
 import { Container } from "./home/index.styles";
+import { StyledComponentsRegistry } from "./lib/registry";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,11 +15,11 @@ export const metadata: Metadata = {
 };
 
 const raleway = Raleway({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'], // Adjust weights as needed
-  variable: '--font-raleway',
-  display: 'swap',
-})
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"], // Adjust weights as needed
+  variable: "--font-raleway",
+  display: "swap",
+});
 
 const beautyRachela = localFont({
   src: [
@@ -41,11 +42,13 @@ const RootLayout = ({
         className={`${raleway.className} ${beautyRachela.className}antialiased`}
       >
         <ThemeProvider>
-          <Container>{children}</Container>
+          <StyledComponentsRegistry>
+            <Container>{children}</Container>
+          </StyledComponentsRegistry>
         </ThemeProvider>
       </body>
     </html>
   );
-}
+};
 
 export default RootLayout;
