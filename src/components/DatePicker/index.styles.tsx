@@ -27,8 +27,17 @@ export const CloseBtn = styled(Icon)`
 export const PickDateBtn = styled(IconButton)`
   background-color: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.secondary};
-
+  
+  padding: 10px 13px;
+  box-sizing: border-box;
   &:hover {
     background-color: ${({ theme }) => theme.colors.grey};
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+  padding: 0px 13px;
+  border: 1px solid #EBEBEB;
+  border-radius: 5px;
+  width: 50%;
   }
 `;

@@ -15,6 +15,10 @@ export const HeaderWrapper = styled.div`
   background-position: top left;
   background-repeat: no-repeat;
   overflow: hidden;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    display: none;
+  }
 `;
 
 export const BackgroundImage = styled(Image)`
@@ -69,7 +73,13 @@ export const TitleContainer = styled.div`
   @media (min-width: ${({ theme }) =>
       theme.breakpoints.md}) and (max-width: ${({ theme }) =>
       theme.breakpoints.xl}) {
-    margin: 24px 0 80px;}
+    margin: 24px 0 80px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    margin: 60px 0 29px;
+    max-width: 100%;
+  }
 `;
 
 export const Title = styled.h1`
@@ -90,6 +100,11 @@ export const Title = styled.h1`
     font-size: 54px;
     line-height: 60px;
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    font-size: 28px;
+    line-height: 36px;
+  }
 `;
 
 export const SubTitle = styled.p`
@@ -104,6 +119,11 @@ export const SubTitle = styled.p`
   color: ${({ theme }) => theme.colors.secondary};
   text-align: center;
   margin: 0 24px 0 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    font-size: 24px;
+    line-height: 36px;
+  }
 `;
 
 export const GettheApp = styled(IconButton)`
@@ -125,6 +145,15 @@ export const GettheApp = styled(IconButton)`
   @media (min-width: ${({ theme }) =>
       theme.breakpoints.md}) and (max-width: ${({ theme }) =>
       theme.breakpoints.xl}) {
-     margin: 80px 0 0;
-     }
+    margin: 80px 0 0;
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    margin: 74px 0 0;
+    padding: 16px 32px;
+    font-size: 15px;
+    line-height: 15px;
+    align-self: center;
+
+  }
 `;

@@ -8,6 +8,7 @@ import ThemeProvider from "@/Providers/ThemeProvider";
 import "./globals.css";
 import { Container } from "./home/index.styles";
 import { StyledComponentsRegistry } from "./lib/registry";
+import Toast from "@/components/Common/Toast";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -43,6 +44,7 @@ const RootLayout = ({
       >
         <ThemeProvider>
           <StyledComponentsRegistry>
+            <Toast />
             <Container>{children}</Container>
           </StyledComponentsRegistry>
         </ThemeProvider>
