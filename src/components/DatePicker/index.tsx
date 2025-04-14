@@ -3,10 +3,11 @@ import { useState } from "react";
 import { DayPicker } from "react-day-picker";
 
 import Icons from "@/Icons";
+import StyledModal from "../Common/Modal";
 
 //css
 import "react-day-picker/style.css";
-import { CloseBtn, DatePickerWrapper, Modal, PickDateBtn } from "./index.styles";
+import { CalendarWrapper, CloseBtn, DatePickerWrapper, DaySelector, PickDateBtn } from "./index.styles";
 
 /*
   * DatePicker component
@@ -33,10 +34,9 @@ const DatePicker = () => {
     <DatePickerWrapper>
       <PickDateBtn onClick={handleModal} iconSrc={Icons.Calendar} iconAlt="calendar" iconWidth={20} iconHeight={20}>
         Any Date</PickDateBtn>
-      {open && (
-        <Modal>
-          <CloseBtn src={Icons.Close} onClick={handleClose} width={14} height={14} alt="close" />
-          <DayPicker
+       {open && <StyledModal isOpen={open} onClose={handleClose}>
+        <CalendarWrapper>
+          <DaySelector
           animate
           mode="single"
           required={true}
@@ -47,9 +47,11 @@ const DatePicker = () => {
               ? `Selected: ${selected.toLocaleDateString()}`
               : "Pick a day."
           }
+          
         />
-        </Modal>
-      )}
+        </CalendarWrapper>
+        </StyledModal>
+       }
     </DatePickerWrapper>
   );
 }

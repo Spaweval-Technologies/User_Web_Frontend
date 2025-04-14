@@ -6,7 +6,8 @@ import StyledSelect from "../Common/Select";
 
 //css
 import { TimePickerContainer, TimeSelectWrapper } from "./index.styles";
-import { CloseBtn, Modal, PickDateBtn } from "../DatePicker/index.styles";
+import { PickDateBtn } from "../DatePicker/index.styles";
+import StyledModal from "../Common/Modal";
 
 /*
   * TimePicker component
@@ -47,14 +48,7 @@ const TimePicker = () => {
         Any Time
       </PickDateBtn>
       {open && (
-        <Modal>
-          <CloseBtn
-            src={Icons.Close}
-            onClick={handleClose}
-            width={14}
-            height={14}
-            alt="close"
-          />
+        <StyledModal isOpen={open} onClose={handleClose}> 
           <TimeSelectWrapper>
           <StyledSelect
             value={startTime ?? ""}
@@ -67,7 +61,7 @@ const TimePicker = () => {
             options={[{ label: "10pm", value: "10PM" }]}
           />
           </TimeSelectWrapper>
-        </Modal>
+        </StyledModal>
       )}
     </TimePickerContainer>
   );
