@@ -8,19 +8,6 @@ export const DatePickerWrapper = styled.div`
   position: relative;
 `;
 
-export const StyledModalContainer = styled.aside`
-  position: absolute;
-  top: 80px;
-  left: 0;
-  background-color: red;
-  border-radius: 8px;
-  z-index: 1;
-  padding: 12px;
-  border: 1px solid ${({ theme }) => theme.colors.greyBorder};
-  display: flex;
-  flex-direction: column;
-`;
-
 export const CloseBtn = styled(Icon)`
   align-self: end;
 `;
@@ -46,10 +33,6 @@ export const CalendarWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 10px;
-  border-radius: 8px;
-  background-color: ${({ theme }) => theme.colors.background};
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
 `;
 
 export const DaySelector = styled(DayPicker)`

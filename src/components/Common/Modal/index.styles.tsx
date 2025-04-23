@@ -3,18 +3,18 @@ import Icon from '../Icon';
 
 export const ModalWrapper = styled.div`
   position: absolute;
-  top: 80px;
+  top: calc(100% + 15px);
   left: 0;
   background-color: ${({ theme }) => theme.colors.background};
   border-radius: 8px;
   z-index: 1;
-  padding: 12px;
+  padding: 12px 16px;
   border: 1px solid #ccc;
   display: flex;
   flex-direction: column;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
+  width: max-content;
+  gap: 8px;
   box-sizing: border-box;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {

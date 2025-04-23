@@ -26,20 +26,6 @@ const Home = () => {
     <>
     <StyledHeader />
     <MobileHeader />
-    <CalendarWrapper>
-              <DaySelector
-              animate
-              mode="single"
-              required={true}
-              selected={new Date(2025,3,8)}
-              today={new Date()}
-              onSelect={handleSelect}
-              footer={
-               "Pick a day."
-              }
-              
-            />
-            </CalendarWrapper>
     </>
   );
 };

@@ -15,7 +15,7 @@ import { CloseButton, ModalWrapper } from "./index.styles";
 const StyledModal = ({ isOpen, onClose, children }: ModalProps) => {
  
   return (
-    <ModalWrapper onClick={onClose}>
+    <ModalWrapper style={{display: isOpen ? 'flex': 'none'}} onClick={onClose}>
         <CloseButton
           src={Icons.Close}
           onClick={onClose}
