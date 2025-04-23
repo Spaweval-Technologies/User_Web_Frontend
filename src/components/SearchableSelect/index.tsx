@@ -4,9 +4,10 @@ import dynamic from 'next/dynamic';
 
 import Icons from "@/Icons";
 import Icon from "../Common/Icon";
+import { useTheme } from "styled-components";
 
 //css
-import { useTheme } from "styled-components";
+import { SelectWrapper } from "./index.styles";
 
 const options = [
   { value: "apple", label: "Apple" },
@@ -43,6 +44,7 @@ const SearchableSelect = () => {
   };
 
   return (
+    <SelectWrapper>
     <SearchSelect
       options={options}
       onChange={handleChange}
@@ -54,7 +56,12 @@ const SearchableSelect = () => {
         IndicatorSeparator: () => null,
       }}
       styles={{
-        control: (base, state) => ({
+        container: (base) => ({
+          ...base,
+          width: "100%", // Default full width
+         
+        }),
+        control: (base) => ({
           ...base,
           border: "1px solid #EBEBEB",
           width: "100%",
@@ -71,6 +78,7 @@ const SearchableSelect = () => {
         }),
       }}
     />
+    </SelectWrapper>
   );
 }
 

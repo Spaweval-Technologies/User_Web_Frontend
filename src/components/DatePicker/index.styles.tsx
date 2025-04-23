@@ -6,10 +6,10 @@ import { DayPicker } from "react-day-picker";
 
 export const DatePickerWrapper = styled.div`
   position: relative;
-`;
 
-export const CloseBtn = styled(Icon)`
-  align-self: end;
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    width: 50%;
+  }
 `;
 
 export const PickDateBtn = styled(IconButton)`
@@ -25,7 +25,7 @@ export const PickDateBtn = styled(IconButton)`
     padding: 0px 13px;
     border: 1px solid ${({ theme }) => theme.colors.greyBorder};
     border-radius: 5px;
-    width: 50%;
+    width: 100%;
   }
 `;
 

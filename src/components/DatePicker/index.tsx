@@ -8,7 +8,6 @@ import StyledModal from "../Common/Modal";
 import "react-day-picker/style.css";
 import {
   CalendarWrapper,
-  CloseBtn,
   DatePickerWrapper,
   DaySelector,
   PickDateBtn,
