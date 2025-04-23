@@ -12,6 +12,7 @@ export const SearchWrapper = styled.div`
   justify-content: space-between;
   padding: 0px 9px 0px 0px;
   box-sizing: border-box;
+ 
   background: ${({ theme }) => theme.colors.background};
 `;
 
@@ -20,4 +21,5 @@ export const Wrapper = styled.div`
   align-items: center;
   min-width: 60%;
   justify-content: space-evenly;
+   position: relative;
   `;

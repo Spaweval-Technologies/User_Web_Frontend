@@ -17,6 +17,11 @@ export const lightTheme = {
     contrastBg: '#000',
     grey: '#f2f7fa',
     transparent: 'transparent',
+    greyBorder: '#EBEBEB',
+    transparentGrey: 'rgba(255, 255, 255, 0.1)',
+    transparentDark: 'rgba(0, 0, 0, 0.1)',
+    blueGrey: '#D8D9E3',
+    bluishGrey: '#9C9FB7'
   },
   fontWeights: {
     lighter: 300,
@@ -45,7 +50,12 @@ export const darkTheme = {
     textSecondary: "#000",
     secondary: '#272728',
     greyLight: '#D9D9D9',
-    contrastBg: '#fff'
+    contrastBg: '#fff',
+    transparent: 'transparent',
+    grey: '#f2f7fa',
+    greyBorder: '#EBEBEB',
+    transparentGrey: 'rgba(0, 0, 0, 0.1)',
+    transparentDark: 'rgba(255, 255, 255, 0.1)',
   },
   fontWeights: {
     lighter: 300,

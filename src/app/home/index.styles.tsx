@@ -12,4 +12,9 @@ export const Container = styled.div`
  margin: 0 auto;
  overflow: hidden;
  background-color: ${({ theme }) => theme.colors.background};
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+     max-width: 100%;
+     justify-content: flex-start;
+    }
 `

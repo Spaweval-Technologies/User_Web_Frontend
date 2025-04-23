@@ -56,9 +56,9 @@ const SearchableSelect = () => {
       styles={{
         control: (base, state) => ({
           ...base,
-          border: "none",
+          border: "1px solid #EBEBEB",
           width: "100%",
-          borderColor: 'none' 
+          padding: "10px 13px"
         }),
         placeholder: (base) => ({
           ...base,
