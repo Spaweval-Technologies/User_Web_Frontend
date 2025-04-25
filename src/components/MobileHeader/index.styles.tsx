@@ -6,13 +6,7 @@ export const MobileHeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 768px;
   padding: 25px 20px;
-  background-image: url("/Images/HeaderBgMb.svg");
-  background-size: cover;
-  background-position: top left;
-  background-repeat: no-repeat;
-  overflow: hidden;
 
 
   @media (min-width: ${({ theme }) =>

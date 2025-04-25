@@ -6,7 +6,7 @@ type IconProps = {
     width?: number;
     height?: number;
     className?: string;
-    onClick?: () => void;
+    onClick?: (e?:any) => void;
     color?: string;
 };
 

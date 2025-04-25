@@ -1,11 +1,18 @@
 import Icons from "@/Icons";
+
 import Icon from "../Common/Icon";
-import { MbHeader, MobileHeaderWrapper, SearchBtn, SearchContainer, Wrapper } from "./index.styles";
-import { TitleContainer, Title, SubTitle, GettheApp } from "../Header/index.styles";
 import SearchableSelect from "../SearchableSelect";
 import DatePicker from "../DatePicker";
 import TimePicker from "../TimePicker";
 
+//css
+import { MbHeader, MobileHeaderWrapper, SearchBtn, SearchContainer, Wrapper } from "./index.styles";
+import { TitleContainer, Title, SubTitle, GettheApp } from "../Header/index.styles";
+
+/*
+ * MobileHeader component
+ * @returns {JSX.Element} - A mobile header component with a logo, title, and search functionality.
+ */
 const MobileHeader = () => {
   return (
     <MobileHeaderWrapper>

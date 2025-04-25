@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import Icon from '../Icon';
+import styled from "styled-components";
+import Icon from "../Icon";
 
 export const ModalWrapper = styled.div`
   position: absolute;
@@ -18,18 +18,16 @@ export const ModalWrapper = styled.div`
   box-sizing: border-box;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    top: 60px;
+    top: calc(100% + 20px);
     left: 0;
-    width: 100%;
-    max-width: 100%;
-    padding: 8px;
-    border-radius: 0;
-    border: none;
+    width: max-content;
+    max-width: max-content;
+    padding: 12px;
     box-shadow: none;
   }
 `;
 
 export const CloseButton = styled(Icon)`
-  align-self:end;
+  align-self: end;
   display: flex;
 `;

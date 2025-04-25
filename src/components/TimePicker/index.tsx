@@ -3,11 +3,11 @@ import { useState } from "react";
 import Icons from "@/Icons";
 
 import StyledSelect from "../Common/Select";
+import StyledModal from "../Common/Modal";
 
 //css
 import { TimePickerContainer, TimeSelectWrapper } from "./index.styles";
 import { PickDateBtn } from "../DatePicker/index.styles";
-import StyledModal from "../Common/Modal";
 
 /*
   * TimePicker component

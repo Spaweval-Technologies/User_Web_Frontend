@@ -34,7 +34,6 @@ const DatePicker = () => {
     setOpen(false);
   };
 
-  const today = new Date();
   return (
     <DatePickerWrapper>
       <PickDateBtn
@@ -44,7 +43,7 @@ const DatePicker = () => {
         iconWidth={20}
         iconHeight={20}
       >
-        {   "Any Date"}
+        Any Date
       </PickDateBtn>
       <StyledModal isOpen={open} onClose={handleClose}>
         <CalendarWrapper>
