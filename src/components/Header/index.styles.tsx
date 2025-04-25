@@ -7,14 +7,7 @@ export const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 1440px;
   width: 100% !important;
-  height: 100vh !important;
-  background-image: url("/Images/Top_colors.png");
-  background-size: cover;
-  background-position: top left;
-  background-repeat: no-repeat;
-  overflow: hidden;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     display: none;

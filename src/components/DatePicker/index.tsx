@@ -13,7 +13,7 @@ import {
   PickDateBtn,
 } from "./index.styles";
 
-/*
+/**
  * DatePicker component
  * @returns {JSX.Element} - A date picker component that allows users to select a date.
  */
@@ -34,7 +34,6 @@ const DatePicker = () => {
     setOpen(false);
   };
 
-  const today = new Date();
   return (
     <DatePickerWrapper>
       <PickDateBtn
@@ -44,7 +43,7 @@ const DatePicker = () => {
         iconWidth={20}
         iconHeight={20}
       >
-        {   "Any Date"}
+        Any Date
       </PickDateBtn>
       <StyledModal isOpen={open} onClose={handleClose}>
         <CalendarWrapper>

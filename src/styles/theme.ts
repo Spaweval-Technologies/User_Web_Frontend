@@ -1,4 +1,4 @@
-/*
+/**
   * lightTheme and darkTheme objects
   * These objects define the light and dark themes for the application.
   * Each theme contains color properties, font weights, and breakpoints.
@@ -21,7 +21,8 @@ export const lightTheme = {
     transparentGrey: 'rgba(255, 255, 255, 0.1)',
     transparentDark: 'rgba(0, 0, 0, 0.1)',
     blueGrey: '#D8D9E3',
-    bluishGrey: '#9C9FB7'
+    bluishGrey: '#9C9FB7',
+    lightSilver: '#d9d9d9'
   },
   fontWeights: {
     lighter: 300,
@@ -56,6 +57,9 @@ export const darkTheme = {
     greyBorder: '#EBEBEB',
     transparentGrey: 'rgba(0, 0, 0, 0.1)',
     transparentDark: 'rgba(255, 255, 255, 0.1)',
+    blueGrey: '#D8D9E3',
+    bluishGrey: '#9C9FB7',
+    lightSilver: '#d9d9d9'
   },
   fontWeights: {
     lighter: 300,

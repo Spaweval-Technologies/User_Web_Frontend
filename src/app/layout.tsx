@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Raleway } from "next/font/google";
-
+import Toast from "@/components/Common/Toast";
 import ThemeProvider from "@/Providers/ThemeProvider";
+
+import { StyledComponentsRegistry } from "./lib/registry";
 
 //css
 import "./globals.css";
 import { Container } from "./home/index.styles";
-import { StyledComponentsRegistry } from "./lib/registry";
-import Toast from "@/components/Common/Toast";
 
 export const metadata: Metadata = {
   title: "Create Next App",

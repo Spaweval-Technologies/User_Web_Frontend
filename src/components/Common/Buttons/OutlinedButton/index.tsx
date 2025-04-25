@@ -3,7 +3,7 @@ import OutlinedButtonProps from "./index.d";
 //css
 import { OutlinedButton } from "./index.styles";
 
-/*
+/**
   * OutlinedButton component
   * @param {string} children - The content of the button
   * @param {function} onClick - The function to call when the button is clicked

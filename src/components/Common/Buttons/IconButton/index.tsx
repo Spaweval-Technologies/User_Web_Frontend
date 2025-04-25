@@ -5,7 +5,7 @@ import IconButtonProps from "./index.d"
 //css
 import { StyledIconButton } from "./index.styles";
 
-/*
+/**
   IconButton component
   @param {React.ReactNode | string} children - The content of the button.
   @param {string} iconSrc - The source of the icon image.

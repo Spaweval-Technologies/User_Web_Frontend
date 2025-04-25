@@ -1,11 +1,11 @@
 import Icons from "@/Icons";
-import Icon from "../Icon";
 
 import ModalProps from "./index.d";
+
 //css
 import { CloseButton, ModalWrapper } from "./index.styles";
 
-/*
+/**
  * StyledModal component
  * @param {boolean} isOpen - Determines if the modal is open or closed.
  * @param {function} onClose - Function to close the modal.
@@ -13,7 +13,6 @@ import { CloseButton, ModalWrapper } from "./index.styles";
  * @returns {JSX.Element | null} - A styled modal component that overlays the screen when open.
  */
 const StyledModal = ({ isOpen, onClose, children }: ModalProps) => {
- 
   return (
     <ModalWrapper style={{display: isOpen ? 'flex': 'none'}} onClick={onClose}>
         <CloseButton

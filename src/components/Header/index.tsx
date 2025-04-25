@@ -16,10 +16,10 @@ import {
   TitleContainer,
 } from "./index.styles";
 
-/*
-  * StyledHeader component
-  * @returns {JSX.Element} - A styled header component with a logo, buttons, and a search bar.
-*/
+/**
+ * StyledHeader component
+ * @returns {JSX.Element} - A styled header component with a logo, buttons, and a search bar.
+ */
 const StyledHeader = () => {
   return (
     <HeaderWrapper>

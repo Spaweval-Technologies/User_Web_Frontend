@@ -3,7 +3,7 @@ import  VerticalSeperatorProps from "./index.d";
 //css
 import { Hr } from "./index.styles";
 
-/*
+/**
  * VerticalSeperator component
  * @param {string} height - The height of the separator.
  * @param {string} color - The color of the separator.
