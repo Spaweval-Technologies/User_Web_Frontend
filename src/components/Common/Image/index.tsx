@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import ImageProps from "./index.d";
 
-/*
+/**
  * StyledImage component
  * @param {string} src - The source of the image.
  * @param {number} width - The width of the image.

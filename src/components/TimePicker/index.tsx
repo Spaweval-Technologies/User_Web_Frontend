@@ -9,10 +9,10 @@ import StyledModal from "../Common/Modal";
 import { TimePickerContainer, TimeSelectWrapper } from "./index.styles";
 import { PickDateBtn } from "../DatePicker/index.styles";
 
-/*
-  * TimePicker component
-  * @returns {JSX.Element} - A time picker component that allows users to select a start and end time.
-*/
+/**
+ * TimePicker component
+ * @returns {JSX.Element} - A time picker component that allows users to select a start and end time.
+ */
 const TimePicker = () => {
   const [startTime, setStartTime] = useState<string | null>(null);
   const [endTime, setEndTime] = useState<string | null>(null);
@@ -48,18 +48,18 @@ const TimePicker = () => {
         Any Time
       </PickDateBtn>
       {open && (
-        <StyledModal isOpen={open} onClose={handleClose}> 
+        <StyledModal isOpen={open} onClose={handleClose}>
           <TimeSelectWrapper>
-          <StyledSelect
-            value={startTime ?? ""}
-            onChange={(time) => handleStartTimeSelect(time)}
-            options={[{ label: "6 am", value: "6AM" }]}
-          />
-          <StyledSelect
-            value={endTime ?? ""}
-            onChange={(time) => handleEndTimeSelect(time)}
-            options={[{ label: "10pm", value: "10PM" }]}
-          />
+            <StyledSelect
+              value={startTime ?? ""}
+              onChange={(time) => handleStartTimeSelect(time)}
+              options={[{ label: "6 am", value: "6AM" }]}
+            />
+            <StyledSelect
+              value={endTime ?? ""}
+              onChange={(time) => handleEndTimeSelect(time)}
+              options={[{ label: "10pm", value: "10PM" }]}
+            />
           </TimeSelectWrapper>
         </StyledModal>
       )}

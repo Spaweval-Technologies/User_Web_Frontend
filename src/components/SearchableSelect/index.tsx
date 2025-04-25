@@ -1,6 +1,6 @@
 "use client";
 import { components } from "react-select";
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 import Icons from "@/Icons";
 
 import Icon from "../Common/Icon";
@@ -17,13 +17,13 @@ const options = [
   { value: "grape", label: "Grape" },
 ];
 
-const SearchSelect = dynamic(() => import('react-select'), { ssr: false });
+const SearchSelect = dynamic(() => import("react-select"), { ssr: false });
 
 /*
-  * CustomControl component
-  * @param {any} props - The props passed to the component.
-  * @returns {JSX.Element} - A custom control component for the select input.
-*/
+ * CustomControl component
+ * @param {any} props - The props passed to the component.
+ * @returns {JSX.Element} - A custom control component for the select input.
+ */
 const CustomControl = (props: any) => (
   <components.Control {...props}>
     <span className="ml-3 mr-2">
@@ -33,10 +33,10 @@ const CustomControl = (props: any) => (
   </components.Control>
 );
 
-/*
-  * SearchableSelect component
-  * @returns {JSX.Element} - A searchable select component with custom styles and functionality.
-*/
+/**
+ * SearchableSelect component
+ * @returns {JSX.Element} - A searchable select component with custom styles and functionality.
+ */
 const SearchableSelect = () => {
   const theme = useTheme();
   const handleChange = (selectedOption: any) => {
@@ -45,41 +45,40 @@ const SearchableSelect = () => {
 
   return (
     <SelectWrapper>
-    <SearchSelect
-      options={options}
-      onChange={handleChange}
-      placeholder="All Categories"
-      isSearchable
-      components={{
-        Control: CustomControl,
-        DropdownIndicator: () => null,
-        IndicatorSeparator: () => null,
-      }}
-      styles={{
-        container: (base) => ({
-          ...base,
-          width: "100%", // Default full width
-         
-        }),
-        control: (base) => ({
-          ...base,
-          border: "1px solid #EBEBEB",
-          width: "100%",
-          padding: "10px 13px"
-        }),
-        placeholder: (base) => ({
-          ...base,
-          color: theme.colors.secondary,
-          fontWeight: theme.fontWeights.bold
-        }),
-        input: (base) => ({
+      <SearchSelect
+        options={options}
+        onChange={handleChange}
+        placeholder="All Categories"
+        isSearchable
+        components={{
+          Control: CustomControl,
+          DropdownIndicator: () => null,
+          IndicatorSeparator: () => null,
+        }}
+        styles={{
+          container: (base) => ({
             ...base,
-            border: 'none'
-        }),
-      }}
-    />
+            width: "100%", // Default full width
+          }),
+          control: (base) => ({
+            ...base,
+            border: "1px solid #EBEBEB",
+            width: "100%",
+            padding: "10px 13px",
+          }),
+          placeholder: (base) => ({
+            ...base,
+            color: theme.colors.secondary,
+            fontWeight: theme.fontWeights.bold,
+          }),
+          input: (base) => ({
+            ...base,
+            border: "none",
+          }),
+        }}
+      />
     </SelectWrapper>
   );
-}
+};
 
 export default SearchableSelect;

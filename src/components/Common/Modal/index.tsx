@@ -5,7 +5,7 @@ import ModalProps from "./index.d";
 //css
 import { CloseButton, ModalWrapper } from "./index.styles";
 
-/*
+/**
  * StyledModal component
  * @param {boolean} isOpen - Determines if the modal is open or closed.
  * @param {function} onClose - Function to close the modal.

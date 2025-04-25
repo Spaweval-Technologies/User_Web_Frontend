@@ -5,7 +5,7 @@ type Props = {
   className?: string;
 };
 
-/*
+/**
  * Title component
  * @param {string} children - The title text to be displayed.
  * @param {string} className - Additional class names for styling.

@@ -1,6 +1,6 @@
 import { Toaster } from "react-hot-toast";
 
-/*
+/**
  * Toast component
  * @returns {JSX.Element} - A toast notification component that displays messages to the user.
  */

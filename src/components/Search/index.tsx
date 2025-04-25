@@ -7,10 +7,10 @@ import VerticalSeperator from "../Common/VerticalSeperator";
 //css
 import { SearchWrapper, Wrapper } from "./index.styles";
 
-/*
-  * Search component
-  * @returns {JSX.Element} - A search component with date, time, and location pickers.
-*/
+/**
+ * Search component
+ * @returns {JSX.Element} - A search component with date, time, and location pickers.
+ */
 const Search = () => {
   return (
     <SearchWrapper>

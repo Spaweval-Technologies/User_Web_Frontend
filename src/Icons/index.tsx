@@ -10,7 +10,7 @@ import LeftArrow from "./LeftArrow.svg";
 import RightArrow from "./RightArrow.svg";
 import StarFill from "./StarFill.svg";
 
-/*
+/**
  * Icons component
  * @returns {JSX.Element} - A collection of SVG icons used in the application.
  */

@@ -4,6 +4,10 @@ import AromaTherapy from "./Category/AromaTherapy.svg";
 import DeepTissue from "./Category/DeepTissue.svg";
 import HotStone from "./Category/HotStone.svg";
 import Swedish from "./Category/Swedish.svg";
+import DestinationSpa from "./Spa/DestinationSpa.svg";
+import ShiatsuSpa from "./Spa/ShiatsuMassageSpa.svg";
+import MineralSpringSpa from "./Spa/MineralSpringSpa.svg";
+import ThalassotherapySpa from "./Spa/ThalassotherapySpa.svg";
 
 // Importing images for the application
 const Images = {
@@ -13,6 +17,10 @@ const Images = {
   DeepTissue,
   HotStone,
   Swedish,
+  DestinationSpa,
+  ShiatsuSpa,
+  MineralSpringSpa,
+  ThalassotherapySpa,
 };
 
 export default Images;

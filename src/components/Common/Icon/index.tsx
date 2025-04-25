@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import IconProps from "./index.d";
 
-/*
+/**
   Icon component
   @param {string | StaticImageData} src - The source of the icon image.
   @param {number} width - The width of the icon image.

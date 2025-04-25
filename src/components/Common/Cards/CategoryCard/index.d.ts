@@ -1,5 +1,5 @@
 type CategoryCardProps = {
-    color: "black" | "white",
+    color: string,
     title: string,
     description: string,
     img?: string,

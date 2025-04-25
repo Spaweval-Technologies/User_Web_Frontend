@@ -13,7 +13,7 @@ import {
   PickDateBtn,
 } from "./index.styles";
 
-/*
+/**
  * DatePicker component
  * @returns {JSX.Element} - A date picker component that allows users to select a date.
  */
