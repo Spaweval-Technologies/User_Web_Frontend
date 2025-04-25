@@ -20,6 +20,7 @@ const CardCarousel = ({title, spaDetails}: SpaCardCarouselProps) => {
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     initial: 0,
     slides: {
+      perView: "auto",
       spacing: 31,
     },
     loop: true,
