@@ -26,7 +26,14 @@ import {
  * @param {number} props.ratting - Average rating for the spa (e.g., 4.5).
  * @returns {JSX.Element} A styled spa card component.
  */
-const SpaCard = ({title, description, img, alt, numReviews, ratting}: SpaCardProps) => {
+const SpaCard = ({
+  title,
+  description,
+  img,
+  alt,
+  numReviews,
+  ratting,
+}: SpaCardProps) => {
   return (
     <CardWrapper>
       <CardImage

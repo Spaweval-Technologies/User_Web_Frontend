@@ -11,6 +11,10 @@ import spaDetails from "@/components/Common/Carousel/SpaCardsCarousel/data";
 //css
 import { PageWrapper } from "./home/index.styles";
 import DownloadApp from "@/components/DownloadApp";
+import ReviewCard from "@/components/Common/Cards/ReviewCard";
+import ReviewCarousel from "@/components/Common/Carousel/ReviewCardsCarousel";
+import reviewDetails from "@/components/Common/Carousel/ReviewCardsCarousel/data";
+import SpaBusiness from "@/components/SpaBusiness";
 
 /**
  * Home Page Component
@@ -37,6 +41,8 @@ const Home = () => {
       <CardCarousel title={"New to Spawn"} spaDetails={spaDetails}/>
       <CardCarousel title={"Recommended"} spaDetails={spaDetails}/>
       <DownloadApp/>
+      <ReviewCarousel title="Reviews" reviewDetails={reviewDetails} />
+      <SpaBusiness />
     </PageWrapper>
   );
 };
