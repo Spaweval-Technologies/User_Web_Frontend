@@ -39,7 +39,7 @@ const CardCarousel = ({ title, spaDetails }: SpaCardCarouselProps) => {
         <div ref={sliderRef} className="keen-slider">
           {spaDetails &&
             spaDetails.map((spa) => (
-              <div className="keen-slider__slide" key={spa.title}>
+              <div id="spaCarousel" className="keen-slider__slide" key={spa.title}>
                 <SpaCard
                   title={spa.title}
                   description={spa.description}

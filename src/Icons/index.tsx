@@ -19,6 +19,9 @@ import GoogleSolid from "./GoogleSolid.svg";
 import TwitterSolid from "./TwitterSolid.svg";
 import InstagramSolid from "./IntagramSolid.svg";
 import PinterestSolid from "./PinterestSolid.svg";
+import ProfileImg from "./ProfileImg.svg";
+import StarGray from "./StarGray.svg";
+import ArrowCircleRight from "./ArrowRightCircle.svg";
 
 /**
  * Icons component
@@ -45,7 +48,10 @@ const Icons = {
   TwitterSolid,
   GoogleSolid,
   InstagramSolid,
-  PinterestSolid
+  PinterestSolid,
+  ProfileImg,
+  StarGray,
+  ArrowCircleRight
 };
 
 export default Icons;
