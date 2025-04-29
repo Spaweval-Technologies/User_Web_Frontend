@@ -119,6 +119,23 @@ export const SubTitle = styled.p`
   }
 `;
 
+export const AppDetail = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 119px 0 0;
+  min-height: 191px;
+
+  @media (min-width: ${({ theme }) =>
+      theme.breakpoints.md}) and (max-width: ${({ theme }) =>
+      theme.breakpoints.xl}) {
+    margin: 80px 0 0;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    margin: 74px 0 0;
+  }
+`;
+
 export const GettheApp = styled(IconButton)`
   display: flex;
   align-items: center;
@@ -128,25 +145,23 @@ export const GettheApp = styled(IconButton)`
   color: ${({ theme }) => theme.colors.textSecondary};
   border-radius: 40px;
   padding: 17px 30px;
-  margin: 119px 0 0;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.primary};
     border: 1px solid ${({ theme }) => theme.colors.secondary};
   }
 
-  @media (min-width: ${({ theme }) =>
-      theme.breakpoints.md}) and (max-width: ${({ theme }) =>
-      theme.breakpoints.xl}) {
-    margin: 80px 0 0;
-  }
-  
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    margin: 74px 0 0;
     padding: 16px 32px;
     font-size: 15px;
     line-height: 15px;
     align-self: center;
-
   }
 `;
+
+
+export const BusinessButton = styled(IconButton)`
+  font-size: 20px;
+  font-weight: ${({theme}) => theme.fontWeights.bolder};
+  height: fit-content;
+`

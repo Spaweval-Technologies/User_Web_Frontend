@@ -10,6 +10,7 @@ type IconButtonProps = {
     disabled?: boolean;
     type?: "button" | "submit" | "reset";
     iconPosition?: "left" | "right";
+    onMouseEnter?: () => void
 };
 
 export default IconButtonProps;

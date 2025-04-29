@@ -8,6 +8,7 @@ import DestinationSpa from "./Spa/DestinationSpa.svg";
 import ShiatsuSpa from "./Spa/ShiatsuMassageSpa.svg";
 import MineralSpringSpa from "./Spa/MineralSpringSpa.svg";
 import ThalassotherapySpa from "./Spa/ThalassotherapySpa.svg";
+import DownloadApp from "./DownloadApp.svg";
 
 // Importing images for the application
 const Images = {
@@ -21,6 +22,7 @@ const Images = {
   ShiatsuSpa,
   MineralSpringSpa,
   ThalassotherapySpa,
+  DownloadApp
 };
 
 export default Images;

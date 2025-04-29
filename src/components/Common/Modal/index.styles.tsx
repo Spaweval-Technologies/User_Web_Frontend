@@ -9,10 +9,10 @@ export const ModalWrapper = styled.div`
   border-radius: 8px;
   z-index: 1;
   padding: 12px 16px;
-  border: 1px solid #ccc;
+  border: 1px solid ${({theme}) => theme.colors.gray80};
   display: flex;
   flex-direction: column;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 20px ${({theme}) => theme.colors.transparentGrey};
   width: max-content;
   gap: 8px;
   box-sizing: border-box;

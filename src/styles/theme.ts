@@ -20,9 +20,15 @@ export const lightTheme = {
     greyBorder: '#EBEBEB',
     transparentGrey: 'rgba(255, 255, 255, 0.1)',
     transparentDark: 'rgba(0, 0, 0, 0.1)',
+    transparentWhite: 'rgba(255,255,255,0.3)',
     blueGrey: '#D8D9E3',
     bluishGrey: '#9C9FB7',
-    lightSilver: '#d9d9d9'
+    lightSilver: '#d9d9d9',
+    lightBlue: '#DBE5EA',
+    gray80: '#cccccc',
+    deepSkyBlue: '#20aafb',
+    lightPastelBlue: '#edeef5',
+    platinumGray: '#d2d2d7'
   },
   fontWeights: {
     lighter: 300,
@@ -57,9 +63,11 @@ export const darkTheme = {
     greyBorder: '#EBEBEB',
     transparentGrey: 'rgba(0, 0, 0, 0.1)',
     transparentDark: 'rgba(255, 255, 255, 0.1)',
+    transparentWhite: 'rgba(255,255,255,0.3)',
     blueGrey: '#D8D9E3',
     bluishGrey: '#9C9FB7',
-    lightSilver: '#d9d9d9'
+    lightSilver: '#d9d9d9',
+    lightBluishGray: "#DBE5EA"
   },
   fontWeights: {
     lighter: 300,

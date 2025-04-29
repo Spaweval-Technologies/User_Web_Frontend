@@ -19,7 +19,7 @@ const StyledImage = ({ src, alt, width, height, className }: ImageProps) => {
         alt={alt ?? "Background"}
         width={width ?? 100}
         height={height ?? 100}
-        className={className}
+        className={className} 
       />
     </div>
   );

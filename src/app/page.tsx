@@ -10,6 +10,7 @@ import spaDetails from "@/components/Common/Carousel/SpaCardsCarousel/data";
 
 //css
 import { PageWrapper } from "./home/index.styles";
+import DownloadApp from "@/components/DownloadApp";
 
 /**
  * Home Page Component
@@ -35,6 +36,7 @@ const Home = () => {
       <Categories />
       <CardCarousel title={"New to Spawn"} spaDetails={spaDetails}/>
       <CardCarousel title={"Recommended"} spaDetails={spaDetails}/>
+      <DownloadApp/>
     </PageWrapper>
   );
 };

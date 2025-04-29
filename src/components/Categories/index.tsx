@@ -19,6 +19,7 @@ const Categories = () => {
             color={category.color}
             img={category.img}
             alt={category.alt}
+            key={category.title}
           />
         ))}
     </CategoriesWrapper>

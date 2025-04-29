@@ -9,6 +9,16 @@ import Menu from "./Menu.svg";
 import LeftArrow from "./LeftArrow.svg";
 import RightArrow from "./RightArrow.svg";
 import StarFill from "./StarFill.svg";
+import DownArrow from "./DownBlack.svg";
+import UpArrow from "./UpBlack.svg";
+import ArrowRightBlack from "./ArrowRightBlack.svg";
+import AndroidSolid from "./AndroidSolid.svg";
+import AppleSolid from "./AppleSolid.svg";
+import FacebookSolid from "./Facebook.svg";
+import GoogleSolid from "./GoogleSolid.svg";
+import TwitterSolid from "./TwitterSolid.svg";
+import InstagramSolid from "./IntagramSolid.svg";
+import PinterestSolid from "./PinterestSolid.svg";
 
 /**
  * Icons component
@@ -26,6 +36,16 @@ const Icons = {
   LeftArrow,
   RightArrow,
   StarFill,
+  DownArrow,
+  UpArrow,
+  ArrowRightBlack,
+  FacebookSolid,
+  AndroidSolid,
+  AppleSolid,
+  TwitterSolid,
+  GoogleSolid,
+  InstagramSolid,
+  PinterestSolid
 };
 
 export default Icons;
