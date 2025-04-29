@@ -28,7 +28,7 @@ export const lightTheme = {
     gray80: '#cccccc',
     deepSkyBlue: '#20aafb',
     lightPastelBlue: '#edeef5',
-
+    platinumGray: '#d2d2d7'
   },
   fontWeights: {
     lighter: 300,
