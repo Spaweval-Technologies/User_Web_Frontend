@@ -13,7 +13,7 @@ import { CarouselWrapper, TitleWrapper, Wrapper } from "./index.styles";
  * CardCarousel component
  * @returns {JSX.Element} - A carousel component that displays a list of cards.
  */
-const CardCarousel = ({title, spaDetails}: SpaCardCarouselProps) => {
+const CardCarousel = ({ title, spaDetails }: SpaCardCarouselProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
 
@@ -39,7 +39,7 @@ const CardCarousel = ({title, spaDetails}: SpaCardCarouselProps) => {
         <div ref={sliderRef} className="keen-slider">
           {spaDetails &&
             spaDetails.map((spa) => (
-              <div className="keen-slider__slide">
+              <div className="keen-slider__slide" key={spa.title}>
                 <SpaCard
                   title={spa.title}
                   description={spa.description}

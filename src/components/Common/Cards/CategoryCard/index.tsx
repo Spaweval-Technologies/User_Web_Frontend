@@ -38,6 +38,7 @@ const CategoryCard = ({
         alt={alt ?? "swedish"}
         width={"100"}
         height="100"
+        priority
       />
       <Title color={color}>{title}</Title>
       <Description color={color}>{description}</Description>

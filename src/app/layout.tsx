@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Raleway } from "next/font/google";
+
 import Toast from "@/components/Common/Toast";
 import ThemeProvider from "@/Providers/ThemeProvider";
-
-import { StyledComponentsRegistry } from "./lib/registry";
 
 //css
 import "./globals.css";
@@ -43,10 +42,8 @@ const RootLayout = ({
         className={`${raleway.className} ${beautyRachela.className}antialiased`}
       >
         <ThemeProvider>
-          <StyledComponentsRegistry>
-            <Toast />
-            <Container>{children}</Container>
-          </StyledComponentsRegistry>
+          <Toast />
+          <Container>{children}</Container>
         </ThemeProvider>
       </body>
     </html>

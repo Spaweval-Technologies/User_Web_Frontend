@@ -6,6 +6,8 @@ import { DayPicker } from "react-day-picker";
 
 export const DatePickerWrapper = styled.div`
   position: relative;
+  flex-1;
+  width: 100%;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     width: 50%;
@@ -15,8 +17,12 @@ export const DatePickerWrapper = styled.div`
 export const PickDateBtn = styled(IconButton)`
   background-color: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.secondary};
-  padding: 10px 13px;
+  padding: 5px 13px;
   box-sizing: border-box;
+  min-height: 100%;
+  flex-1;
+  width: 100%;
+
   &:hover {
     background-color: ${({ theme }) => theme.colors.grey};
   }

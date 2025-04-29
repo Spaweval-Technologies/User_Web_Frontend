@@ -6,6 +6,7 @@ import StyledSelect from "../Common/Select";
 
 //css
 import {
+  AppDetail,
   ButtonsWrapper,
   GettheApp,
   Header,
@@ -15,12 +16,17 @@ import {
   Title,
   TitleContainer,
 } from "./index.styles";
+import StyledQrCode from "../Common/QrCode";
+import { useState } from "react";
+import menuOptions from "./data";
 
 /**
  * StyledHeader component
  * @returns {JSX.Element} - A styled header component with a logo, buttons, and a search bar.
  */
 const StyledHeader = () => {
+  const [showQRCode, setShowQRCode] = useState<boolean>(false);
+
   return (
     <HeaderWrapper>
       <Header>
@@ -28,8 +34,9 @@ const StyledHeader = () => {
         <ButtonsWrapper>
           <SecondaryButton>For Business</SecondaryButton>
           <StyledSelect
-            value="check"
-            options={[{ label: "check", value: "check" }]}
+            defaultText="Menu"
+            value="Menu"
+            options={menuOptions}
           />
         </ButtonsWrapper>
       </Header>
@@ -42,15 +49,26 @@ const StyledHeader = () => {
           <Title>Experiences"</Title>
         </TitleContainer>
         <Search />
-        <GettheApp
-          iconSrc={Icons.ScanBarcode}
-          iconPosition="right"
-          iconAlt="app"
-          iconWidth={20}
-          iconHeight={20}
-        >
-          Get the App
-        </GettheApp>
+        <AppDetail>
+          {!showQRCode ? (
+            <GettheApp
+              iconSrc={Icons.ScanBarcode}
+              iconPosition="right"
+              iconAlt="app"
+              iconWidth={20}
+              iconHeight={20}
+              onMouseEnter={() => setShowQRCode(true)}
+            >
+              Get the App
+            </GettheApp>
+           ) : ( 
+            <StyledQrCode
+              onMouseLeave={() => setShowQRCode(false)}
+              content={"Scan to Download"}
+              value="check"
+            />
+           )} 
+        </AppDetail>
       </SearchContainer>
     </HeaderWrapper>
   );
