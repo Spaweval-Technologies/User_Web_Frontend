@@ -5,6 +5,7 @@ import ReviewProps from "./index.d";
 
 //css
 import { Ratting, ReviewCount, ReviewWrapper } from "./index.styles";
+import RatingStars from "../RatingStars";
 
 /**
  * Review Component
@@ -16,41 +17,31 @@ import { Ratting, ReviewCount, ReviewWrapper } from "./index.styles";
  * @param {number} props.starCount - Total number of stars to display (typically 5)
  * @param {number} props.rating - Actual rating value (e.g., 4.2)
  * @param {number} props.reviews - Total number of user reviews
+ * @param {number} [props.mobileWidth] - Optional. Width of the star icons for mobile view
+ * @param {number} [props.mobileHeight] - Optional. Height of the star icons for mobile view
  * @returns {JSX.Element} A UI component showing rating stars and review count
  */
-const Review = ({ show = false, iconWidth, iconHeight, starCount, rating, reviews }: ReviewProps) => {
-  const filledStars = Math.floor(rating);
-  const hasHalfStar = rating - filledStars >= 0.5;
-  const totalStars = starCount;
-
-  const stars = [];
-
-  for (let i = 0; i < totalStars; i++) {
-    if (i < filledStars) {
-      stars.push(
-        <Icon
-          key={i}
-          src={Icons.StarFill}
-          alt="filled"
-          width={iconWidth ?? 20}
-          height={iconHeight ?? 20}
-        />
-      );
-    }
-    // else if (i === filledStars && hasHalfStar) {
-    //     stars.push(<Icon key={i} src={Icons.StarHalf} alt="half" width={20} height={20} />);
-    // }
-    else {
-      stars.push(
-        <Icon key={i} src={Icons.StarGray} alt="empty" width={20} height={20} />
-      );
-    }
-  }
-
+const Review = ({
+  show = false,
+  iconWidth,
+  iconHeight,
+  starCount,
+  rating,
+  reviews,
+  mobileWidth,
+  mobileHeight,
+}: ReviewProps) => {
   return (
     <ReviewWrapper>
       {show && <Ratting>{rating}</Ratting>}
-      {stars}
+      <RatingStars
+        iconHeight={iconHeight}
+        iconWidth={iconWidth}
+        rating={rating}
+        totalRating={starCount}
+        mobileWidth={mobileWidth}
+        mobileHeight={mobileHeight}
+      />
       <ReviewCount>({reviews} reviews)</ReviewCount>
     </ReviewWrapper>
   );

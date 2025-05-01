@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  overflow-x: auto;
+  overflow: hidden;
 `;
 
 export const TitleWrapper = styled.text`
@@ -16,6 +16,11 @@ export const TitleWrapper = styled.text`
   line-height: 1;
   color: ${({ theme }) => theme.colors.secondary};
   box-sizing: border-box;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    font-size: 25px;
+    padding: 20px 0 0 14px;
+  }
 `;
 
 export const CarouselWrapper = styled.div`
@@ -30,7 +35,7 @@ export const CarouselWrapper = styled.div`
   overflow: hidden;
   overflow-x: auto;
   position: relative;
-  
+
   .keen-slider {
     overflow: hidden;
     display: flex;
@@ -67,5 +72,30 @@ export const CarouselWrapper = styled.div`
   .right-arrow {
     left: auto;
     right: 35px;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+export const CarouselMobileWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+  gap: 16px;
+  margin: 26px 0 52px 20px;
+  min-height: max-content;
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+  }
+
+  @media (min-width: 768px) {
+    display: none;
   }
 `;

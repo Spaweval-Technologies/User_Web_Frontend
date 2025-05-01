@@ -14,6 +14,13 @@ export const CardWrapper = styled.div`
   width: 311px;
   box-sizing: border-box;
   min-height: 395px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    width: 300px;
+    min-width: 300px;
+    padding: 22px 39px 15px 25px;
+    min-height: 381px;
+  }
 `;
 
 export const ProfileImg = styled(Icon)`

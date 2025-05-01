@@ -51,6 +51,8 @@ const ReviewCard = ({
           starCount={totalRating ?? 5}
           rating={rating ?? 4.2}
           reviews={reviews ?? 52}
+          mobileWidth={20}
+          mobileHeight={20}
         />
         <Description>{description}</Description>
       </ProfileContainer>

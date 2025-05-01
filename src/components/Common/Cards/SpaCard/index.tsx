@@ -1,7 +1,5 @@
-import Icons from "@/Icons";
-
-import Icon from "../../Icon";
 import SpaCardProps from "./index.d";
+import RatingStars from "../../RatingStars";
 
 //css
 import {
@@ -46,7 +44,7 @@ const SpaCard = ({
         <CardTitle>{title}</CardTitle>
         <Wrapper>
           <Ratting>{ratting}</Ratting>
-          <Icon src={Icons.StarFill} alt="star" width={15} height={15} />
+           <RatingStars mobileHeight={13} mobileWidth={13} iconHeight={15} iconWidth={15} rating={ratting} totalRating={1} />
           <ReviewCount>({numReviews} Reviews)</ReviewCount>
         </Wrapper>
         <CardDescription>{description}</CardDescription>

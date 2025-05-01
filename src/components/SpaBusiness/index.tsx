@@ -1,31 +1,51 @@
-import Image from "next/image";
 import Icons from "@/Icons";
 
-import Images from "../../../public/Images";
+import SpaBusinessProps from "./index.d";
+import RatingStars from "../Common/RatingStars";
 
 //css
-import { Content, Description, FindMore, Title, Wrapper } from "./index.styles";
+import {
+  BusinessImg,
+  Content,
+  Description,
+  FindMore,
+  Ratting,
+  Review,
+  Stars,
+  Title,
+  Wrapper,
+} from "./index.styles";
 
 /**
  * SpaBusiness Component
- *
- * This component displays a promotional section for the business-facing features
- * of the Spawn platform. It includes a title, description, a call-to-action button,
- * and a background image representing the business tool.
- *
- * @returns {JSX.Element} The rendered SpaBusiness section.
+ * @param {Object} props - The props for the SpaBusiness component
+ * @param {number} props.rating - Average user rating (e.g., 4.5)
+ * @param {number} props.reviews - Total number of user reviews
+ * @param {string} props.title - Title of the business section
+ * @param {string} props.description - Description of the feature
+ * @param {string} props.findMoreUrl - URL for the "Find out More" button (currently unused)
+ * @param {string} props.imgSrc - Image source URL representing the business feature
+ * @param {string} props.alt - Alt text for the image (for accessibility)
+ * @param {number} [props.iconWidth] - Optional width of the star icons
+ * @param {number} [props.iconHeight] - Optional height of the star icons
+ * @returns {JSX.Element} JSX layout with rating, reviews, description, CTA button, and image
  */
-
-const SpaBusiness = () => {
+const SpaBusiness = ({
+  rating,
+  reviews,
+  title,
+  description,
+  findMoreUrl,
+  imgSrc,
+  alt,
+  iconWidth,
+  iconHeight,
+}: SpaBusinessProps) => {
   return (
     <Wrapper>
       <Content>
-        <Title>Spawn for Business</Title>
-        <Description>
-          Here's how to effortlessly fill those gaps with our new online booking
-          optimisation tool. Booking your salon appointments is as easy as a few
-          taps on your device. It's quick, convenient, and hassle-free.
-        </Description>
+        <Title>{title}</Title>
+        <Description>{description}</Description>
         <FindMore
           iconSrc={Icons.ArrowCircleRight}
           iconAlt="white right arrow circle"
@@ -35,12 +55,16 @@ const SpaBusiness = () => {
         >
           Find out More
         </FindMore>
+        <Ratting>Excellent {rating}/5</Ratting>
+        <RatingStars
+          iconHeight={iconHeight ?? 29}
+          iconWidth={iconWidth ?? 29}
+          rating={rating}
+          totalRating={5}
+        />
+        <Review>Over {reviews} reviews on</Review>
       </Content>
-      <Image
-        src={Images.BusinessLaptopBg}
-        alt={"business laptop bg"}
-        objectFit="cover"
-      />
+      <BusinessImg src={imgSrc} alt={alt} />
     </Wrapper>
   );
 };

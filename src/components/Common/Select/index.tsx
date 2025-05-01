@@ -73,9 +73,13 @@ const StyledSelect = ({
   const handleOpen = () => {
     if (!disabled) {
       const rect = dropdownRef.current?.getBoundingClientRect();
+      const dropdownWidth = dropdownRef.current?.offsetWidth || 230; // Fallback width
+
       if (rect) {
-        const windowWidth = window.innerWidth;
-        if (rect.right + 200 > windowWidth) {
+        const spaceRight = window.innerWidth - rect.right;
+        const spaceLeft = rect.left;
+
+        if (spaceRight < dropdownWidth && spaceLeft > dropdownWidth) {
           // 200px assumed dropdown width, adjust if needed
           setDropdownDirection("left");
         } else {

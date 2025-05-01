@@ -156,6 +156,7 @@ export const GettheApp = styled(IconButton)`
     font-size: 15px;
     line-height: 15px;
     align-self: center;
+    margin-top: 74px;
   }
 `;
 

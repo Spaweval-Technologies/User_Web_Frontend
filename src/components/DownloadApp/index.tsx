@@ -10,6 +10,7 @@ import {
   Description,
   DownloadImg,
   DownloadQr,
+  GetAppButton,
   SubTitle,
   SubTitleText,
   Title,
@@ -35,12 +36,17 @@ const DownloadApp = () => {
           overall you can get in this mobile app
         </Description>
         <DownloadQr value={"check"} />
+        <GetAppButton
+          iconSrc={Icons.ScanBarcode}
+          iconAlt="get app"
+          iconPosition="right"
+          iconWidth={23}
+          iconHeight={23}
+        >
+          Get the App
+        </GetAppButton>
       </Content>
-      <DownloadImg
-        src={Images.DownloadApp}
-        alt="downloadapp"
-        objectFit="cover"
-      />
+      <DownloadImg src={Images.DownloadApp} alt="downloadapp" />
     </Container>
   );
 };
