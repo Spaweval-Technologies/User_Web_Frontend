@@ -15,6 +15,16 @@ export const CardWrapper = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.lightSilver};
   cursor: pointer;
   overflow: hidden;
+  box-sizing: border-box;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    width: 271px;
+    min-width: 271px;
+    max-width: 271px;
+    height: 248px;
+    min-height: 248px;
+    max-height: 248px;
+  }
 `;
 
 export const CardImage = styled(Image)`
@@ -29,6 +39,13 @@ export const CardImage = styled(Image)`
   &:hover {
     scale: 1.1;
     transition: all 0.3s ease-in-out;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    width: 100%;
+    height: 160px;
+    min-height: 160px;
+    max-height: 160px;
   }
 `;
 

@@ -36,3 +36,17 @@ export const PageWrapper = styled.main`
     background-image: url("/Images/HeaderBgMb.svg");
   }
 `;
+
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-image: url("/Images/Bottom_colors.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    background-image: url("/Images/FooterMbBg.png");
+  }
+`;

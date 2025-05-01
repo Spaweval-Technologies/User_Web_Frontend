@@ -7,7 +7,12 @@ import SpaCard from "../../Cards/SpaCard";
 import SpaCardCarouselProps from "./index.d";
 
 //css
-import { CarouselWrapper, TitleWrapper, Wrapper } from "./index.styles";
+import {
+  CarouselMobileWrapper,
+  CarouselWrapper,
+  TitleWrapper,
+  Wrapper,
+} from "./index.styles";
 
 /**
  * CardCarousel component
@@ -39,7 +44,11 @@ const CardCarousel = ({ title, spaDetails }: SpaCardCarouselProps) => {
         <div ref={sliderRef} className="keen-slider">
           {spaDetails &&
             spaDetails.map((spa) => (
-              <div id="spaCarousel" className="keen-slider__slide" key={spa.title}>
+              <div
+                id="spaCarousel"
+                className="keen-slider__slide"
+                key={spa.title}
+              >
                 <SpaCard
                   title={spa.title}
                   description={spa.description}
@@ -80,6 +89,20 @@ const CardCarousel = ({ title, spaDetails }: SpaCardCarouselProps) => {
           </>
         )}
       </CarouselWrapper>
+      <CarouselMobileWrapper>
+        {spaDetails &&
+          spaDetails.map((spa, id) => (
+            <SpaCard
+              title={spa.title}
+              description={spa.description}
+              ratting={spa.ratting}
+              numReviews={spa.numReviews}
+              img={spa.img}
+              alt={spa.alt}
+              key={spa.title + id}
+            />
+          ))}
+      </CarouselMobileWrapper>
     </Wrapper>
   );
 };

@@ -6,8 +6,7 @@ export const MobileHeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 25px 20px;
-
+  padding: 25px 20px 77px;
 
   @media (min-width: ${({ theme }) =>
     theme.breakpoints.md}) {

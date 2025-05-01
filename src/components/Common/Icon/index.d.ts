@@ -8,6 +8,8 @@ type IconProps = {
     className?: string;
     onClick?: (e?:any) => void;
     color?: string;
+    mobileWidth?: number;
+    mobileHeight?: number;
 };
 
 export default IconProps;

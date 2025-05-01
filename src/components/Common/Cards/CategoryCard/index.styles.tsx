@@ -6,8 +6,6 @@ import { OutlinedButton } from "../../Buttons/OutlinedButton/index.styles";
 export const CategoryCardWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: 100%;
   padding: 17px 23px;
   border-radius: 20px;
   background-color: ${({ theme }) => theme.colors.background};
@@ -19,10 +17,20 @@ export const CategoryCardWrapper = styled.div`
   width: 384px;
   height: 318px;
   min-width: 384px;
+  max-width: 384px;
   min-height: 318px;
 
   &:hover {
     overflow: hidden;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    width: 371px;
+    min-width: 371px;
+    max-width: 371px;
+    height: 307px;
+    min-height: 307px;
+    max-height: 307px;
   }
 `;
 

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import {
+  CarouselMobileWrapper,
   CarouselWrapper,
   TitleWrapper,
   Wrapper,
@@ -34,18 +35,22 @@ const ReviewCarousel = ({ title, reviewDetails }: ReviewCarouselProps) => {
       <CarouselWrapper>
         <div id="reviewCarousel" ref={sliderRef} className="keen-slider">
           {reviewDetails &&
-            reviewDetails.map((review) => (
-                <div id="reviewCarousel" className="keen-slider__slide" key={review.name} >
+            reviewDetails.map((review, id) => (
+              <div
+                id="reviewCarousel"
+                className="keen-slider__slide"
+                key={review.name + id}
+              >
                 <ReviewCard
-                name={review.name}
-                location={review.location}
-                img={review.img}
-                alt={review.alt}
-                totalRating={review.totalRating}
-                rating={review.rating}
-                reviews={review.reviews}
-                description={review.description}
-              />
+                  name={review.name}
+                  location={review.location}
+                  img={review.img}
+                  alt={review.alt}
+                  totalRating={review.totalRating}
+                  rating={review.rating}
+                  reviews={review.reviews}
+                  description={review.description}
+                />
               </div>
             ))}
         </div>
@@ -80,6 +85,22 @@ const ReviewCarousel = ({ title, reviewDetails }: ReviewCarouselProps) => {
           </>
         )}
       </CarouselWrapper>
+      <CarouselMobileWrapper>
+        {reviewDetails &&
+          reviewDetails.map((review, id) => (
+            <ReviewCard
+              key={review.name + id}
+              name={review.name}
+              location={review.location}
+              img={review.img}
+              alt={review.alt}
+              totalRating={review.totalRating}
+              rating={review.rating}
+              reviews={review.reviews}
+              description={review.description}
+            />
+          ))}
+      </CarouselMobileWrapper>
     </Wrapper>
   );
 };
