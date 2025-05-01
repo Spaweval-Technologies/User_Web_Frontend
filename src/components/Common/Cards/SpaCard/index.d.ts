@@ -1,7 +1,9 @@
+import { StaticImageData } from "next/image";
+
 type SpaCardProps = {
     title: string,
     description: string,
-    img: string,
+    img: string | StaticImageData,
     alt?: string,
     numReviews: number,
     ratting: number
