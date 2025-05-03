@@ -10,7 +10,9 @@ import {
   Disclaimer,
   FooterContent,
   FooterWrapper,
+  GetApp,
   HR,
+  IconsWrapper,
   List,
   ListItem,
   ListItemLink,
@@ -83,7 +85,18 @@ const Footer = () => {
               <ListItemLink href="#">Terms of Use</ListItemLink>
             </ListItem>
           </List>
-          <GetAppButton iconPosition="right" iconSrc={Icons.AndroidSolid} iconAlt="get app" >Get the App</GetAppButton>
+          <GetApp>
+            Get the App
+            <IconsWrapper>
+              <Icon
+                src={Icons.AndroidSolid}
+                alt="android"
+                width={24}
+                height={24}
+              />
+              <Icon src={Icons.AppleSolid} alt="apple" width={24} height={24} />
+            </IconsWrapper>
+          </GetApp>
           <List>
             <ListTitle>Follow us on</ListTitle>
             <SocialMediaWrapper>
@@ -92,30 +105,40 @@ const Footer = () => {
                 alt="facebook"
                 width={16}
                 height={16}
+                mobileheight={19}
+                mobilewidth={18}
               />
               <SocialMediaIcon
                 src={Icons.TwitterSolid}
                 alt="twitter"
                 width={16}
                 height={16}
+                mobileheight={19}
+                mobilewidth={18}
               />
               <SocialMediaIcon
                 src={Icons.InstagramSolid}
                 alt="telegram"
                 width={16}
                 height={16}
+                mobileheight={19}
+                mobilewidth={18}
               />
               <SocialMediaIcon
                 src={Icons.GoogleSolid}
                 alt="google"
                 width={16}
                 height={16}
+                mobileheight={19}
+                mobilewidth={18}
               />
               <SocialMediaIcon
                 src={Icons.PinterestSolid}
                 alt="pinterest"
                 width={16}
                 height={16}
+                mobileheight={19}
+                mobilewidth={18}
               />
             </SocialMediaWrapper>
             <HR />
@@ -126,7 +149,12 @@ const Footer = () => {
                 width={26}
                 height={26}
               />
-              <SocialMediaIcon src={Icons.AppleSolid} alt="apple" width={26} height={26} />
+              <SocialMediaIcon
+                src={Icons.AppleSolid}
+                alt="apple"
+                width={26}
+                height={26}
+              />
             </SocialMediaWrapper>
           </List>
         </Wrapper>
