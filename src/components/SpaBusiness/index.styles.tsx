@@ -11,12 +11,22 @@ export const Wrapper = styled.section`
   box-sizing: border-box;
   min-height: max-content;
   align-items: center;
-  border-bottom: 1px solid ${({theme}) => theme.colors.lightSilver};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.lightSilver};
 
   & > *:last-child {
-    width: 70%;
+    width: 60%;
     height: 700px;
   }
+
+  @media (min-width: ${({ theme }) =>
+      theme.breakpoints.md}) and (max-width: ${({ theme }) =>
+      theme.breakpoints.xl}) {
+    & > *:last-child {
+      width: 50%;
+      height: 550px;
+    }
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     padding-left: 0px;
     flex-direction: column;
@@ -28,13 +38,19 @@ export const Wrapper = styled.section`
 `;
 
 export const Content = styled.div`
-  width: 30%;
+  width: 40%;
   display: flex;
   flex-direction: column;
 
+  @media (min-width: ${({ theme }) =>
+      theme.breakpoints.md}) and (max-width: ${({ theme }) =>
+      theme.breakpoints.xl}) {
+    width: 50%;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     width: 100%;
-    padding: 0 20px;
+    padding: 0 20px 20px;
     box-sizing: border-box;
   }
 `;
