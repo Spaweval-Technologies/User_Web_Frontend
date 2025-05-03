@@ -13,7 +13,8 @@ type StyledSelectProps = {
     className?: string;
     disabled?: boolean;
     options: (OptionItem | GroupedOptions)[];
-    defaultText: string
+    defaultText: string;
+    position?: 'left' | 'right';
 };
 
 export default StyledSelectProps;

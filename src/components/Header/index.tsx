@@ -39,7 +39,7 @@ const StyledHeader = () => {
         />
         <ButtonsWrapper>
           <SecondaryButton>For Business</SecondaryButton>
-          <StyledSelect defaultText="Menu" value="Menu" options={menuOptions} />
+          <StyledSelect position="right" defaultText="Menu" value="Menu" options={menuOptions} />
         </ButtonsWrapper>
       </Header>
       <SearchContainer>

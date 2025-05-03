@@ -61,7 +61,7 @@ export const DropdownList = styled.ul<{direction?: "left" | "right" }>`
   min-width: 100%;
   width: max-content;
   margin-top: 8px;
-  ${(props) => (props.direction === "left" ? "right: 0;" : "left: 0;")}
+  ${(props) => (props.direction === "left" ? "left: 0;" : "right: 0;")}
   background-color: ${({ theme }) => theme.colors.background};
   border: 1px solid ${({ theme }) => theme.colors.secondary};
   border-radius: 12px;
