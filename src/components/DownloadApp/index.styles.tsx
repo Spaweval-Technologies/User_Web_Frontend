@@ -17,6 +17,15 @@ export const Container = styled.div`
     width: 58%;
   }
 
+  @media (min-width: ${({ theme }) =>
+      theme.breakpoints.md}) and (max-width: ${({ theme }) =>
+      theme.breakpoints.xl}) {
+    & > *:last-child {
+      width: 48%;
+      height: 550px;  
+    }
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     flex-direction: column;
     padding-left: 0;
@@ -33,6 +42,14 @@ export const Content = styled.div`
   color: ${({ theme }) => theme.colors.secondary};
   width: 39%;
   box-sizing: border-box;
+
+  @media (min-width: ${({ theme }) =>
+      theme.breakpoints.md}) and (max-width: ${({ theme }) =>
+      theme.breakpoints.xl}) {
+    
+      width: 48%;
+    
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     width: 100%;
@@ -73,6 +90,7 @@ export const Description = styled.p`
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     font-size: 14px;
     line-height: 26px;
+    margin-bottom: 31px;
   }
 `;
 
@@ -93,6 +111,7 @@ export const GetAppButton = styled(GettheApp)`
   display: flex;
   width: fit-content;
   align-self: flex-start;
+  margin-top: 0px;
   
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     display: none;
