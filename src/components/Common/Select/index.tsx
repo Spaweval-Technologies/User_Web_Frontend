@@ -25,7 +25,8 @@ import {
  * @param {boolean} autoFocus - Whether the select input should be focused automatically.
  * @param {Array<{ label: string; value: string }>} options - The options for the select input.
  * @param {string} defaultText - to show default selected option or placeholder value
- * @returns {JSX.Element} - A styled select input element with specified properties.
+ * @param {string} position - The position of the dropdown (left or right).
+ *  @returns {JSX.Element} - A styled select input element with specified properties.
  */
 const StyledSelect = ({
   value,
@@ -33,12 +34,10 @@ const StyledSelect = ({
   disabled,
   options,
   defaultText,
+  position = "left",
 }: StyledSelectProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const [dropdownDirection, setDropdownDirection] = useState<"left" | "right">(
-    "left"
-  );
 
   const selectedOptionLabel = (() => {
     for (const option of options) {
@@ -72,20 +71,6 @@ const StyledSelect = ({
 
   const handleOpen = () => {
     if (!disabled) {
-      const rect = dropdownRef.current?.getBoundingClientRect();
-      const dropdownWidth = dropdownRef.current?.offsetWidth || 230; // Fallback width
-
-      if (rect) {
-        const spaceRight = window.innerWidth - rect.right;
-        const spaceLeft = rect.left;
-
-        if (spaceRight < dropdownWidth && spaceLeft > dropdownWidth) {
-          // 200px assumed dropdown width, adjust if needed
-          setDropdownDirection("left");
-        } else {
-          setDropdownDirection("right");
-        }
-      }
       setIsOpen(!isOpen);
     }
   };
@@ -102,7 +87,7 @@ const StyledSelect = ({
         />
       </SelectedValue>
       {isOpen && (
-        <DropdownList direction={dropdownDirection}>
+        <DropdownList direction={position}>
           {options.map((optGroupOrOption) => {
             if ("options" in optGroupOrOption) {
               return (
