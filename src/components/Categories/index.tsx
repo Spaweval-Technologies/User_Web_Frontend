@@ -1,4 +1,5 @@
 import CategoryCard from "../Common/Cards/CategoryCard";
+import MobileCarousel from "../Common/Carousel/MobileCarousel";
 import categories from "./data";
 
 //css
@@ -10,19 +11,22 @@ import { CategoriesWrapper } from "./index.styles";
  */
 const Categories = () => {
   return (
-    <CategoriesWrapper>
-      {categories &&
-        categories.map((category) => (
-          <CategoryCard
-            title={category.title}
-            description={category.description}
-            color={category.color}
-            img={category.img}
-            alt={category.alt}
-            key={category.title}
-          />
-        ))}
-    </CategoriesWrapper>
+    <>
+      <CategoriesWrapper>
+        {categories &&
+          categories.map((category) => (
+            <CategoryCard
+              title={category.title}
+              description={category.description}
+              color={category.color}
+              img={category.img}
+              alt={category.alt}
+              key={category.title}
+            />
+          ))}
+      </CategoriesWrapper>
+      <MobileCarousel />
+    </>
   );
 };
 

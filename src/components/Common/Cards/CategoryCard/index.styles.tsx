@@ -24,10 +24,10 @@ export const CategoryCardWrapper = styled.div`
     overflow: hidden;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    width: 371px;
-    min-width: 371px;
-    max-width: 371px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
     height: 307px;
     min-height: 307px;
     max-height: 307px;
@@ -42,7 +42,7 @@ export const CategoryCardImage = styled(Image)`
   top: 0;
   left: 0;
   z-index: 1;
-  object-fit: contain;
+  object-fit: cover;
   cursor: pointer;
 
   &:hover {

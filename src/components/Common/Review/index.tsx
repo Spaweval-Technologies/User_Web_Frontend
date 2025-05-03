@@ -17,8 +17,8 @@ import RatingStars from "../RatingStars";
  * @param {number} props.starCount - Total number of stars to display (typically 5)
  * @param {number} props.rating - Actual rating value (e.g., 4.2)
  * @param {number} props.reviews - Total number of user reviews
- * @param {number} [props.mobileWidth] - Optional. Width of the star icons for mobile view
- * @param {number} [props.mobileHeight] - Optional. Height of the star icons for mobile view
+ * @param {number} [props.mobilewidth] - Optional. Width of the star icons for mobile view
+ * @param {number} [props.mobileheight] - Optional. Height of the star icons for mobile view
  * @returns {JSX.Element} A UI component showing rating stars and review count
  */
 const Review = ({
@@ -28,8 +28,8 @@ const Review = ({
   starCount,
   rating,
   reviews,
-  mobileWidth,
-  mobileHeight,
+  mobilewidth,
+  mobileheight,
 }: ReviewProps) => {
   return (
     <ReviewWrapper>
@@ -39,8 +39,8 @@ const Review = ({
         iconWidth={iconWidth}
         rating={rating}
         totalRating={starCount}
-        mobileWidth={mobileWidth}
-        mobileHeight={mobileHeight}
+        mobilewidth={mobilewidth}
+        mobileheight={mobileheight}
       />
       <ReviewCount>({reviews} reviews)</ReviewCount>
     </ReviewWrapper>

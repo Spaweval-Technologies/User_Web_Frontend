@@ -20,8 +20,8 @@ const RatingStars = ({
   iconHeight = 29,
   rating,
   totalRating = 5,
-  mobileWidth,
-  mobileHeight,
+  mobilewidth,
+  mobileheight,
 }: RatingStarsProps) => {
   const filledStars = Math.floor(rating);
   const hasHalfStar = rating - filledStars >= 0.5;
@@ -38,8 +38,8 @@ const RatingStars = ({
           alt="filled"
           width={iconWidth ?? 29}
           height={iconHeight ?? 29}
-          mobileHeight={mobileHeight ?? 29}
-          mobileWidth={mobileWidth ?? 29}
+          mobileheight={mobileheight ?? 29}
+          mobilewidth={mobilewidth ?? 29}
         />
       );
     }
@@ -54,8 +54,8 @@ const RatingStars = ({
           alt="empty"
           width={iconWidth ?? 29}
           height={iconHeight ?? 29}
-          mobileHeight={mobileHeight ?? 29}
-          mobileWidth={mobileWidth ?? 29}
+          mobileheight={mobileheight ?? 29}
+          mobilewidth={mobilewidth ?? 29}
         />
       );
     }

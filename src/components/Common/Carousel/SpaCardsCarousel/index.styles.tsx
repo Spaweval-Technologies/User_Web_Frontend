@@ -19,7 +19,7 @@ export const TitleWrapper = styled.text`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     font-size: 25px;
-    padding: 20px 0 0 14px;
+    padding: 20px 0 0 20px;
   }
 `;
 

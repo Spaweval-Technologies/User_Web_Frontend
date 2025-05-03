@@ -11,7 +11,6 @@ import {
   FindMore,
   Ratting,
   Review,
-  Stars,
   Title,
   Wrapper,
 } from "./index.styles";

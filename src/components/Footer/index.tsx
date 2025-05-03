@@ -16,6 +16,7 @@ import {
   ListItemLink,
   ListTitle,
   LogoContentWrapper,
+  SocialMediaIcon,
   SocialMediaWrapper,
   Wrapper,
 } from "./index.styles";
@@ -86,31 +87,31 @@ const Footer = () => {
           <List>
             <ListTitle>Follow us on</ListTitle>
             <SocialMediaWrapper>
-              <Icon
+              <SocialMediaIcon
                 src={Icons.FacebookSolid}
                 alt="facebook"
                 width={16}
                 height={16}
               />
-              <Icon
+              <SocialMediaIcon
                 src={Icons.TwitterSolid}
                 alt="twitter"
                 width={16}
                 height={16}
               />
-              <Icon
+              <SocialMediaIcon
                 src={Icons.InstagramSolid}
                 alt="telegram"
                 width={16}
                 height={16}
               />
-              <Icon
+              <SocialMediaIcon
                 src={Icons.GoogleSolid}
                 alt="google"
                 width={16}
                 height={16}
               />
-              <Icon
+              <SocialMediaIcon
                 src={Icons.PinterestSolid}
                 alt="pinterest"
                 width={16}
@@ -119,13 +120,13 @@ const Footer = () => {
             </SocialMediaWrapper>
             <HR />
             <SocialMediaWrapper>
-              <Icon
+              <SocialMediaIcon
                 src={Icons.AndroidSolid}
                 alt="android"
                 width={26}
                 height={26}
               />
-              <Icon src={Icons.AppleSolid} alt="apple" width={26} height={26} />
+              <SocialMediaIcon src={Icons.AppleSolid} alt="apple" width={26} height={26} />
             </SocialMediaWrapper>
           </List>
         </Wrapper>

@@ -12,8 +12,8 @@ import { IconWrapper } from "./index.styles";
   @param {string} className - Additional classes for styling.
   @param {() => void} onClick - Function to call on icon click.
   @param {string} color - The color of the icon.
-  @param {number} mobileWidth - The width of the icon image on mobile.
-  @param {number} mobileHeight - The height of the icon image on mobile.
+  @param {number} mobilewidth - The width of the icon image on mobile.
+  @param {number} mobileheight - The height of the icon image on mobile.
   @returns {JSX.Element} - An image element with specified properties.
 */
 const Icon = ({
@@ -24,8 +24,8 @@ const Icon = ({
   className,
   onClick,
   color,
-  mobileWidth,
-  mobileHeight,
+  mobilewidth,
+  mobileheight,
 }: IconProps) => {
   return (
     <IconWrapper
@@ -36,8 +36,8 @@ const Icon = ({
       className={className}
       onClick={onClick}
       color={color}
-      mobileWidth={mobileWidth}
-      mobileHeight={mobileHeight}
+      mobilewidth={mobilewidth}
+      mobileheight={mobileheight}
     />
   );
 };

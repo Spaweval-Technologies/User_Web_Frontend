@@ -5,8 +5,8 @@ type ReviewProps = {
     show?: boolean,
     iconHeight?: number,
     iconWidth?: number,
-    mobileWidth?: number,
-    mobileHeight?: number,
+    mobilewidth?: number,
+    mobileheight?: number,
 }
 
 export default ReviewProps;

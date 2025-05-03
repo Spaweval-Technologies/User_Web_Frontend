@@ -22,7 +22,7 @@ import PinterestSolid from "./PinterestSolid.svg";
 import ProfileImg from "./ProfileImg.svg";
 import StarGray from "./StarGray.svg";
 import ArrowCircleRight from "./ArrowRightCircle.svg";
-
+import DownArrowCircle from "./DownWhiteCircleArrow.svg";
 /**
  * Icons component
  * @returns {JSX.Element} - A collection of SVG icons used in the application.
@@ -51,7 +51,8 @@ const Icons = {
   PinterestSolid,
   ProfileImg,
   StarGray,
-  ArrowCircleRight
+  ArrowCircleRight,
+  DownArrowCircle
 };
 
 export default Icons;

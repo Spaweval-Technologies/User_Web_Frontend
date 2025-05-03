@@ -44,7 +44,7 @@ const SpaCard = ({
         <CardTitle>{title}</CardTitle>
         <Wrapper>
           <Ratting>{ratting}</Ratting>
-           <RatingStars mobileHeight={13} mobileWidth={13} iconHeight={15} iconWidth={15} rating={ratting} totalRating={1} />
+           <RatingStars mobileheight={13} mobilewidth={13} iconHeight={15} iconWidth={15} rating={ratting} totalRating={1} />
           <ReviewCount>({numReviews} Reviews)</ReviewCount>
         </Wrapper>
         <CardDescription>{description}</CardDescription>
