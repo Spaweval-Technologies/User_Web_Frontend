@@ -1,10 +1,10 @@
+import { useEffect, useRef } from "react";
 import Icons from "@/Icons";
 
 import ModalProps from "./index.d";
 
 //css
 import { CloseButton, ModalWrapper } from "./index.styles";
-import { useEffect, useRef } from "react";
 
 /**
  * StyledModal component
