@@ -11,6 +11,7 @@ import {
   GettheApp,
   Header,
   HeaderWrapper,
+  Logo,
   SearchContainer,
   SubTitle,
   Title,
@@ -30,14 +31,15 @@ const StyledHeader = () => {
   return (
     <HeaderWrapper>
       <Header>
-        <Icon src={Icons.Logo} alt="logo" width={78} height={63} />
+        <Logo
+          src={Icons.Logo}
+          alt="logo"
+          width={78}
+          height={63}
+        />
         <ButtonsWrapper>
           <SecondaryButton>For Business</SecondaryButton>
-          <StyledSelect
-            defaultText="Menu"
-            value="Menu"
-            options={menuOptions}
-          />
+          <StyledSelect defaultText="Menu" value="Menu" options={menuOptions} />
         </ButtonsWrapper>
       </Header>
       <SearchContainer>
@@ -61,13 +63,13 @@ const StyledHeader = () => {
             >
               Get the App
             </GettheApp>
-           ) : ( 
+          ) : (
             <StyledQrCode
               onMouseLeave={() => setShowQRCode(false)}
               content={"Scan to Download"}
               value="check"
             />
-           )} 
+          )}
         </AppDetail>
       </SearchContainer>
     </HeaderWrapper>

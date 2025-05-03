@@ -3,8 +3,8 @@ type RatingStarsProps = {
     iconHeight?: number;
     rating: number;
     totalRating: number;
-    mobileWidth?: number;
-    mobileHeight?: number;
+    mobilewidth?: number;
+    mobileheight?: number;
 }
 
 export default RatingStarsProps;

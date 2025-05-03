@@ -19,7 +19,7 @@ export const CategoriesWrapper = styled.div`
     display: none;           /* Chrome, Safari, and Opera */
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-   padding: 0 20px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+   display: none;
   }
 `;

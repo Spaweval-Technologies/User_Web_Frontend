@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import styled from "styled-components";
+import Icon from "../Common/Icon";
 
 export const FooterWrapper = styled.footer`
   display: flex;
@@ -59,12 +60,19 @@ export const ListTitle = styled.text`
   text-transform: uppercase;
 `;
 
-export const ListItem = styled.li``;
+export const ListItem = styled.li`
+  cursor: pointer;
+`;
 
 export const ListItemLink = styled(Link)`
   font-size: 14px;
   line-height: 1;
   color: ${({ theme }) => theme.colors.secondary};
+
+  &:hover {
+   color: ${({ theme }) => theme.colors.primary};
+   font-weight: ${({ theme }) => theme.fontWeights.strong};
+  }
 `;
 
 export const SocialMediaWrapper = styled.div`
@@ -126,5 +134,10 @@ export const CopyRightText = styled.text`
 `;
 
 export const CopyRightLink = styled(Link)`
-  color: #ffb6b6;
+  color: ${({ theme }) => theme.colors.melon};
+  cursor: pointer;
+`;
+
+export const SocialMediaIcon = styled(Icon)`
+  aspect-ratio: 1;
 `;

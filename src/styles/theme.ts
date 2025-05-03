@@ -30,7 +30,8 @@ export const lightTheme = {
     lightPastelBlue: '#edeef5',
     platinumGray: '#d2d2d7',
     deepViolet: '#382757',
-    neutralGray: '#d8d8d8'
+    neutralGray: '#d8d8d8',
+    melon: '#ffb6b6',
   },
   fontWeights: {
     lighter: 300,

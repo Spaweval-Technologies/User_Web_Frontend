@@ -2,6 +2,7 @@
 import styled from "styled-components";
 import Image from "next/image";
 import IconButton from "../Common/Buttons/IconButton";
+import Icon from "../Common/Icon";
 
 export const HeaderWrapper = styled.div`
   display: flex;
@@ -12,6 +13,10 @@ export const HeaderWrapper = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     display: none;
   }
+`;
+
+export const Logo = styled(Icon)`
+ object-fit: cover;
 `;
 
 export const BackgroundImage = styled(Image)`

@@ -33,7 +33,7 @@ export const PageWrapper = styled.main`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     max-width: 768px;
-    background-image: url("/Images/HeaderBgMb.svg");
+    background-image: url("/Images/HeaderMbBg.png");
   }
 `;
 
