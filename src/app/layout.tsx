@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Raleway } from 'next/font/google'
+import { Raleway, Oswald, Poppins } from "next/font/google";
 
+import Toast from "@/components/Common/Toast";
 import ThemeProvider from "@/Providers/ThemeProvider";
 
 //css
@@ -14,11 +15,25 @@ export const metadata: Metadata = {
 };
 
 const raleway = Raleway({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'], // Adjust weights as needed
-  variable: '--font-raleway',
-  display: 'swap',
-})
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"], // Adjust weights as needed
+  variable: "--font-raleway",
+  display: "swap",
+});
+
+const oswald = Oswald({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"], // Adjust weights as needed
+  variable: "--font-oswald",
+  display: "swap",
+});
+
+const popins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"], // Adjust weights as needed
+  variable: "--font-poppins",
+  display: "swap",
+});
 
 const beautyRachela = localFont({
   src: [
@@ -38,14 +53,15 @@ const RootLayout = ({
   return (
     <html lang="en">
       <body
-        className={`${raleway.className} ${beautyRachela.className}antialiased`}
+        className={`${raleway.className} ${beautyRachela.className}antialiased ${oswald.className}antialiased ${popins.className}antialiased`}
       >
         <ThemeProvider>
+          <Toast />
           <Container>{children}</Container>
         </ThemeProvider>
       </body>
     </html>
   );
-}
+};
 
 export default RootLayout;

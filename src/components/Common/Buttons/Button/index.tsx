@@ -1,11 +1,10 @@
 "use client";
-
 import ButtonProps from "./index.d";
 
 //css
 import StyledButton from "./index.styles";
 
-/*
+/**
   Button component
   @param {React.ReactNode | string} children - The content of the button.
   @param {string} className - Additional classes for styling.

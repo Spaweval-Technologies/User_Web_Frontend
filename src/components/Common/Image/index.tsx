@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import ImageProps from "./index.d";
 
-/*
+/**
  * StyledImage component
  * @param {string} src - The source of the image.
  * @param {number} width - The width of the image.
@@ -19,7 +19,7 @@ const StyledImage = ({ src, alt, width, height, className }: ImageProps) => {
         alt={alt ?? "Background"}
         width={width ?? 100}
         height={height ?? 100}
-        className={className}
+        className={className} 
       />
     </div>
   );

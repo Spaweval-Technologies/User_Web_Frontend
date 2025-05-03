@@ -1,4 +1,4 @@
-/*
+/**
   * lightTheme and darkTheme objects
   * These objects define the light and dark themes for the application.
   * Each theme contains color properties, font weights, and breakpoints.
@@ -17,6 +17,21 @@ export const lightTheme = {
     contrastBg: '#000',
     grey: '#f2f7fa',
     transparent: 'transparent',
+    greyBorder: '#EBEBEB',
+    transparentGrey: 'rgba(255, 255, 255, 0.1)',
+    transparentDark: 'rgba(0, 0, 0, 0.1)',
+    transparentWhite: 'rgba(255,255,255,0.3)',
+    blueGrey: '#D8D9E3',
+    bluishGrey: '#9C9FB7',
+    lightSilver: '#d9d9d9',
+    lightBlue: '#DBE5EA',
+    gray80: '#cccccc',
+    deepSkyBlue: '#20aafb',
+    lightPastelBlue: '#edeef5',
+    platinumGray: '#d2d2d7',
+    deepViolet: '#382757',
+    neutralGray: '#d8d8d8',
+    melon: '#ffb6b6',
   },
   fontWeights: {
     lighter: 300,
@@ -45,7 +60,17 @@ export const darkTheme = {
     textSecondary: "#000",
     secondary: '#272728',
     greyLight: '#D9D9D9',
-    contrastBg: '#fff'
+    contrastBg: '#fff',
+    transparent: 'transparent',
+    grey: '#f2f7fa',
+    greyBorder: '#EBEBEB',
+    transparentGrey: 'rgba(0, 0, 0, 0.1)',
+    transparentDark: 'rgba(255, 255, 255, 0.1)',
+    transparentWhite: 'rgba(255,255,255,0.3)',
+    blueGrey: '#D8D9E3',
+    bluishGrey: '#9C9FB7',
+    lightSilver: '#d9d9d9',
+    lightBluishGray: "#DBE5EA"
   },
   fontWeights: {
     lighter: 300,

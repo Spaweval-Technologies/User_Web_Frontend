@@ -2,19 +2,21 @@
 import styled from "styled-components";
 import Image from "next/image";
 import IconButton from "../Common/Buttons/IconButton";
+import Icon from "../Common/Icon";
 
 export const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 1440px;
   width: 100% !important;
-  height: 100vh !important;
-  background-image: url("/Images/Top_colors.png");
-  background-size: cover;
-  background-position: top left;
-  background-repeat: no-repeat;
-  overflow: hidden;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    display: none;
+  }
+`;
+
+export const Logo = styled(Icon)`
+ object-fit: cover;
 `;
 
 export const BackgroundImage = styled(Image)`
@@ -69,7 +71,13 @@ export const TitleContainer = styled.div`
   @media (min-width: ${({ theme }) =>
       theme.breakpoints.md}) and (max-width: ${({ theme }) =>
       theme.breakpoints.xl}) {
-    margin: 24px 0 80px;}
+    margin: 24px 0 80px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    margin: 60px 0 29px;
+    max-width: 100%;
+  }
 `;
 
 export const Title = styled.h1`
@@ -90,6 +98,11 @@ export const Title = styled.h1`
     font-size: 54px;
     line-height: 60px;
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    font-size: 28px;
+    line-height: 36px;
+  }
 `;
 
 export const SubTitle = styled.p`
@@ -104,6 +117,28 @@ export const SubTitle = styled.p`
   color: ${({ theme }) => theme.colors.secondary};
   text-align: center;
   margin: 0 24px 0 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    font-size: 24px;
+    line-height: 36px;
+  }
+`;
+
+export const AppDetail = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 119px 0 0;
+  min-height: 191px;
+
+  @media (min-width: ${({ theme }) =>
+      theme.breakpoints.md}) and (max-width: ${({ theme }) =>
+      theme.breakpoints.xl}) {
+    margin: 80px 0 0;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    margin: 74px 0 0;
+  }
 `;
 
 export const GettheApp = styled(IconButton)`
@@ -115,16 +150,24 @@ export const GettheApp = styled(IconButton)`
   color: ${({ theme }) => theme.colors.textSecondary};
   border-radius: 40px;
   padding: 17px 30px;
-  margin: 119px 0 0;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.primary};
     border: 1px solid ${({ theme }) => theme.colors.secondary};
   }
 
-  @media (min-width: ${({ theme }) =>
-      theme.breakpoints.md}) and (max-width: ${({ theme }) =>
-      theme.breakpoints.xl}) {
-     margin: 80px 0 0;
-     }
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    padding: 16px 32px;
+    font-size: 15px;
+    line-height: 15px;
+    align-self: center;
+    margin-top: 74px;
+  }
 `;
+
+
+export const BusinessButton = styled(IconButton)`
+  font-size: 20px;
+  font-weight: ${({theme}) => theme.fontWeights.bolder};
+  height: fit-content;
+`

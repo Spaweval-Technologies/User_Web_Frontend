@@ -1,12 +1,12 @@
-'use client';
+"use client";
 import styled from "styled-components";
 
 export const SearchWrapper = styled.div`
-  border: 6px solid rgba(0,0,0, 0.015);
+  outline: 6px solid ${({theme}) => theme.colors.transparentWhite};
   border-radius: 50px;
   max-width: 1030px;
   width: 100%;
-  box-shadow: 1px 4px 20px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 4px 20px 0px ${({theme}) => theme.colors.transparentGrey};
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -18,6 +18,22 @@ export const SearchWrapper = styled.div`
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  min-width: 60%;
-  justify-content: space-evenly;
-  `;
+  min-width: 78%;
+  position: relative;
+  min-height: max-content;
+
+  & > *:first-child {
+    width: 35%;
+  }
+
+  & > *:nth-child(3),
+  & > *:nth-child(5) {
+    width: 32%;
+  }
+
+  @media (min-width: ${({ theme }) =>
+      theme.breakpoints.md}) and (max-width: ${({ theme }) =>
+      theme.breakpoints.lg}) {
+    width: 80%;
+  }
+`;

@@ -5,7 +5,7 @@ import IconButtonProps from "./index.d"
 //css
 import { StyledIconButton } from "./index.styles";
 
-/*
+/**
   IconButton component
   @param {React.ReactNode | string} children - The content of the button.
   @param {string} iconSrc - The source of the icon image.
@@ -17,6 +17,7 @@ import { StyledIconButton } from "./index.styles";
   @param {() => void} onClick - Function to call on button click.
   @param {boolean} disabled - If true, the button is disabled.
   @param {"button" | "submit" | "reset"} type - The type of the button.
+  @param {() => void} onMouseEnter - Function to call on mouse over the button. d 
   @returns {JSX.Element} - A styled button element with an icon.
 */
 const IconButton = ({
@@ -31,9 +32,10 @@ const IconButton = ({
   iconWidth,
   iconHeight,
   iconPosition = "left",
+  onMouseEnter
 }: IconButtonProps) => {
   return (
-    <StyledIconButton disabled={disabled} type={type} onClick={onClick} className={className}>
+    <StyledIconButton disabled={disabled} type={type} onClick={onClick} className={className} onMouseEnter={onMouseEnter}>
       {iconPosition === "left" && <Icon src={iconSrc} alt={iconAlt} width={iconWidth} height={iconHeight} className={iconClassName} />}
       {children}
       {iconPosition === "right" && <Icon src={iconSrc} alt={iconAlt} width={iconWidth} height={iconHeight} className={iconClassName} />}

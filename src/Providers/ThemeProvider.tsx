@@ -1,5 +1,5 @@
 "use client";
-import { ReactNode, useState } from "react";
+import React, { ReactNode, useState } from "react";
 import { ThemeProvider as StyledProvider } from "styled-components";
 
 import { lightTheme, darkTheme } from "@/styles/theme";
