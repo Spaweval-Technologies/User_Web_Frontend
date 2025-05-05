@@ -12,6 +12,7 @@ const StyledButton = styled.button`
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   line-height: 1;
   height: fit-content;
+  cursor: pointer;
 `;
 
 export default StyledButton;

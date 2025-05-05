@@ -32,7 +32,7 @@ export const PageWrapper = styled.main`
   flex-direction: column;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    max-width: 768px;
+    max-width: 100%;
     background-image: url("/Images/HeaderMbBg.png");
   }
 `;
