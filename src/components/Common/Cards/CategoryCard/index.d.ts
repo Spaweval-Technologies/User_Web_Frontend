@@ -4,7 +4,7 @@ type CategoryCardProps = {
     color: string,
     title: string,
     description: string,
-    img?: string | StaticImageData,
+    img: string | StaticImageData,
     onClick?: () => void,
     className?: string,
     style?: React.CSSProperties,

@@ -32,7 +32,7 @@ const SearchSelect = dynamic(() => import("react-select"), { ssr: false });
 const CustomControl = (props: any) => (
   <components.Control {...props}>
     <span className="ml-3 mr-2">
-      <Icon src={Icons.Search} alt="search" width={20} height={20} />
+      <Icon src={Icons.Search} alt="search" width={20} height={20} mobileheight={18} mobilewidth={18} />
     </span>
     {props.children}
   </components.Control>
@@ -82,6 +82,8 @@ const SearchableSelect = () => {
           input: (base) => ({
             ...base,
             border: "none",
+            padding: 0,
+            margin: 0,
           }),
           menu: (base) => ({
             ...base,
@@ -122,7 +124,7 @@ const SearchableSelect = () => {
               : theme.colors.transparent,
             color: isSelected
               ? theme.colors.textSecondary
-              : theme.colors.secondary,
+              : isFocused ? theme.colors.secondary : theme.colors.secondary,
             cursor: "pointer",
             fontWeight: isSelected
               ? theme.fontWeights.bolder

@@ -29,7 +29,7 @@ export const SearchContainer = styled.section`
   width: 100%;
   flex-wrap: wrap;
   max-width: 100%;
-  border: 4px solid rgba(255, 255, 255, 0.1);
+  outline: 4px solid rgba(255, 255, 255, 0.8);
   border-radius: 5px;
   background: ${({ theme }) => theme.colors.background};
   box-shadow: 1px 4px 20px 0px rgba(0, 0, 0, 0.1);
