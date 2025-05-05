@@ -50,7 +50,7 @@ const TimePicker = () => {
         iconHeight={24}
         iconWidth={24}
       >
-        Any Time
+        {startTime ?? "Any Time"}
       </PickDateBtn>
       {open && (
         <StyledModal isOpen={open} onClose={handleClose}>

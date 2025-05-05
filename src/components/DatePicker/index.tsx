@@ -19,7 +19,7 @@ import {
  */
 const DatePicker = () => {
   const [open, setOpen] = useState<boolean>(false);
-  const [selected, setSelected] = useState<Date>(new Date());
+  const [selected, setSelected] = useState<Date | null>();
 
   const handleModal = () => {
     setOpen(!open);
@@ -43,7 +43,7 @@ const DatePicker = () => {
         iconWidth={20}
         iconHeight={20}
       >
-        Any Date
+        {selected?.toDateString() ?? "Any Date"}
       </PickDateBtn>
       <StyledModal isOpen={open} onClose={handleClose}>
         <CalendarWrapper>
@@ -51,7 +51,7 @@ const DatePicker = () => {
             animate
             mode="single"
             required={true}
-            selected={new Date(selected)}
+            selected={selected ? new Date(selected) : undefined}
             onSelect={handleSelect}
             today={new Date()}
           />

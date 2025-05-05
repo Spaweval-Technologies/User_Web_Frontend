@@ -17,21 +17,29 @@ export const DatePickerWrapper = styled.div`
 export const PickDateBtn = styled(IconButton)`
   background-color: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.secondary};
-  padding: 5px 13px;
+  padding: 21px 13px;
   box-sizing: border-box;
   min-height: 100%;
   flex-1;
   width: 100%;
+  height: max-content;
+  justify-content: flex-start;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.grey};
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    padding: 0px 13px;
+    padding: 7px 12px;
     border: 1px solid ${({ theme }) => theme.colors.greyBorder};
     border-radius: 5px;
     width: 100%;
+  }
+
+  @media (max-width: ${({theme}) => theme.breakpoints.vsm}){
+    padding: 7px 10px;
+    max-width: 100%;
+    font-size: 14px;
   }
 `;
 

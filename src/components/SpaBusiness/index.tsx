@@ -63,7 +63,7 @@ const SpaBusiness = ({
         />
         <Review>Over {reviews} reviews on</Review>
       </Content>
-      <BusinessImg src={imgSrc} alt={alt} />
+      <BusinessImg loading="lazy" src={imgSrc} alt={alt} />
     </Wrapper>
   );
 };
