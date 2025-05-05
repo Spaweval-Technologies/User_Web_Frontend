@@ -16,9 +16,9 @@ export const CardWrapper = styled.div`
   min-height: 395px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    width: 300px;
-    min-width: 300px;
-    padding: 22px 39px 15px 25px;
+    width: 290px;
+    min-width: 290px;
+    padding: 22px 39px 15px 20px;
     min-height: 381px;
   }
 `;

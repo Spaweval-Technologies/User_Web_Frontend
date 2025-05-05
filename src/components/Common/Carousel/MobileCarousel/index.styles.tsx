@@ -12,6 +12,7 @@ export const CarouselWrapper = styled.div`
   height: 550px;
   position: relative;
   margin-bottom: 40px;
+  display: none;
 
   .gradient {
     position: absolute;
@@ -35,6 +36,8 @@ export const CarouselWrapper = styled.div`
     height: fit-content;
     flex-wrap: nowrap !important;
     border-radius: 20px;
+    overscroll-behavior: contain;
+    overscroll-behavior-y: auto;
     -ms-overflow-style: none; /* Internet Explorer and Edge */
     scrollbar-width: none; /* Firefox */
 
