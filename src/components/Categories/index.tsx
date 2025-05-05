@@ -3,7 +3,7 @@ import MobileCarousel from "../Common/Carousel/MobileCarousel";
 import categories from "./data";
 
 //css
-import { CategoriesWrapper } from "./index.styles";
+import { CategoriesWrapper, Gradient, Wrapper } from "./index.styles";
 
 /**
  * Categories component
@@ -11,7 +11,7 @@ import { CategoriesWrapper } from "./index.styles";
  */
 const Categories = () => {
   return (
-    <>
+    <Wrapper>
       <CategoriesWrapper>
         {categories &&
           categories.map((category) => (
@@ -25,8 +25,8 @@ const Categories = () => {
             />
           ))}
       </CategoriesWrapper>
-      <MobileCarousel />
-    </>
+      <Gradient />
+    </Wrapper>
   );
 };
 
