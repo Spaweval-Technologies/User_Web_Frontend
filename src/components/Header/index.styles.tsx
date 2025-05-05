@@ -16,7 +16,7 @@ export const HeaderWrapper = styled.div`
 `;
 
 export const Logo = styled(Icon)`
- object-fit: cover;
+  object-fit: cover;
 `;
 
 export const BackgroundImage = styled(Image)`
@@ -103,6 +103,10 @@ export const Title = styled.h1`
     font-size: 28px;
     line-height: 36px;
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.vsm}) {
+    font-size: 24px;
+  }
 `;
 
 export const SubTitle = styled.p`
@@ -121,6 +125,7 @@ export const SubTitle = styled.p`
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     font-size: 24px;
     line-height: 36px;
+    margin: 0 12px 0 0;
   }
 `;
 
@@ -165,9 +170,8 @@ export const GettheApp = styled(IconButton)`
   }
 `;
 
-
 export const BusinessButton = styled(IconButton)`
   font-size: 20px;
-  font-weight: ${({theme}) => theme.fontWeights.bolder};
+  font-weight: ${({ theme }) => theme.fontWeights.bolder};
   height: fit-content;
-`
+`;

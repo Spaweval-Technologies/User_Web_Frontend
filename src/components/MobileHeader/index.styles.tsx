@@ -8,8 +8,7 @@ export const MobileHeaderWrapper = styled.div`
   width: 100%;
   padding: 25px 20px 77px;
 
-  @media (min-width: ${({ theme }) =>
-    theme.breakpoints.md}) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     display: none;
   }
 `;
@@ -18,7 +17,7 @@ export const MbHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;  
+  width: 100%;
 `;
 
 export const SearchContainer = styled.section`
@@ -35,19 +34,18 @@ export const SearchContainer = styled.section`
   box-shadow: 1px 4px 20px 0px rgba(0, 0, 0, 0.1);
   padding: 24px 20px;
   box-sizing: border-box;
+`;
 
-  `;
+export const SearchBtn = styled(Button)`
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 22px;
+`;
 
-  export const SearchBtn = styled(Button)`
-   width: 100%;
-   border-radius: 5px;
-    margin-top: 22px;
-  `;
-
-  export const Wrapper = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
-  gap:12px;
+  gap: 12px;
   margin-top: 22px;
-  `;
+`;
