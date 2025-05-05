@@ -12,6 +12,7 @@ import {
   ReviewCount,
   Wrapper,
 } from "./index.styles";
+import Images from "../../../../../public/Images";
 
 /**
  * Spa Card
@@ -35,10 +36,11 @@ const SpaCard = ({
   return (
     <CardWrapper>
       <CardImage
-        src={img ?? "/Images/Category/AromaTherapy.svg"}
+        src={img ?? Images.DestinationSpa}
         alt={alt ?? "spa"}
         width="100"
         height="100"
+        loading="lazy"
       />
       <CardContent>
         <CardTitle>{title}</CardTitle>

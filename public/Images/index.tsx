@@ -1,15 +1,15 @@
 import HeaderBg from "./Top_colors.png";
 import FooterBg from "./Bottom_colors.png";
-import AromaTherapy from "./Category/AromaTherapySpa.webp";
-import DeepTissue from "./Category/DeepTissueSpa.webp";
-import HotStone from "./Category/HotStoneSpa.webp";
-import Swedish from "./Category/SweidhSpa.webp";
-import DestinationSpa from "./Spa/DestinationSpa.webp";
-import ShiatsuSpa from "./Spa/ShiatsuMassageSpa.webp";
-import MineralSpringSpa from "./Spa/MineralSpringSpa.webp";
-import ThalassotherapySpa from "./Spa/ThalassoTherapySpa.webp";
-import DownloadApp from "./DownloadApp.webp";
-import BusinessLaptopBg from "./BusinessLaptop.webp";
+import AromaTherapy from "./Category/AromaTherapy.svg";
+import DeepTissue from "./Category/DeepTissue.svg";
+import HotStone from "./Category/HotStone.svg";
+import Swedish from "./Category/Swedish.svg";
+import DestinationSpa from "./Spa/DestinationSpa.svg";
+import ShiatsuSpa from "./Spa/ShiatsuMassageSpa.svg";
+import MineralSpringSpa from "./Spa/MineralSpringSpa.svg";
+import ThalassotherapySpa from "./Spa/ThalassoTherapySpa.svg";
+import DownloadApp from "./DownloadApp.svg";
+import BusinessLaptopBg from "./BusinessLaptopBg.svg";
 
 // Importing images for the application
 const Images = {
