@@ -13,6 +13,7 @@ export const SearchWrapper = styled.div`
   padding: 0px 9px 0px 0px;
   box-sizing: border-box;
   background: ${({ theme }) => theme.colors.background};
+  min-height: 67px;
 `;
 
 export const Wrapper = styled.div`
@@ -23,17 +24,18 @@ export const Wrapper = styled.div`
   min-height: max-content;
 
   & > *:first-child {
-    width: 35%;
+    width: 40%;
   }
 
   & > *:nth-child(3),
   & > *:nth-child(5) {
-    width: 32%;
+    width: 28%;
   }
 
   @media (min-width: ${({ theme }) =>
       theme.breakpoints.md}) and (max-width: ${({ theme }) =>
       theme.breakpoints.lg}) {
     width: 80%;
+    min-width: 80%;
   }
 `;

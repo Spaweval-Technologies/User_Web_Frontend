@@ -46,7 +46,7 @@ const DownloadApp = () => {
           Get the App
         </GetAppButton>
       </Content>
-      <DownloadImg src={Images.DownloadApp} alt="downloadapp" />
+      <DownloadImg loading="lazy" src={Images.DownloadApp} alt="downloadapp" />
     </Container>
   );
 };

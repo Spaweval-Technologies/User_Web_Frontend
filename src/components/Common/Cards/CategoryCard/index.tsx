@@ -1,3 +1,4 @@
+import Images from "../../../../../public/Images";
 import CategoryCardProps from "./index.d";
 
 //css
@@ -14,7 +15,7 @@ import {
  * @param {string} title - The title text displayed on the card.
  * @param {string} description - The description text displayed below the title.
  * @param {string} color - The color used for text and button styling.
- * @param {string} img - The image source URL (defaults to a Swedish spa image if not provided).
+ * @param {string} img - The image source URL.
  * @param {string} alt - Alternate text for the image (used for accessibility).
  * @param {function} onClick - Optional click handler for the card.
  * @param {string} className - Optional additional class name for styling overrides.
@@ -34,11 +35,11 @@ const CategoryCard = ({
   return (
     <CategoryCardWrapper onClick={onClick} className={className} style={style}>
       <CategoryCardImage
-        src={img ?? "/Images/Category/Swedish.svg"}
+        src={img ?? Images.Swedish}
         alt={alt ?? "swedish"}
         width={"100"}
         height="100"
-        priority
+        loading="lazy"
       />
       <Title color={color}>{title}</Title>
       <Description color={color}>{description}</Description>
