@@ -30,7 +30,7 @@ const Images = {
   BusinessLaptopBg,
   SignUpBg,
   DownloadAppMb,
-  BusinessLaptopMb
+  BusinessLaptopMb,
 };
 
 export default Images;
