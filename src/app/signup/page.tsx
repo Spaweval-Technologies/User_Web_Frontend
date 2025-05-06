@@ -3,7 +3,6 @@ import Images from "../../../public/Images";
 
 //css
 import { Img, Wrapper } from "./index.styles";
-import SignupOtpVerify from "@/components/SignupOtpVerify";
 
 /**
  * Signup page component that displays the user registration form
