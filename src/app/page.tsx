@@ -12,10 +12,10 @@ import ReviewCarousel from "@/components/Common/Carousel/ReviewCardsCarousel";
 import reviewDetails from "@/components/Common/Carousel/ReviewCardsCarousel/data";
 import SpaBusiness from "@/components/SpaBusiness";
 import Footer from "@/components/Footer";
+import Images from "../../public/Images";
 
 //css
-import { PageWrapper, Wrapper } from "./home/index.styles";
-import Images from "../../public/Images";
+import { PageWrapper, Wrapper, WrapperBg } from "./home/index.styles";
 
 /**
  * Home Page Component
@@ -36,9 +36,11 @@ const Home = () => {
 
   return (
     <PageWrapper>
-      <StyledHeader />
-      <MobileHeader />
-      <Categories />
+      <WrapperBg>
+        <StyledHeader />
+        <MobileHeader />
+        <Categories />
+      </WrapperBg>
       <CardCarousel title={"New to Spawn"} spaDetails={spaDetails} />
       <CardCarousel title={"Recommended"} spaDetails={spaDetails} />
       <DownloadApp />

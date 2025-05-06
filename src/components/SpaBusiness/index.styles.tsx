@@ -13,7 +13,7 @@ export const Wrapper = styled.section`
   align-items: center;
   border-bottom: 1px solid ${({ theme }) => theme.colors.lightSilver};
 
-  & > *:last-child {
+  & > img {
     width: 60%;
     height: 700px;
   }
@@ -21,7 +21,7 @@ export const Wrapper = styled.section`
   @media (min-width: ${({ theme }) =>
       theme.breakpoints.md}) and (max-width: ${({ theme }) =>
       theme.breakpoints.xl}) {
-    & > *:last-child {
+    & > img {
       width: 50%;
       height: 550px;
     }
@@ -31,8 +31,9 @@ export const Wrapper = styled.section`
     padding-left: 0px;
     flex-direction: column;
 
-    & > *:last-child {
+    & > img {
       width: 100%;
+      height: 297px;
     }
   }
 `;
@@ -110,5 +111,17 @@ export const Review = styled.p`
 `;
 
 export const BusinessImg = styled(Image)`
-  object-fit: cover;
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    display: none;
+  }
+`;
+
+export const BusinessLaptopImgMb = styled(Image)`
+  display: none;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    display: flex;
+    object-fit: none;
+    height: max-content;
+  }
 `;

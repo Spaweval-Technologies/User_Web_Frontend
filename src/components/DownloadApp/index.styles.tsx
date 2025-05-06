@@ -13,16 +13,16 @@ export const Container = styled.div`
   padding-left: 60px;
   box-sizing: border-box;
 
-  & > *:last-child {
+  & > img {
     width: 58%;
   }
 
   @media (min-width: ${({ theme }) =>
       theme.breakpoints.md}) and (max-width: ${({ theme }) =>
       theme.breakpoints.xl}) {
-    & > *:last-child {
+    & > img {
       width: 48%;
-      height: 550px;  
+      height: 550px;
     }
   }
 
@@ -30,7 +30,7 @@ export const Container = styled.div`
     flex-direction: column;
     padding-left: 0;
 
-    & > *:last-child {
+    & > img {
       width: 100%;
     }
   }
@@ -46,9 +46,7 @@ export const Content = styled.div`
   @media (min-width: ${({ theme }) =>
       theme.breakpoints.md}) and (max-width: ${({ theme }) =>
       theme.breakpoints.xl}) {
-    
-      width: 48%;
-    
+    width: 48%;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
@@ -105,6 +103,10 @@ export const DownloadQr = styled(StyledQrCode)`
 
 export const DownloadImg = styled(Image)`
   object-fit: cover;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    display: none;
+  }
 `;
 
 export const GetAppButton = styled(GettheApp)`
@@ -112,8 +114,17 @@ export const GetAppButton = styled(GettheApp)`
   width: fit-content;
   align-self: flex-start;
   margin-top: 0px;
-  
+
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     display: none;
+  }
+`;
+
+export const DownloadImgMb = styled(Image)`
+  display: none;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    display: block;
+    object-fit: none;
   }
 `;
