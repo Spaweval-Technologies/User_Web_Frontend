@@ -23,6 +23,8 @@ import ProfileImg from "./ProfileImg.svg";
 import StarGray from "./StarGray.svg";
 import ArrowCircleRight from "./ArrowRightCircle.svg";
 import DownArrowCircle from "./DownWhiteCircleArrow.svg";
+import Google from "./Google.svg";
+
 /**
  * Icons component
  * @returns {JSX.Element} - A collection of SVG icons used in the application.
@@ -52,7 +54,8 @@ const Icons = {
   ProfileImg,
   StarGray,
   ArrowCircleRight,
-  DownArrowCircle
+  DownArrowCircle,
+  Google
 };
 
 export default Icons;
