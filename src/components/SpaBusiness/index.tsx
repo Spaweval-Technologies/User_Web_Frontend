@@ -2,10 +2,12 @@ import Icons from "@/Icons";
 
 import SpaBusinessProps from "./index.d";
 import RatingStars from "../Common/RatingStars";
+import Images from "../../../public/Images";
 
 //css
 import {
   BusinessImg,
+  BusinessLaptopImgMb,
   Content,
   Description,
   FindMore,
@@ -64,6 +66,11 @@ const SpaBusiness = ({
         <Review>Over {reviews} reviews on</Review>
       </Content>
       <BusinessImg loading="lazy" src={imgSrc} alt={alt} />
+      <BusinessLaptopImgMb
+        loading="lazy"
+        src={Images.BusinessLaptopMb}
+        alt="mobile background business"
+      />
     </Wrapper>
   );
 };
