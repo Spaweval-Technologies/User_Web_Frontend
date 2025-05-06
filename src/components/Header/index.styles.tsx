@@ -87,7 +87,6 @@ export const Title = styled.h1`
   font-size: 60px;
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   line-height: 78px;
-  font-family: "Beauty-Rachela";
   color: ${({ theme }) => theme.colors.secondary};
   text-align: center;
   margin: 0;

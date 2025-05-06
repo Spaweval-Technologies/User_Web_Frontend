@@ -11,6 +11,8 @@ import ThalassotherapySpa from "./Spa/ThalassoTherapySpa.svg";
 import DownloadApp from "./DownloadApp.svg";
 import BusinessLaptopBg from "./BusinessLaptopBg.svg";
 import SignUpBg from "./SignupBg.svg";
+import DownloadAppMb from "./DownloadAppMb.svg";
+import BusinessLaptopMb from "./BusinessLaptopMb.svg";
 
 // Importing images for the application
 const Images = {
@@ -26,7 +28,9 @@ const Images = {
   ThalassotherapySpa,
   DownloadApp,
   BusinessLaptopBg,
-  SignUpBg
+  SignUpBg,
+  DownloadAppMb,
+  BusinessLaptopMb,
 };
 
 export default Images;
