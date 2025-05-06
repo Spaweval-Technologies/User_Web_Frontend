@@ -2,7 +2,7 @@ import Images from "../../../../public/Images";
 import SignupOtpVerify from "@/components/SignupOtpVerify";
 
 //css
-import { Img, Wrapper } from "../index.styles";
+import { Img, VerifyWrapper } from "../index.styles";
 
 /**
  * SignupVerify page component that renders the OTP verification step
@@ -12,12 +12,12 @@ import { Img, Wrapper } from "../index.styles";
  */
 const SignupVerify = () => {
   return (
-    <Wrapper>
+    <VerifyWrapper>
       {/* <SignupOtpVerify /> */}
       <SignupOtpVerify />
       {/* Decorative background image */}
       <Img src={Images.SignUpBg} alt="signupbg" />
-    </Wrapper>
+    </VerifyWrapper>
   );
 };
 
