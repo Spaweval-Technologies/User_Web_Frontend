@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Raleway, Oswald, Poppins, DM_Serif_Display  } from "next/font/google";
+import { Raleway, Oswald, Poppins, DM_Serif_Display } from "next/font/google";
 
 import Toast from "@/components/Common/Toast";
 import ThemeProvider from "@/Providers/ThemeProvider";
@@ -37,8 +37,8 @@ const popins = Poppins({
 const dmSerif = DM_Serif_Display({
   subsets: ["latin"],
   weight: ["400"],
-  variable: '--font-dm-serif',
-  display: 'swap'
+  variable: "--font-dm-serif",
+  display: "swap",
 });
 
 const RootLayout = ({
@@ -48,6 +48,12 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="en">
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body
         className={`${raleway.className} ${dmSerif.className}antialised ${oswald.className}antialiased ${popins.className}antialiased`}
       >
