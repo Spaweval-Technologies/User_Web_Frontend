@@ -11,7 +11,7 @@ export const FormContainer = styled.div`
   padding: 43px 116px 75px;
   box-sizing: border-box;
   justify-content: flex-start;
-  overflow-y: auto;
+  overflow-y: hidden;
   -ms-overflow-style: none; /* Internet Explorer and Edge */
   scrollbar-width: none; /* Firefox */
 
@@ -25,6 +25,7 @@ export const FormContainer = styled.div`
     width: 100%;
     padding: 60px;
     justify-content: flex-start;
+    min-height: max-content;
   }
 
   @media (min-width: ${({ theme }) =>
@@ -37,6 +38,7 @@ export const FormContainer = styled.div`
     padding: 40px 40px 81px;
     width: 100%;
     align-items: center;
+    overflow-y: auto;
   }
 `;
 
@@ -69,6 +71,7 @@ export const SignUpWith = styled(IconButton)`
   align-items: center;
   justify-content: center;
   background: ${({ theme }) => theme.colors.background};
+  height: max-content;
 `;
 
 export const Container = styled.div`
