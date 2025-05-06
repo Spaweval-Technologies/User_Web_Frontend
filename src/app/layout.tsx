@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import { Raleway, Oswald, Poppins } from "next/font/google";
+import { Raleway, Oswald, Poppins, DM_Serif_Display  } from "next/font/google";
 
 import Toast from "@/components/Common/Toast";
 import ThemeProvider from "@/Providers/ThemeProvider";
@@ -35,14 +34,11 @@ const popins = Poppins({
   display: "swap",
 });
 
-const beautyRachela = localFont({
-  src: [
-    {
-      path: "../app/fonts/beauty-rachela/BeautyRachela-Regular.otf",
-      weight: "400",
-      style: "normal",
-    },
-  ],
+const dmSerif = DM_Serif_Display({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: '--font-dm-serif',
+  display: 'swap'
 });
 
 const RootLayout = ({
@@ -53,7 +49,7 @@ const RootLayout = ({
   return (
     <html lang="en">
       <body
-        className={`${raleway.className} ${beautyRachela.className}antialiased ${oswald.className}antialiased ${popins.className}antialiased`}
+        className={`${raleway.className} ${dmSerif.className}antialised ${oswald.className}antialiased ${popins.className}antialiased`}
       >
         <ThemeProvider>
           <Toast />

@@ -15,7 +15,7 @@ import Footer from "@/components/Footer";
 import Images from "../../public/Images";
 
 //css
-import { PageWrapper, Wrapper } from "./home/index.styles";
+import { PageWrapper, Wrapper, WrapperBg } from "./home/index.styles";
 
 /**
  * Home Page Component
@@ -36,9 +36,11 @@ const Home = () => {
 
   return (
     <PageWrapper>
-      <StyledHeader />
-      <MobileHeader />
-      <Categories />
+      <WrapperBg>
+        <StyledHeader />
+        <MobileHeader />
+        <Categories />
+      </WrapperBg>
       <CardCarousel title={"New to Spawn"} spaDetails={spaDetails} />
       <CardCarousel title={"Recommended"} spaDetails={spaDetails} />
       <DownloadApp />

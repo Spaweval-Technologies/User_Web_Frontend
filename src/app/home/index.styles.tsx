@@ -19,10 +19,7 @@ export const Container = styled.div`
 `;
 
 export const PageWrapper = styled.main`
-  background-image: url("/Images/Top_colors.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  
   overflow-x: hidden;
   overflow-y: auto;
   max-width: 1440px;
@@ -33,6 +30,20 @@ export const PageWrapper = styled.main`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     max-width: 768px;
+     }
+`;
+
+export const WrapperBg = styled.div`
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ background-image: url("/Images/Top_colors.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    max-width: 100%;
     background-image: url("/Images/HeaderMbBg.png");
   }
 `;

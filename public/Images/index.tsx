@@ -10,6 +10,9 @@ import MineralSpringSpa from "./Spa/MineralSpringSpa.svg";
 import ThalassotherapySpa from "./Spa/ThalassoTherapySpa.svg";
 import DownloadApp from "./DownloadApp.svg";
 import BusinessLaptopBg from "./BusinessLaptopBg.svg";
+import SignUpBg from "./SignupBg.svg";
+import DownloadAppMb from "./DownloadAppMb.svg";
+import BusinessLaptopMb from "./BusinessLaptopMb.svg";
 
 // Importing images for the application
 const Images = {
@@ -24,7 +27,10 @@ const Images = {
   MineralSpringSpa,
   ThalassotherapySpa,
   DownloadApp,
-  BusinessLaptopBg
+  BusinessLaptopBg,
+  SignUpBg,
+  DownloadAppMb,
+  BusinessLaptopMb
 };
 
 export default Images;
