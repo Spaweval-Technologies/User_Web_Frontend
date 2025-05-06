@@ -12,10 +12,10 @@ import ReviewCarousel from "@/components/Common/Carousel/ReviewCardsCarousel";
 import reviewDetails from "@/components/Common/Carousel/ReviewCardsCarousel/data";
 import SpaBusiness from "@/components/SpaBusiness";
 import Footer from "@/components/Footer";
+import Images from "../../public/Images";
 
 //css
 import { PageWrapper, Wrapper } from "./home/index.styles";
-import Images from "../../public/Images";
 
 /**
  * Home Page Component

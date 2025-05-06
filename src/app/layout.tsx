@@ -38,7 +38,7 @@ const popins = Poppins({
 const beautyRachela = localFont({
   src: [
     {
-      path: "../../public/fonts/beauty-rachela/BeautyRachela-Regular.otf",
+      path: "../app/fonts/beauty-rachela/BeautyRachela-Regular.otf",
       weight: "400",
       style: "normal",
     },
