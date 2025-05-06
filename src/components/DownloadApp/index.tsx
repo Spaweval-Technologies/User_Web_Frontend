@@ -9,6 +9,7 @@ import {
   Content,
   Description,
   DownloadImg,
+  DownloadImgMb,
   DownloadQr,
   GetAppButton,
   SubTitle,
@@ -47,6 +48,7 @@ const DownloadApp = () => {
         </GetAppButton>
       </Content>
       <DownloadImg loading="lazy" src={Images.DownloadApp} alt="downloadapp" />
+      <DownloadImgMb loading="lazy" src={Images.DownloadAppMb} alt="download app mobile" />
     </Container>
   );
 };

@@ -20,12 +20,12 @@ const SignupOtpVerify = () => {
 
       {/* 6-digit OTP input fields */}
       <CodeInput>
-        <Input type="number" />
-        <Input type="number" />
-        <Input type="number" />
-        <Input type="number" />
-        <Input type="number" />
-        <Input type="number" />
+        <Input type="number" maxLength={1}/>
+        <Input type="number" maxLength={1}/>
+        <Input type="number" maxLength={1}/>
+        <Input type="number" maxLength={1}/>
+        <Input type="number" maxLength={1}/>
+        <Input type="number" maxLength={1}/>
       </CodeInput>
 
       {/* Button to submit OTP */}
