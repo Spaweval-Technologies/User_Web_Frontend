@@ -48,7 +48,7 @@ export const Title = styled.text`
   color: ${({ theme }) => theme.colors.secondary};
   font-weight: ${({ theme }) => theme.fontWeights.bolder};
 
-  @media (max-width: ${({theme}) => theme.breakpoints.vsm}){
+  @media (max-width: ${({ theme }) => theme.breakpoints.vsm}) {
     font-size: 24px;
   }
 `;
@@ -106,7 +106,7 @@ export const Field = styled.div`
   flex-direction: column;
   gap: 9px;
   width: 100%;
-  margin: 10px 0;
+  margin: 0;
 `;
 
 export const Label = styled.label`
@@ -144,19 +144,21 @@ export const Submit = styled(Button)`
   color: ${({ theme }) => theme.colors.textSecondary};
   background: ${({ theme }) => theme.colors.secondary};
   border-radius: 10px;
-  margin: 9px 0 24px;
+  margin: 9px 0 0px;
   font-size: 17px;
   font-weight: ${({ theme }) => theme.fontWeights.bolder};
   padding: 18px 0px;
 
-  &:hover, &:focus, &:active {
+  &:hover,
+  &:focus,
+  &:active {
     color: ${({ theme }) => theme.colors.secondary};
     background: ${({ theme }) => theme.colors.background};
     border: 1px solid ${({ theme }) => theme.colors.secondary};
   }
- 
+
   &:focus {
-   outline: 4px solid ${({theme}) => theme.colors.transparentDark};
+    outline: 4px solid ${({ theme }) => theme.colors.transparentDark};
   }
 `;
 
@@ -172,12 +174,13 @@ export const TextContainer = styled.div`
 
 export const Text = styled.text`
   font-weight: ${({ theme }) => theme.fontWeights.bold};
-  text-align:center;
+  text-align: center;
 `;
 
-export const LogInLink = styled(Link)`
+export const StyledLink = styled(Link)`
   font-weight: ${({ theme }) => theme.fontWeights.strong};
   text-decoration: underline;
+  margin-left: 4px;
 `;
 
 export const ReferalCode = styled.div`
