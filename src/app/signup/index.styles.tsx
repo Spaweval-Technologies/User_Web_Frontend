@@ -3,15 +3,24 @@ import Image from "next/image";
 import styled from "styled-components";
 
 export const Wrapper = styled.main`
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden auto;
   max-width: 1440px;
   width: 100vw;
   margin: 0 auto;
   height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: flex-start;
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.xxl}) {
+    align-items: center;
+  }
 
   @media (min-width: ${({ theme }) =>
       theme.breakpoints.md}) and (max-width: ${({ theme }) =>
@@ -21,8 +30,11 @@ export const Wrapper = styled.main`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     max-width: 100%;
-    align-items: flex-start;
   }
+`;
+
+export const VerifyWrapper = styled(Wrapper)`
+  align-items: center;
 `;
 
 export const Img = styled(Image)`
