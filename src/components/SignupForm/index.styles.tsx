@@ -10,7 +10,14 @@ export const FormContainer = styled.div`
   flex-direction: column;
   padding: 43px 116px 75px;
   box-sizing: border-box;
-  justify-content: center;
+  justify-content: flex-start;
+  overflow-y: auto;
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+  }
 
   @media (min-width: ${({ theme }) =>
       theme.breakpoints.md}) and (max-width: ${({ theme }) =>
