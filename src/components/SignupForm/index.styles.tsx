@@ -11,6 +11,26 @@ export const FormContainer = styled.div`
   padding: 43px 116px 75px;
   box-sizing: border-box;
   justify-content: center;
+
+  @media (min-width: ${({ theme }) =>
+      theme.breakpoints.md}) and (max-width: ${({ theme }) =>
+      theme.breakpoints.lg}) {
+    width: 100%;
+    padding: 60px;
+    justify-content: flex-start;
+  }
+
+  @media (min-width: ${({ theme }) =>
+      theme.breakpoints.lg}) and (max-width: ${({ theme }) =>
+      theme.breakpoints.xl}) {
+    padding: 40px 80px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    padding: 40px 40px 81px;
+    width: 100%;
+    align-items: center;
+  }
 `;
 
 export const Title = styled.text`
@@ -18,6 +38,10 @@ export const Title = styled.text`
   line-height: 1;
   color: ${({ theme }) => theme.colors.secondary};
   font-weight: ${({ theme }) => theme.fontWeights.bolder};
+
+  @media (max-width: ${({theme}) => theme.breakpoints.vsm}){
+    font-size: 24px;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -33,7 +57,7 @@ export const Wrapper = styled.div`
 export const SignUpWith = styled(IconButton)`
   width: 100%;
   color: ${({ theme }) => theme.colors.secondary};
-  border: 1px solid #d8d9e3;
+  border: 1px solid ${({ theme }) => theme.colors.blueGrey};
   border-radius: 5px;
   align-items: center;
   justify-content: center;
@@ -49,7 +73,7 @@ export const Container = styled.div`
 `;
 
 export const Hr = styled.hr`
-  border-color: #d8d9e3;
+  border-color: ${({ theme }) => theme.colors.blueGrey};
   width: 47%;
 `;
 
@@ -82,7 +106,7 @@ export const Label = styled.label`
 
 export const Input = styled.input`
   border-radius: 5px;
-  border: 1px solid #d8d9e3;
+  border: 1px solid ${({ theme }) => theme.colors.blueGrey};
   color: ${({ theme }) => theme.colors.secondary};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   font-size: 13px;
@@ -90,8 +114,8 @@ export const Input = styled.input`
   width: 100%;
   box-sizing: border-box;
 
-  &::placeholder{
-   color: #9C9FB780;
+  &::placeholder {
+    color: ${({ theme }) => theme.colors.bluishGrey}80;
   }
 `;
 
@@ -105,7 +129,7 @@ export const NameField = styled(Field)`
   width: 50%;
 `;
 
-export const CreateAccount = styled(Button)`
+export const Submit = styled(Button)`
   width: 100%;
   color: ${({ theme }) => theme.colors.textSecondary};
   background: ${({ theme }) => theme.colors.secondary};
@@ -113,7 +137,17 @@ export const CreateAccount = styled(Button)`
   margin: 9px 0 24px;
   font-size: 17px;
   font-weight: ${({ theme }) => theme.fontWeights.bolder};
-  padding: 16px 0px;
+  padding: 18px 0px;
+
+  &:hover, &:focus, &:active {
+    color: ${({ theme }) => theme.colors.secondary};
+    background: ${({ theme }) => theme.colors.background};
+    border: 1px solid ${({ theme }) => theme.colors.secondary};
+  }
+ 
+  &:focus {
+   outline: 4px solid ${({theme}) => theme.colors.transparentDark};
+  }
 `;
 
 export const TextContainer = styled.div`
@@ -128,6 +162,7 @@ export const TextContainer = styled.div`
 
 export const Text = styled.text`
   font-weight: ${({ theme }) => theme.fontWeights.bold};
+  text-align:center;
 `;
 
 export const LogInLink = styled(Link)`
@@ -136,9 +171,9 @@ export const LogInLink = styled(Link)`
 `;
 
 export const ReferalCode = styled.div`
-  background: #20aafb1a;
+  background: ${({ theme }) => theme.colors.primary}1a;
   border-radius: 76px;
-  border: 1.5px dashed #20aafb;
+  border: 1.5px dashed ${({ theme }) => theme.colors.primary};
   width: max-content;
   padding: 8px 9px;
   box-sizing: border-box;
@@ -167,6 +202,6 @@ export const ReferalCodeInput = styled.input`
   color: ${({ theme }) => theme.colors.secondary};
 
   &::placeholder {
-  color: #9C9FB7;
+    color: ${({ theme }) => theme.colors.bluishGrey};
   }
 `;
