@@ -32,6 +32,7 @@ export const lightTheme = {
     deepViolet: '#382757',
     neutralGray: '#d8d8d8',
     melon: '#ffb6b6',
+    darkBlue: '#02059D'
   },
   fontWeights: {
     lighter: 300,

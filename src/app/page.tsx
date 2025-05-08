@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
 import StyledHeader from "@/components/Header";
@@ -16,6 +16,7 @@ import Images from "../../public/Images";
 
 //css
 import { PageWrapper, Wrapper, WrapperBg } from "./home/index.styles";
+import AppNotificationMb from "@/components/Common/AppNotification";
 
 /**
  * Home Page Component
@@ -24,6 +25,8 @@ import { PageWrapper, Wrapper, WrapperBg } from "./home/index.styles";
  * @returns {JSX.Element} The homepage layout.
  */
 const Home = () => {
+  const [showNotification, setShowNotification] = useState<boolean>(false);
+
   useEffect(() => {
     toast.success("Welcome to the app!", {
       duration: 2000,
@@ -32,10 +35,14 @@ const Home = () => {
         color: "#fff",
       },
     });
+    setShowNotification(true)
   }, []);
+
+  const onCloseNotification = () => setShowNotification(false);
 
   return (
     <PageWrapper>
+      <AppNotificationMb show={showNotification} onClose={onCloseNotification} />
       <WrapperBg>
         <StyledHeader />
         <MobileHeader />
