@@ -24,6 +24,13 @@ import StarGray from "./StarGray.svg";
 import ArrowCircleRight from "./ArrowRightCircle.svg";
 import DownArrowCircle from "./DownWhiteCircleArrow.svg";
 import Google from "./Google.svg";
+import WhiteStar from "./WhiteStar.svg";
+import WhiteClose from "./WhiteClose.svg";
+import ProfileIcon from "./ProfileIcon.svg";
+import Save from "./Save.svg";
+import Wallet from "./Wallet.svg";
+import Setting from "./Setting.svg";
+import ArrowRight from "./ArrowRight.svg";
 
 /**
  * Icons component
@@ -55,7 +62,14 @@ const Icons = {
   StarGray,
   ArrowCircleRight,
   DownArrowCircle,
-  Google
+  Google,
+  WhiteClose,
+  WhiteStar,
+  ProfileIcon,
+  Save,
+  Setting,
+  Wallet,
+  ArrowRight
 };
 
 export default Icons;
