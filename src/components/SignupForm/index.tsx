@@ -10,12 +10,12 @@ import {
   Hr,
   Input,
   Label,
-  LogInLink,
   NameField,
   Or,
   ReferalCode,
   ReferalCodeInput,
   SignUpWith,
+  StyledLink,
   Submit,
   Text,
   TextContainer,
@@ -49,8 +49,7 @@ const SignupForm = () => {
           iconWidth={24}
           iconHeight={24}
         >
-          {/* TODO: Update text to reflect Apple login instead of Google */}
-          Sign up with Google
+          Sign up with Apple
         </SignUpWith>
       </Wrapper>
       {/* OR divider */}
@@ -78,10 +77,9 @@ const SignupForm = () => {
         <Label htmlFor="mobileNumber">
           Mobile No.<sup>*</sup>
         </Label>
-        {/* TODO: Consider changing type to "tel" for better UX */}
         <Input
           placeholder="Enter your Mobile No."
-          type="number"
+          type="tel"
           id="mobileNumber"
         />
       </Field>
@@ -89,7 +87,6 @@ const SignupForm = () => {
         <Label htmlFor="password">
           Create a Password.<sup>*</sup>
         </Label>
-        {/* TODO: Conditionally render this error message based on validation */}
         <Input
           placeholder="Enter your Password"
           type="password"
@@ -102,16 +99,14 @@ const SignupForm = () => {
         <Label>Enter Your Referral code to use</Label>
         <ReferalCode>
           <ReferalCodeInput type="text" placeholder="SPAWN@1420" />
-          {/* TODO: Add onClick handler to make this button functional */}
           <Use>Use</Use>
         </ReferalCode>
       </Field>
       {/* Submit button */}
-      {/* TODO: Add onClick or onSubmit handler for form functionality */}
       <Submit>Create Account</Submit>
       <TextContainer>
         <Text>Already have an account? </Text>
-        <LogInLink href="#"> Log in</LogInLink>
+        <StyledLink href="#"> Log in</StyledLink>
       </TextContainer>
     </FormContainer>
   );
