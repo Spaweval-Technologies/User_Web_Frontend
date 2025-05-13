@@ -18,6 +18,10 @@ export const SliderWrapper = styled.section<{ showSlider?: boolean }>`
   & > img {
     margin: 12px 20px;
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    width: 90%;
+  }
 `;
 
 export const Backdrop = styled.div<{ showSlider?: boolean }>`
