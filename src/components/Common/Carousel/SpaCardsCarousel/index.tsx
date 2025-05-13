@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
-import Icons from "@/Icons";
 
+import Icons from "@/Icons";
 import Icon from "../../Icon";
 import SpaCard from "../../Cards/SpaCard";
+
+//props
 import SpaCardCarouselProps from "./index.d";
 
 //css

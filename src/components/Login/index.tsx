@@ -41,60 +41,58 @@ const LoginForm = () => {
           iconSrc={Icons.Google}
           iconAlt="google"
           iconWidth={24}
-          iconHeight={24}
-        >
+          iconHeight={24}>
           Sign In with Google
         </SignUpWith>
         <SignUpWith
           iconSrc={Icons.AppleSolid}
           iconAlt="apple"
           iconWidth={24}
-          iconHeight={24}
-        >
+          iconHeight={24}>
           Sign In with Apple
         </SignUpWith>
-        {/* OR divider */}
-        <Container>
-          <Hr />
-          <Or>or</Or>
-          <Hr />
-        </Container>
-        {/* User info fields */}
-        <Field>
-          <Label htmlFor="mobileNumber">
-            Email or Phone<sup>*</sup>
-          </Label>
-          <Input
-            placeholder="Enter your Email or Phone"
-            type="text"
-            id="mobileNumber"
-          />
-        </Field>
-        <Field>
-          <Label htmlFor="password">
-            Password<sup>*</sup>
-          </Label>
-          <Input
-            placeholder="Enter your Password"
-            type="password"
-            id="password"
-          />
-          <Error>Must be at least 8 characters.</Error>
-        </Field>
-        <RememberPasswordWrapper>
-          <StyledCheckbox
-            checked={remember}
-            onChange={() => setRemember(!remember)}
-            label="Remember for 30 days"
-          />
-          <ForgetPasswordLink href="#">Forget Password?</ForgetPasswordLink>
-        </RememberPasswordWrapper>
-        <Submit>Log in</Submit>
-        <TextContainer>
-          <Text>Don't have an account?</Text>
-          <StyledLink href="/signup">Sign up for free</StyledLink>
-        </TextContainer>
       </Wrapper>
+      {/* OR divider */}
+      <Container>
+        <Hr />
+        <Or>or</Or>
+        <Hr />
+      </Container>
+      {/* User info fields */}
+      <Field>
+        <Label htmlFor="mobileNumber">
+          Email or Phone<sup>*</sup>
+        </Label>
+        <Input
+          placeholder="Enter your Email or Phone"
+          type="text"
+          id="mobileNumber"
+        />
+      </Field>
+      <Field>
+        <Label htmlFor="password">
+          Password<sup>*</sup>
+        </Label>
+        <Input
+          placeholder="Enter your Password"
+          type="password"
+          id="password"
+        />
+        <Error>Must be at least 8 characters.</Error>
+      </Field>
+      <RememberPasswordWrapper>
+        <StyledCheckbox
+          checked={remember}
+          onChange={() => setRemember(!remember)}
+          label="Remember for 30 days"
+        />
+        <ForgetPasswordLink href="#">Forget Password?</ForgetPasswordLink>
+      </RememberPasswordWrapper>
+      <Submit>Log in</Submit>
+      <TextContainer>
+        <Text>Don't have an account?</Text>
+        <StyledLink href="/signup">Sign up for free</StyledLink>
+      </TextContainer>
     </FormContainer>
   );
 };

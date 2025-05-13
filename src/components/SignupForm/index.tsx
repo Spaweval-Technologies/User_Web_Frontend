@@ -39,16 +39,14 @@ const SignupForm = () => {
           iconSrc={Icons.Google}
           iconAlt="google"
           iconWidth={24}
-          iconHeight={24}
-        >
+          iconHeight={24}>
           Sign up with Google
         </SignUpWith>
         <SignUpWith
           iconSrc={Icons.AppleSolid}
           iconAlt="apple"
           iconWidth={24}
-          iconHeight={24}
-        >
+          iconHeight={24}>
           Sign up with Apple
         </SignUpWith>
       </Wrapper>
@@ -106,7 +104,7 @@ const SignupForm = () => {
       <Submit>Create Account</Submit>
       <TextContainer>
         <Text>Already have an account? </Text>
-        <StyledLink href="#"> Log in</StyledLink>
+        <StyledLink href="/login"> Log in</StyledLink>
       </TextContainer>
     </FormContainer>
   );

@@ -1,4 +1,5 @@
 "use client";
+//props
 import ButtonProps from "./index.d";
 
 //css

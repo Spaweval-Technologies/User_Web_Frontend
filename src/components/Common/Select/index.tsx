@@ -2,6 +2,8 @@
 import { useEffect, useRef, useState } from "react";
 
 import Icons from "@/Icons";
+
+//props
 import StyledSelectProps from "./index.d";
 
 //css

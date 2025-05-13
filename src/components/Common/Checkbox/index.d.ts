@@ -1,7 +1,8 @@
 type CheckboxProps = {
     checked: boolean;
     onChange: (checked: boolean) => void;
-    label: string
+    label: string;
+    position?: string;
 }
 
 export default CheckboxProps;

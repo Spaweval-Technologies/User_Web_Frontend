@@ -1,4 +1,6 @@
 import { Fragment } from "react";
+
+//props
 import { MenuListProps } from "./index.d";
 
 //css
@@ -19,14 +21,14 @@ import {
 const MenuOptions = ({ menuOptions }: MenuListProps) => {
   return (
     <List>
-      {menuOptions.map((grpOptionOrOption) => {
+      {menuOptions.map((grpOptionOrOption, id) => {
         if ("options" in grpOptionOrOption) {
           return (
-            <Fragment key={grpOptionOrOption.label}>
+            <Fragment key={grpOptionOrOption.label + id}>
               <ListTitle>{grpOptionOrOption.label}</ListTitle>
               {grpOptionOrOption?.options &&
-                grpOptionOrOption.options.map((opt) => (
-                  <ListItem>
+                grpOptionOrOption.options.map((opt, id) => (
+                  <ListItem key={opt.label + id}>
                     <ListItemLink href="#">
                       {opt?.icon ? (
                         <StyledIconBtn

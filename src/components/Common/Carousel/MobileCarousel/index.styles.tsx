@@ -7,23 +7,22 @@ export const CarouselWrapper = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 0 20px;
+  min-width: 100%;
   box-sizing: border-box;
-  height: 550px;
+  height: 600px;
   position: relative;
   margin-bottom: 40px;
-  display: none;
 
   .gradient {
     position: absolute;
     bottom: -30px;
-    left: 20px;
-    width: calc(100% - 40px);
+    left: 0px;
+    width: 100%;
     height: 30%;
     background: linear-gradient(
       180deg,
       rgba(255, 255, 255, 0) 12.65%,
-     ${({theme}) => theme.colors.background} 59.34%
+      ${({ theme }) => theme.colors.background} 59.34%
     );
     z-index: 1;
   }
@@ -77,7 +76,8 @@ export const CarouselWrapper = styled.div`
 
   .bottom-arrow {
     top: auto;
-    bottom: -48px;
+    bottom: -30px;
+    z-index: 3;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {

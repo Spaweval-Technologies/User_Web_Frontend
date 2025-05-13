@@ -1,7 +1,7 @@
 import { ListProps } from './index.d';
 import Icons from "@/Icons";
 
-const menuOptions: ListProps[] = [
+const menuOptionsMb: ListProps[] = [
     {
         label: "Ciara Angles",
         value: "ciara angles",
@@ -53,4 +53,4 @@ const menuOptions: ListProps[] = [
     }
 ]
 
-export default menuOptions;
+export default menuOptionsMb;

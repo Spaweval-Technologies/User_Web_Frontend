@@ -13,10 +13,10 @@ import reviewDetails from "@/components/Common/Carousel/ReviewCardsCarousel/data
 import SpaBusiness from "@/components/SpaBusiness";
 import Footer from "@/components/Footer";
 import Images from "../../public/Images";
+import AppNotificationMb from "@/components/Common/AppNotification";
 
 //css
 import { PageWrapper, Wrapper, WrapperBg } from "./home/index.styles";
-import AppNotificationMb from "@/components/Common/AppNotification";
 
 /**
  * Home Page Component
@@ -35,14 +35,17 @@ const Home = () => {
         color: "#fff",
       },
     });
-    setShowNotification(true)
+    setShowNotification(true);
   }, []);
 
   const onCloseNotification = () => setShowNotification(false);
 
   return (
     <PageWrapper>
-      <AppNotificationMb show={showNotification} onClose={onCloseNotification} />
+      <AppNotificationMb
+        show={showNotification}
+        onClose={onCloseNotification}
+      />
       <WrapperBg>
         <StyledHeader />
         <MobileHeader />

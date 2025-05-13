@@ -1,5 +1,6 @@
 import QRCode from "react-qr-code";
 
+//props
 import StyledQrProps from "./index.d";
 
 //css

@@ -1,7 +1,6 @@
-'use client';
+"use client";
 import styled from "styled-components";
 import { OutlinedButton } from "../Common/Buttons/OutlinedButton/index.styles";
-import StyledSelect from "../Common/Select";
 
 export const TimePickerContainer = styled.div`
   position: relative;
@@ -20,10 +19,10 @@ export const Container = styled.div`
 `;
 
 export const Tags = styled.div`
- display: flex;
- align-items: center;
- justify-content: space-between;
- gap:10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
 `;
 
 export const TimeSelectWrapper = styled.div`
@@ -35,15 +34,17 @@ export const TimeSelectWrapper = styled.div`
 `;
 
 export const Button = styled(OutlinedButton)`
- border: 1px solid ${({theme}) => theme.colors.lightPastelBlue};
- padding: 12px 16px;
+  border: 1px solid ${({ theme }) => theme.colors.lightPastelBlue};
+  padding: 12px 16px;
 
- &:focus, &:active, &:hover {
-   background: ${({theme}) => theme.colors.deepSkyBlue};
-   color: ${({theme}) => theme.colors.textSecondary}
- }
+  &:focus,
+  &:active,
+  &:hover {
+    background: ${({ theme }) => theme.colors.deepSkyBlue};
+    color: ${({ theme }) => theme.colors.textSecondary};
+  }
 
- &:active {
-  outline: 6px solid ${({theme}) => theme.colors.transparentDark}
- }
+  &:active {
+    outline: 6px solid ${({ theme }) => theme.colors.transparentDark};
+  }
 `;

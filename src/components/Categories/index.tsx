@@ -1,5 +1,4 @@
 import CategoryCard from "../Common/Cards/CategoryCard";
-import MobileCarousel from "../Common/Carousel/MobileCarousel";
 import categories from "./data";
 
 //css
