@@ -170,6 +170,7 @@ export const TextContainer = styled.div`
   font-size: 13px;
   line-height: 1;
   color: ${({ theme }) => theme.colors.secondary};
+  margin-top: 12px;
 `;
 
 export const Text = styled.text`

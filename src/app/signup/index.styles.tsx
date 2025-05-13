@@ -3,7 +3,7 @@ import Image from "next/image";
 import styled from "styled-components";
 
 export const Wrapper = styled.main`
-  overflow: hidden;
+  overflow: hidden auto;
   max-width: 1440px;
   width: 100vw;
   margin: 0 auto;
