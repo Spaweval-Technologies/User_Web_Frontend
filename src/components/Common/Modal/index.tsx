@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import Icons from "@/Icons";
 
+//props
 import ModalProps from "./index.d";
 
 //css

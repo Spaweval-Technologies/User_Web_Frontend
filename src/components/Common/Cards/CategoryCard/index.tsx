@@ -1,4 +1,6 @@
 import Images from "../../../../../public/Images";
+
+//props
 import CategoryCardProps from "./index.d";
 
 //css

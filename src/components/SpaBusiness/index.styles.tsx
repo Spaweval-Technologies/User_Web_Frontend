@@ -11,7 +11,6 @@ export const Wrapper = styled.section`
   box-sizing: border-box;
   min-height: max-content;
   align-items: center;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.lightSilver};
 
   & > img {
     width: 60%;

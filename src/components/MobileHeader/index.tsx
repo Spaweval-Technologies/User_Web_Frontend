@@ -6,13 +6,11 @@ import Icon from "../Common/Icon";
 import SearchableSelect from "../SearchableSelect";
 import DatePicker from "../DatePicker";
 import TimePicker from "../TimePicker";
-import SliderMb from "../Common/SliderMb";
-import MenuOptions from "./MenuOptions";
-import menuOptions from "./data";
+import menuOptionsMb from "./data";
+import StaticHeaderMb from "./HeaderMb";
 
 //css
 import {
-  MbHeader,
   MobileHeaderWrapper,
   SearchBtn,
   SearchContainer,
@@ -38,26 +36,12 @@ const MobileHeader = () => {
 
   return (
     <MobileHeaderWrapper>
-      <MbHeader>
-        <Icon
-          src={Icons.Logo}
-          alt="mobile-logo"
-          width={46}
-          height={37}
-          mobilewidth={46}
-          mobileheight={37}
-        />
-        <Icon
-          onClick={() => setShowMenu(true)}
-          src={Icons.Menu}
-          alt="menu"
-          width={32}
-          height={32}
-        />
-      </MbHeader>
-      <SliderMb showSlider={showMenu} onClose={onCloseMenu}>
-        <MenuOptions menuOptions={menuOptions} />
-      </SliderMb>
+      <StaticHeaderMb
+        showMenu={showMenu}
+        menuOptions={menuOptionsMb}
+        onMenuClose={onCloseMenu}
+        onMenuClick={() => setShowMenu(true)}
+      />
       <TitleContainer>
         <Title>Cool vibes</Title>
         <Icon src={Icons.BlinkingStar} alt="stars" width={40} height={38} />

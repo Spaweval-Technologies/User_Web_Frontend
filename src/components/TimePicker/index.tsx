@@ -4,6 +4,7 @@ import Icons from "@/Icons";
 
 import StyledSelect from "../Common/Select";
 import StyledModal from "../Common/Modal";
+import timeOptions from "./data";
 
 //css
 import {
@@ -14,7 +15,6 @@ import {
   TimeSelectWrapper,
 } from "./index.styles";
 import { PickDateBtn } from "../DatePicker/index.styles";
-import timeOptions from "./data";
 
 /**
  * TimePicker component
@@ -48,8 +48,7 @@ const TimePicker = () => {
         iconSrc={Icons.Clock}
         iconAlt="clock"
         iconHeight={24}
-        iconWidth={24}
-      >
+        iconWidth={24}>
         {startTime ?? "Any Time"}
       </PickDateBtn>
       {open && (

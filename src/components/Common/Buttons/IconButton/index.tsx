@@ -1,5 +1,6 @@
 import Icon from "@/components/Common/Icon";
 
+//props
 import IconButtonProps from "./index.d"
 
 //css

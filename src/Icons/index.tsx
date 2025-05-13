@@ -1,75 +1,83 @@
-import Logo from "./HeaderLogo.svg";
-import BlinkingStar from "./Blinking_Star.svg";
-import ScanBarcode from "./Scan_Barcode.svg";
-import Clock from "./Clock.svg";
-import Calendar from "./Calendar.svg";
-import Search from "./Search.svg";
-import Close from "./Close.png";
-import Menu from "./Menu.svg";
-import LeftArrow from "./LeftArrow.svg";
-import RightArrow from "./RightArrow.svg";
-import StarFill from "./StarFill.svg";
-import DownArrow from "./DownBlack.svg";
-import UpArrow from "./UpBlack.svg";
-import ArrowRightBlack from "./ArrowRightBlack.svg";
 import AndroidSolid from "./AndroidSolid.svg";
 import AppleSolid from "./AppleSolid.svg";
-import FacebookSolid from "./Facebook.svg";
-import GoogleSolid from "./GoogleSolid.svg";
-import TwitterSolid from "./TwitterSolid.svg";
-import InstagramSolid from "./IntagramSolid.svg";
-import PinterestSolid from "./PinterestSolid.svg";
-import ProfileImg from "./ProfileImg.svg";
-import StarGray from "./StarGray.svg";
 import ArrowCircleRight from "./ArrowRightCircle.svg";
-import DownArrowCircle from "./DownWhiteCircleArrow.svg";
-import Google from "./Google.svg";
-import WhiteStar from "./WhiteStar.svg";
-import WhiteClose from "./WhiteClose.svg";
-import ProfileIcon from "./ProfileIcon.svg";
-import Save from "./Save.svg";
-import Wallet from "./Wallet.svg";
-import Setting from "./Setting.svg";
 import ArrowRight from "./ArrowRight.svg";
+import ArrowRightBlack from "./ArrowRightBlack.svg";
+import BlinkingStar from "./Blinking_Star.svg";
+import Calendar from "./Calendar.svg";
+import Clock from "./Clock.svg";
+import Close from "./Close.png";
+import DownArrow from "./DownBlack.svg";
+import DownArrowCircle from "./DownWhiteCircleArrow.svg";
+import DownBlackCircleArrow from "./DownBlackCircleArrow.svg";
+import FacebookSolid from "./Facebook.svg";
+import Filter from "./Filter.svg";
+import Google from "./Google.svg";
+import GoogleSolid from "./GoogleSolid.svg";
+import InstagramSolid from "./IntagramSolid.svg";
+import LeftArrow from "./LeftArrow.svg";
+import Logo from "./HeaderLogo.svg";
+import Menu from "./Menu.svg";
+import PinterestSolid from "./PinterestSolid.svg";
+import ProfileIcon from "./ProfileIcon.svg";
+import ProfileImg from "./ProfileImg.svg";
+import RightArrow from "./RightArrow.svg";
+import Save from "./Save.svg";
+import Saved from "./Saved.svg";
+import ScanBarcode from "./Scan_Barcode.svg";
+import Search from "./Search.svg";
+import Setting from "./Setting.svg";
+import SortLow from "./SortLow.svg";
+import StarFill from "./StarFill.svg";
+import StarGray from "./StarGray.svg";
+import TwitterSolid from "./TwitterSolid.svg";
+import UpArrow from "./UpBlack.svg";
+import Wallet from "./Wallet.svg";
+import WhiteClose from "./WhiteClose.svg";
+import WhiteStar from "./WhiteStar.svg";
 
 /**
  * Icons component
  * @returns {JSX.Element} - A collection of SVG icons used in the application.
  */
 const Icons = {
-  Logo,
-  Menu,
-  BlinkingStar,
-  ScanBarcode,
-  Clock,
-  Calendar,
-  Search,
-  Close,
-  LeftArrow,
-  RightArrow,
-  StarFill,
-  DownArrow,
-  UpArrow,
-  ArrowRightBlack,
-  FacebookSolid,
   AndroidSolid,
   AppleSolid,
-  TwitterSolid,
+  ArrowCircleRight,
+  ArrowRight,
+  ArrowRightBlack,
+  BlinkingStar,
+  Calendar,
+  Clock,
+  Close,
+  DownArrow,
+  DownArrowCircle,
+  DownBlackCircleArrow,
+  FacebookSolid,
+  Filter,
+  Google,
   GoogleSolid,
   InstagramSolid,
+  LeftArrow,
+  Logo,
+  Menu,
   PinterestSolid,
+  ProfileIcon,
   ProfileImg,
+  RightArrow,
+  Save,
+  Saved,
+  ScanBarcode,
+  Search,
+  Setting,
+  SortLow,
+  StarFill,
   StarGray,
-  ArrowCircleRight,
-  DownArrowCircle,
-  Google,
+  TwitterSolid,
+  UpArrow,
+  Wallet,
   WhiteClose,
   WhiteStar,
-  ProfileIcon,
-  Save,
-  Setting,
-  Wallet,
-  ArrowRight
 };
 
 export default Icons;

@@ -1,10 +1,10 @@
 "use client";
 import { components } from "react-select";
 import dynamic from "next/dynamic";
-import Icons from "@/Icons";
-
-import Icon from "../Common/Icon";
 import { useTheme } from "styled-components";
+
+import Icons from "@/Icons";
+import Icon from "../Common/Icon";
 
 //css
 import { SelectWrapper } from "./index.styles";
@@ -32,7 +32,14 @@ const SearchSelect = dynamic(() => import("react-select"), { ssr: false });
 const CustomControl = (props: any) => (
   <components.Control {...props}>
     <span className="ml-3 mr-2">
-      <Icon src={Icons.Search} alt="search" width={20} height={20} mobileheight={18} mobilewidth={18} />
+      <Icon
+        src={Icons.Search}
+        alt="search"
+        width={20}
+        height={20}
+        mobileheight={18}
+        mobilewidth={18}
+      />
     </span>
     {props.children}
   </components.Control>
@@ -72,7 +79,9 @@ const SearchableSelect = () => {
             width: "100%",
             color: theme.colors.secondary,
             fontWeight: theme.fontWeights.bold,
-            background: state.menuIsOpen ? theme.colors.grey : theme.colors.transparent,
+            background: state.menuIsOpen
+              ? theme.colors.grey
+              : theme.colors.transparent,
           }),
           placeholder: (base) => ({
             ...base,
@@ -87,10 +96,10 @@ const SearchableSelect = () => {
           }),
           menu: (base) => ({
             ...base,
-            
-            width: 'max-content',
-            minWidth: '100%',
-            boxSizing: 'border-box',
+
+            width: "max-content",
+            minWidth: "100%",
+            boxSizing: "border-box",
             backgroundColor: theme.colors.background,
             borderRadius: "10px 0 0 10px",
             boxShadow: `0 4px 10px ${theme.colors.transparentGrey}`,
@@ -99,7 +108,7 @@ const SearchableSelect = () => {
           }),
           menuList: (base) => ({
             ...base,
-            padding: '12px 16px',
+            padding: "12px 16px",
             maxHeight: "350px",
             overflowY: "auto",
             scrollbarWidth: "thin",
@@ -114,7 +123,7 @@ const SearchableSelect = () => {
           }),
           option: (base, { isFocused, isSelected }) => ({
             ...base,
-            fontSize: '14px',
+            fontSize: "14px",
             padding: "10px 16px",
             marginBottom: "4px",
             backgroundColor: isSelected
@@ -124,15 +133,17 @@ const SearchableSelect = () => {
               : theme.colors.transparent,
             color: isSelected
               ? theme.colors.textSecondary
-              : isFocused ? theme.colors.secondary : theme.colors.secondary,
+              : isFocused
+              ? theme.colors.secondary
+              : theme.colors.secondary,
             cursor: "pointer",
             fontWeight: isSelected
               ? theme.fontWeights.bolder
               : theme.fontWeights.medium,
             transition: "all 0.2s",
-            borderRadius:'12px',
+            borderRadius: "12px",
             "&:hover": {
-              backgroundColor: theme.colors.secondary+"20",
+              backgroundColor: theme.colors.secondary + "20",
             },
           }),
           groupHeading: (base) => ({

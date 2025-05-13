@@ -1,9 +1,8 @@
-import { TitleWrapper } from "./index.styles";
+//props
+import TitleProps from "./index.d";
 
-type Props = {
-  children?: React.ReactNode | string;
-  className?: string;
-};
+//css
+import { TitleWrapper } from "./index.styles";
 
 /**
  * Title component
@@ -11,7 +10,7 @@ type Props = {
  * @param {string} className - Additional class names for styling.
  * @returns {JSX.Element} - A styled title component.
  */
-const Title = ({ children }: Props) => {
+const Title = ({ children }: TitleProps) => {
   return <TitleWrapper>{children}</TitleWrapper>;
 };
 

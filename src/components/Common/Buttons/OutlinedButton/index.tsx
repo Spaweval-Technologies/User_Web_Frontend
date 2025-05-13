@@ -1,3 +1,4 @@
+//props
 import OutlinedButtonProps from "./index.d";
 
 //css

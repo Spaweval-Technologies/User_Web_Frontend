@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+//props
 import ImageProps from "./index.d";
 
 /**
