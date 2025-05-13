@@ -1,25 +1,21 @@
+import { useState } from "react";
 import Icons from "../../Icons";
-import SecondaryButton from "../Common/Buttons/OutlinedButton";
 import Icon from "../Common/Icon";
 import Search from "../Search";
-import StyledSelect from "../Common/Select";
+import StyledQrCode from "../Common/QrCode";
+import StaticHeader from "./Header";
+import menuOptions from "./data";
 
 //css
 import {
   AppDetail,
-  ButtonsWrapper,
   GettheApp,
-  Header,
   HeaderWrapper,
-  Logo,
   SearchContainer,
   SubTitle,
   Title,
   TitleContainer,
 } from "./index.styles";
-import StyledQrCode from "../Common/QrCode";
-import { useState } from "react";
-import menuOptions from "./data";
 
 /**
  * StyledHeader component
@@ -30,18 +26,7 @@ const StyledHeader = () => {
 
   return (
     <HeaderWrapper>
-      <Header>
-        <Logo
-          src={Icons.Logo}
-          alt="logo"
-          width={78}
-          height={63}
-        />
-        <ButtonsWrapper>
-          <SecondaryButton>For Business</SecondaryButton>
-          <StyledSelect position="right" defaultText="Menu" value="Menu" options={menuOptions} />
-        </ButtonsWrapper>
-      </Header>
+      <StaticHeader menuOptions={menuOptions} />
       <SearchContainer>
         <TitleContainer>
           <Title>Cool vibes</Title>

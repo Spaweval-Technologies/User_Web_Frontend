@@ -7,11 +7,19 @@ export type MobileOptionProps = {
 }
 
 export type ListProps = {
-   label: string;
-   value: string;
-   options?: MobileOptionProps[]
+    label: string;
+    value: string;
+    options?: MobileOptionProps[]
 }
 
 export type MenuListProps = {
     menuOptions: ListProps[]
+}
+
+export type StaticHeaderMbProps = {
+    showMenu: boolean;
+    onMenuClick: () => void;
+    onMenuClose: () => void
+    menuOptions: ListProps[];
+    showSearch?: boolean;
 }

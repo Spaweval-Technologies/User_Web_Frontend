@@ -1,5 +1,8 @@
-import SpaCardProps from "./index.d";
 import RatingStars from "../../RatingStars";
+import Images from "../../../../../public/Images";
+
+//props
+import SpaCardProps from "./index.d";
 
 //css
 import {
@@ -12,7 +15,6 @@ import {
   ReviewCount,
   Wrapper,
 } from "./index.styles";
-import Images from "../../../../../public/Images";
 
 /**
  * Spa Card

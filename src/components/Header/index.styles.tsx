@@ -36,6 +36,10 @@ export const Header = styled.header`
   width: 100%;
   padding: 50px 60px;
   box-sizing: border-box;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    display: none;
+  }
 `;
 
 export const ButtonsWrapper = styled.div`

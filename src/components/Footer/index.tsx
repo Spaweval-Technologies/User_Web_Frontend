@@ -22,7 +22,6 @@ import {
   SocialMediaWrapper,
   Wrapper,
 } from "./index.styles";
-import { GetAppButton } from "../DownloadApp/index.styles";
 
 /**
  * Footer Component

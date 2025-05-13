@@ -1,6 +1,7 @@
 import Icons from '@/Icons';
+import ReviewCardProps from '../../Cards/ReviewCard/index.d';
 
-const reviewDetails = [
+const reviewDetails: ReviewCardProps[] = [
     {
         img: Icons.ProfileImg,
         alt: 'ciara',
