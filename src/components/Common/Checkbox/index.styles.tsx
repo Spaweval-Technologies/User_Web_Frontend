@@ -1,10 +1,15 @@
 "use client";
 import styled from "styled-components";
 
-export const CheckboxWrapper = styled.label`
+export const CheckboxWrapper = styled.div`
   display: inline-flex;
   align-items: center;
   cursor: pointer;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    width: 100%;
+    justify-content: space-between;
+  }
 `;
 
 export const HiddenCheckbox = styled.input.attrs({ type: "checkbox" })`
@@ -37,9 +42,9 @@ export const StyledBox = styled.div<{ checked: boolean }>`
   }
 `;
 
-export const LabelText = styled.span`
+export const LabelText = styled.label`
   margin-left: 10px;
-  font-size: 13px;
+  font-size: 16px;
   color: ${({ theme }) => theme.colors.secondary};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
 `;

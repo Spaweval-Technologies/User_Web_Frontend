@@ -1,6 +1,7 @@
 import Icons from "@/Icons";
 import Icon from "../Icon";
 
+//props
 import NotificationProps from "./index.d";
 
 //css

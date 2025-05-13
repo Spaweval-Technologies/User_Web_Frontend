@@ -1,11 +1,10 @@
-import Icons from "@/Icons";
-import Icon from "../Icon";
+import RatingStars from "../RatingStars";
 
+//props
 import ReviewProps from "./index.d";
 
 //css
 import { Ratting, ReviewCount, ReviewWrapper } from "./index.styles";
-import RatingStars from "../RatingStars";
 
 /**
  * Review Component

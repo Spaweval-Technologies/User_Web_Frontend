@@ -60,6 +60,7 @@ export const DropdownList = styled.ul<{direction?: "left" | "right" }>`
   left: auto;
   min-width: 100%;
   width: max-content;
+  max-width: max-content;
   margin-top: 8px;
   ${(props) => (props.direction === "left" ? "left: 0;" : "right: 0;")}
   background-color: ${({ theme }) => theme.colors.background};

@@ -1,3 +1,4 @@
+//props
 import  VerticalSeperatorProps from "./index.d";
 
 //css

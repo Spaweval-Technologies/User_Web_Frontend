@@ -1,6 +1,7 @@
-import Image from "next/image";
-
+//props
 import IconProps from "./index.d";
+
+//css
 import { IconWrapper } from "./index.styles";
 
 /**

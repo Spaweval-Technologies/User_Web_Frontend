@@ -1,6 +1,7 @@
 import Icons from "@/Icons";
-
 import Review from "../../Review";
+
+//props
 import ReviewCardProps from "./index.d";
 
 //css
