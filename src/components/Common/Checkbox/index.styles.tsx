@@ -47,4 +47,8 @@ export const LabelText = styled.label`
   font-size: 16px;
   color: ${({ theme }) => theme.colors.secondary};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    font-size: 12px;
+  }
 `;

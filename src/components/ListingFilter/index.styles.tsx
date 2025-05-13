@@ -70,6 +70,10 @@ export const Wrapper = styled.div`
     top: auto !important;
     font-weight: ${({ theme }) => theme.fontWeights.bold};
   }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    display: none;
+  }
 `;
 
 export const Btn = styled(IconButton)`
@@ -134,6 +138,10 @@ export const Results = styled(OutlinedButton)`
   color: ${({ theme }) => theme.colors.bluishGrey};
   font-size: 12px;
   padding: 10px 0 12px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    width: 45%;
+  }
 `;
 
 export const Apply = styled(Button)`
@@ -145,6 +153,10 @@ export const Apply = styled(Button)`
   background: ${({ theme }) => theme.colors.primary};
   color: ${({ theme }) => theme.colors.textSecondary};
   font-weight: ${({ theme }) => theme.fontWeights.bolder};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    width: 45%;
+  }
 `;
 
 export const FiltersTypes = styled.div`
@@ -164,6 +176,10 @@ export const FiltersList = styled.ul`
   gap: 8px;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    width: 35%;
+  }
 `;
 
 export const FiltersListItem = styled.li<{ activeFilter?: boolean }>`
@@ -179,11 +195,19 @@ export const FiltersListItem = styled.li<{ activeFilter?: boolean }>`
   &:active {
     background: ${({ theme }) => theme.colors.background};
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    padding: 8px 12px;
+  }
 `;
 
 export const FiltersContent = styled.div`
   width: 70%;
   height: max-content;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    width: 65%;
+  }
 `;
 
 export const SelectFilterList = styled.ul`
