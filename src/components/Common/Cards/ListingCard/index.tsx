@@ -19,6 +19,7 @@ import {
   TitleWrapper,
   Wrapper,
 } from "./index.styles";
+import CardsImgCarousel from "../../Carousel/CardsImgCarousel";
 
 /**
  * ListingCard Component
@@ -47,13 +48,35 @@ const ListingCard = ({
 }: ListingCardProps) => {
   return (
     <ListingCardWrapper>
-      <CardImage
-        src={imgSrc ?? Images.DestinationSpa1}
-        height={266}
-        width={325}
-        loading="lazy"
-        alt={imgAlt ?? "destination spa"}
-      />
+      <CardsImgCarousel id="listing-cards-img">
+        <div className="keen-slider__slide" key={title + imgAlt + "0"}>
+          <CardImage
+            src={imgSrc ?? Images.DestinationSpa1}
+            height={266}
+            width={325}
+            loading="lazy"
+            alt={imgAlt ?? "destination spa"}
+          />
+        </div>
+        <div className="keen-slider__slide" key={title + imgAlt + "1"}>
+          <CardImage
+            src={imgSrc ?? Images.DestinationSpa1}
+            height={266}
+            width={325}
+            loading="lazy"
+            alt={imgAlt ?? "destination spa"}
+          />
+        </div>
+        <div className="keen-slider__slide" key={title + imgAlt + "2"}>
+          <CardImage
+            src={imgSrc ?? Images.DestinationSpa1}
+            height={266}
+            width={325}
+            loading="lazy"
+            alt={imgAlt ?? "destination spa"}
+          />
+        </div>
+      </CardsImgCarousel>
       <Container>
         <TitleWrapper>
           <Title>{title}</Title>

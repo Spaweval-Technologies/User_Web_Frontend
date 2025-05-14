@@ -1,5 +1,5 @@
 "use client";
-import { Fragment, useState } from "react";
+import { useState } from "react";
 
 import ListingCard from "../../Cards/ListingCard";
 import Icon from "../../Icon";
@@ -15,6 +15,8 @@ import {
   PageNumber,
   PageNumberWrapper,
   PaginationWrapper,
+  StyledGradient,
+  Wrapper,
   WrapperMb,
 } from "./index.styles";
 
@@ -70,12 +72,12 @@ const ListingCarousel = ({ spaList }: ListingCarouselProps) => {
   };
 
   return (
-    <>
+    <Wrapper>
       <ListingCarouselWrapper>
         {paginatedList &&
           paginatedList.map((spa, id) => (
             <ListingCard
-              key={spa.title + id}
+              key={spa.title + id + "listing"}
               title={spa.title}
               description={spa.description}
               imgSrc={spa.imgSrc}
@@ -101,7 +103,7 @@ const ListingCarousel = ({ spaList }: ListingCarouselProps) => {
           <PageNumberWrapper>
             {getPageNumbers().map((num) => (
               <PageNumber
-                key={num}
+                key={num + "pagination"}
                 onClick={() => setCurrentPage(num)}
                 isActive={num === currentPage}>
                 {num}
@@ -121,26 +123,24 @@ const ListingCarousel = ({ spaList }: ListingCarouselProps) => {
       )}
       <WrapperMb>
         <ListingWrapperMb>
-          <Fragment>
-            {spaList &&
-              spaList.map((spa, id) => (
-                <ListingCard
-                  title={spa.title + id}
-                  description={spa.description}
-                  imgSrc={spa.imgSrc}
-                  imgAlt={spa.imgAlt}
-                  rating={spa.rating}
-                  saved={spa.saved}
-                  reviews={spa.reviews}
-                  discount={spa.discount}
-                />
-              ))}
-          </Fragment>
+          {spaList &&
+            spaList.map((spa, id) => (
+              <ListingCard
+                key={"listing-cards-mb" + spa.title + id}
+                title={spa.title}
+                description={spa.description}
+                imgSrc={spa.imgSrc}
+                imgAlt={spa.imgAlt}
+                rating={spa.rating}
+                saved={spa.saved}
+                reviews={spa.reviews}
+                discount={spa.discount}
+              />
+            ))}
         </ListingWrapperMb>
-        <div className="gradient" />
-        <Icon src={Icons.DownBlackCircleArrow} alt="downArrow" />
       </WrapperMb>
-    </>
+      <StyledGradient />
+    </Wrapper>
   );
 };
 

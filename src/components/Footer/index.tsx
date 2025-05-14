@@ -1,5 +1,6 @@
 import Icons from "@/Icons";
 import Icon from "../Common/Icon";
+import footerLinks, { socialMediaLinks } from "./data";
 
 //css
 import {
@@ -22,7 +23,6 @@ import {
   SocialMediaWrapper,
   Wrapper,
 } from "./index.styles";
-import footerLinks, { socialMediaLinks } from "./data";
 
 /**
  * Footer Component
@@ -45,11 +45,11 @@ const Footer = () => {
         <Wrapper>
           {footerLinks &&
             footerLinks.map((list, id) => (
-              <List key={list.title + id}>
+              <List key={list.title + id + "link-footer"}>
                 <ListTitle>{list.title}</ListTitle>
                 {list?.links &&
                   list.links.map((linkItem, id) => (
-                    <ListItem id={linkItem.name + id}>
+                    <ListItem key={linkItem.name + id}>
                       <ListItemLink href={linkItem.href}>
                         {linkItem.name}
                       </ListItemLink>
@@ -75,7 +75,7 @@ const Footer = () => {
               {socialMediaLinks &&
                 socialMediaLinks.map((socialMedia, id) => (
                   <SocialMediaIcon
-                    key={socialMedia.alt + id}
+                    key={socialMedia.alt + id + "social-media"}
                     src={socialMedia.icon}
                     alt={socialMedia.alt}
                     width={16}
