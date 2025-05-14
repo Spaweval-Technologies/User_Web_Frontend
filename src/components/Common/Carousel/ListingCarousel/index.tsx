@@ -4,6 +4,7 @@ import { useState } from "react";
 import ListingCard from "../../Cards/ListingCard";
 import Icon from "../../Icon";
 import Icons from "@/Icons";
+import MobileCarousel from "../MobileCarousel";
 
 //props
 import ListingCarouselProps from "./index.d";
@@ -15,7 +16,6 @@ import {
   PageNumberWrapper,
   PaginationWrapper,
 } from "./index.styles";
-import MobileCarousel from "../MobileCarousel";
 
 /**
  * ListingCarousel Component

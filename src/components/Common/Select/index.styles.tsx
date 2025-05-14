@@ -14,16 +14,16 @@ export const GroupOptions = styled.div`
 `;
 
 export const Hr = styled.hr`
- height: 1px;
- border-top: 1px solid ${({theme}) => theme.colors.lightBlue};
- margin: 12px 22px 12px 16px;
- box-sizing: border-box;
+  height: 1px;
+  border-top: 1px solid ${({ theme }) => theme.colors.lightBlue};
+  margin: 12px 22px 12px 16px;
+  box-sizing: border-box;
 `;
 
 export const GroupLabel = styled.div`
   padding: 8px 16px;
   font-size: 20px;
-  font-weight: ${({theme}) => theme.fontWeights.bolder};
+  font-weight: ${({ theme }) => theme.fontWeights.bolder};
   color: ${({ theme }) => theme.colors.secondary};
   background-color: ${({ theme }) => theme.colors.background};
   pointer-events: none;
@@ -40,10 +40,10 @@ export const SelectedValue = styled.div`
   padding: 12px 16px;
   border: 1px solid ${({ theme }) => theme.colors.secondary};
   border-radius: 27px;
-  background-color: ${({theme}) => theme.colors.transparent};
+  background-color: ${({ theme }) => theme.colors.transparent};
   color: ${({ theme }) => theme.colors.secondary};
   font-size: 16px;
-  font-weight: ${({theme}) => theme.fontWeights.bold};
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -55,7 +55,7 @@ export const SelectedValue = styled.div`
   }
 `;
 
-export const DropdownList = styled.ul<{direction?: "left" | "right" }>`
+export const DropdownList = styled.ul<{ direction?: "left" | "right" }>`
   position: absolute;
   left: auto;
   min-width: 100%;
@@ -74,10 +74,10 @@ export const DropdownList = styled.ul<{direction?: "left" | "right" }>`
   ${transitionStyles}
 `;
 
-export const DropdownItem = styled.li<{child?: boolean}>`
-  padding: ${(props) => props.child ? '0 12px': '12px 16px'};
+export const DropdownItem = styled.li<{ child?: boolean }>`
+  padding: ${(props) => (props.child ? "0 12px" : "12px 16px")};
   font-size: 16px;
-  font-weight: ${({theme}) => theme.fontWeights.regular};
+  font-weight: ${({ theme }) => theme.fontWeights.regular};
   color: ${({ theme }) => theme.colors.secondary};
   cursor: pointer;
   ${transitionStyles}

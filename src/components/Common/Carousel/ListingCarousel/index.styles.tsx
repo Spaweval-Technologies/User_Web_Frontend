@@ -4,17 +4,11 @@ import styled from "styled-components";
 export const ListingCarouselWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 28px;
+  gap: 12px;
   align-items: center;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     display: none;
-  }
-
-  @media (min-width: ${({ theme }) =>
-      theme.breakpoints.sm}) and (max-width: ${({ theme }) =>
-      theme.breakpoints.md}) {
-    gap: 12px;
   }
 `;
 

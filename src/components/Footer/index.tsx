@@ -22,6 +22,7 @@ import {
   SocialMediaWrapper,
   Wrapper,
 } from "./index.styles";
+import footerLinks, { socialMediaLinks } from "./data";
 
 /**
  * Footer Component
@@ -42,48 +43,20 @@ const Footer = () => {
           </Description>
         </LogoContentWrapper>
         <Wrapper>
-          <List>
-            <ListTitle>For Business</ListTitle>
-            <ListItem>
-              <ListItemLink href="#">For Partners</ListItemLink>
-            </ListItem>
-            <ListItem>
-              <ListItemLink href="#">Pricing</ListItemLink>
-            </ListItem>
-            <ListItem>
-              <ListItemLink href="#">Support</ListItemLink>
-            </ListItem>
-            <ListItem>
-              <ListItemLink href="#">Status</ListItemLink>
-            </ListItem>
-          </List>
-          <List>
-            <ListTitle>About Spawn</ListTitle>
-            <ListItem>
-              <ListItemLink href="#">Careers</ListItemLink>
-            </ListItem>
-            <ListItem>
-              <ListItemLink href="#">Our Blog & Recipes</ListItemLink>
-            </ListItem>
-            <ListItem>
-              <ListItemLink href="#">Spawn Community</ListItemLink>
-            </ListItem>
-            <ListItem>
-              <ListItemLink href="#">FAQ's</ListItemLink>
-            </ListItem>
-          </List>
-          <List>
-            <ListTitle>Legal</ListTitle>
-            <ListItem>
-              <ListItemLink href="#">Privacy Policy</ListItemLink>
-            </ListItem>
-            <ListItem>
-              <ListItemLink href="#">Terms of Service</ListItemLink>
-            </ListItem>
-            <ListItem>
-              <ListItemLink href="#">Terms of Use</ListItemLink>
-            </ListItem>
-          </List>
+          {footerLinks &&
+            footerLinks.map((list, id) => (
+              <List key={list.title + id}>
+                <ListTitle>{list.title}</ListTitle>
+                {list?.links &&
+                  list.links.map((linkItem, id) => (
+                    <ListItem id={linkItem.name + id}>
+                      <ListItemLink href={linkItem.href}>
+                        {linkItem.name}
+                      </ListItemLink>
+                    </ListItem>
+                  ))}
+              </List>
+            ))}
           <GetApp>
             Get the App
             <IconsWrapper>
@@ -99,46 +72,18 @@ const Footer = () => {
           <List>
             <ListTitle>Follow us on</ListTitle>
             <SocialMediaWrapper>
-              <SocialMediaIcon
-                src={Icons.FacebookSolid}
-                alt="facebook"
-                width={16}
-                height={16}
-                mobileheight={19}
-                mobilewidth={18}
-              />
-              <SocialMediaIcon
-                src={Icons.TwitterSolid}
-                alt="twitter"
-                width={16}
-                height={16}
-                mobileheight={19}
-                mobilewidth={18}
-              />
-              <SocialMediaIcon
-                src={Icons.InstagramSolid}
-                alt="telegram"
-                width={16}
-                height={16}
-                mobileheight={19}
-                mobilewidth={18}
-              />
-              <SocialMediaIcon
-                src={Icons.GoogleSolid}
-                alt="google"
-                width={16}
-                height={16}
-                mobileheight={19}
-                mobilewidth={18}
-              />
-              <SocialMediaIcon
-                src={Icons.PinterestSolid}
-                alt="pinterest"
-                width={16}
-                height={16}
-                mobileheight={19}
-                mobilewidth={18}
-              />
+              {socialMediaLinks &&
+                socialMediaLinks.map((socialMedia, id) => (
+                  <SocialMediaIcon
+                    key={socialMedia.alt + id}
+                    src={socialMedia.icon}
+                    alt={socialMedia.alt}
+                    width={16}
+                    height={16}
+                    mobileheight={19}
+                    mobilewidth={18}
+                  />
+                ))}
             </SocialMediaWrapper>
             <HR />
             <SocialMediaWrapper>

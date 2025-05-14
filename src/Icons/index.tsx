@@ -5,6 +5,7 @@ import ArrowRight from "./ArrowRight.svg";
 import ArrowRightBlack from "./ArrowRightBlack.svg";
 import BlinkingStar from "./Blinking_Star.svg";
 import Calendar from "./Calendar.svg";
+import CheckboxTickMark from "./CheckboxTick.svg";
 import Clock from "./Clock.svg";
 import Close from "./Close.png";
 import DownArrow from "./DownBlack.svg";
@@ -48,6 +49,7 @@ const Icons = {
   ArrowRightBlack,
   BlinkingStar,
   Calendar,
+  CheckboxTickMark,
   Clock,
   Close,
   DownArrow,

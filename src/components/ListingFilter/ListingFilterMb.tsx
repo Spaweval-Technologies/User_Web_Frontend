@@ -3,6 +3,7 @@ import { useState } from "react";
 import SliderMb from "../Common/SliderMb";
 import StyledCheckbox from "../Common/Checkbox";
 import Icons from "@/Icons";
+import { filterList, sortOptions } from "../Listing/data";
 
 //css
 import {
@@ -36,7 +37,7 @@ import {
 const ListingFilterMb = () => {
   const [showFilter, setShowFilter] = useState<boolean>(false);
   const [showSort, setShowSort] = useState<boolean>(false);
-  const [currentFilter, setCurrentFilter] = useState<String>("categories");
+  const [currentFilter, setCurrentFilter] = useState<String>("Categories");
 
   return (
     <Wrapper>
@@ -53,32 +54,18 @@ const ListingFilterMb = () => {
         showSlider={showSort}
         onClose={() => setShowSort(false)}>
         <SortSlider>
-          <SortTitle>Sort</SortTitle>
+          <SortTitle>Sort By</SortTitle>
           <Hr />
-          <StyledCheckbox
-            checked
-            onChange={() => console.log("check")}
-            label="Popularity"
-            position="right"
-          />
-          <StyledCheckbox
-            checked={false}
-            onChange={() => console.log("check")}
-            label="Ratings"
-            position="right"
-          />
-          <StyledCheckbox
-            checked={false}
-            onChange={() => console.log("check")}
-            label="Price Low to High"
-            position="right"
-          />
-          <StyledCheckbox
-            checked={false}
-            onChange={() => console.log("check")}
-            label="Price High to Low"
-            position="right"
-          />
+          {sortOptions &&
+            sortOptions.map((option, id) => (
+              <StyledCheckbox
+                checked={option.selected ?? false}
+                onChange={() => console.log("check")}
+                label={option.label}
+                position="right"
+                key={option.value + id}
+              />
+            ))}
         </SortSlider>
       </SliderMb>
       <Vr />
@@ -98,82 +85,40 @@ const ListingFilterMb = () => {
           </FiltersTitle>
           <FiltersTypes>
             <FiltersList>
-              <FiltersListItem
-                activeFilter={currentFilter === "categories"}
-                onClick={() => setCurrentFilter("categories")}>
-                Categories
-              </FiltersListItem>
-              <FiltersListItem onClick={() => setCurrentFilter("location")}>
-                Location
-              </FiltersListItem>
-              <FiltersListItem onClick={() => setCurrentFilter("ratings")}>
-                Ratings
-              </FiltersListItem>
-              <FiltersListItem onClick={() => setCurrentFilter("discount")}>
-                Discount
-              </FiltersListItem>
+              {filterList &&
+                filterList.map((filter, id) => (
+                  <FiltersListItem
+                    key={filter.title + id}
+                    activeFilter={
+                      currentFilter.toLowerCase() === filter.title.toLowerCase()
+                    }
+                    onClick={() =>
+                      setCurrentFilter(filter.title.toLowerCase())
+                    }>
+                    {filter.title}
+                  </FiltersListItem>
+                ))}
             </FiltersList>
             <FiltersContent>
-              {currentFilter === "categories" && (
-                <SelectFilterList>
-                  <SelectCategoriesListItem>
-                    <StyledCheckbox
-                      label="Swedish Spa"
-                      checked={false}
-                      onChange={() => console.log("check")}
-                    />
-                  </SelectCategoriesListItem>
-                  <SelectCategoriesListItem>
-                    <StyledCheckbox
-                      label="Hot Tissue Spa"
-                      checked={false}
-                      onChange={() => console.log("check")}
-                    />
-                  </SelectCategoriesListItem>
-                  <SelectCategoriesListItem>
-                    <StyledCheckbox
-                      label="Hot Stone Spa"
-                      checked={false}
-                      onChange={() => console.log("check")}
-                    />
-                  </SelectCategoriesListItem>
-                  <SelectCategoriesListItem>
-                    <StyledCheckbox
-                      label="AromaTherapy Spa"
-                      checked={false}
-                      onChange={() => console.log("check")}
-                    />
-                  </SelectCategoriesListItem>
-                  <SelectCategoriesListItem>
-                    <StyledCheckbox
-                      label="Thai Spa"
-                      checked={false}
-                      onChange={() => console.log("check")}
-                    />
-                  </SelectCategoriesListItem>
-                  <SelectCategoriesListItem>
-                    <StyledCheckbox
-                      label="Destination Spa"
-                      checked={false}
-                      onChange={() => console.log("check")}
-                    />
-                  </SelectCategoriesListItem>
-                  <SelectCategoriesListItem>
-                    <StyledCheckbox
-                      label="ThalassoTherapy Spa"
-                      checked={false}
-                      onChange={() => console.log("check")}
-                    />
-                  </SelectCategoriesListItem>
-                  <SelectCategoriesListItem>
-                    <StyledCheckbox
-                      label="Shiatsu Massage Spa"
-                      checked={false}
-                      onChange={() => console.log("check")}
-                    />
-                  </SelectCategoriesListItem>
-                </SelectFilterList>
-              )}
+              {filterList &&
+                filterList.map(
+                  (list, id) =>
+                    list.title.toLowerCase() ===
+                      currentFilter.toLowerCase() && (
+                      <SelectFilterList key={list.title + id}>
+                        {list.options &&
+                          list.options.map((option, id) => (
+                            <SelectCategoriesListItem key={option.value + id}>
+                              <StyledCheckbox
+                                label={option.label}
+                                checked={option.selected}
+                                onChange={() => console.log("check")}
+                              />
+                            </SelectCategoriesListItem>
+                          ))}
+                      </SelectFilterList>
+                    )
+                )}
             </FiltersContent>
           </FiltersTypes>
         </Filters>

@@ -5,14 +5,14 @@ import styled from "styled-components";
 export const ListingCardWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 324px;
-  max-width: 324px;
-  min-width: 324px;
+  width: 310px;
+  max-width: 310px;
+  min-width: 310px;
   height: 394px;
   min-height: 394px;
   max-height: 394px;
   border-radius: 10px;
-  border: 1px solid ${({theme}) => theme.colors.blueGrey};
+  border: 1px solid ${({ theme }) => theme.colors.blueGrey};
   cursor: pointer;
   background-color: ${({ theme }) => theme.colors.background};
   box-shadow: 0px 4px 20px ${({ theme }) => theme.colors.transparentDark};
@@ -26,7 +26,9 @@ export const ListingCardWrapper = styled.div`
     max-height: 410px;
   }
 
-  @media (min-width: ${({theme}) => theme.breakpoints.sm}) and (max-width: ${({ theme }) => theme.breakpoints.md}) {
+  @media (min-width: ${({ theme }) =>
+      theme.breakpoints.sm}) and (max-width: ${({ theme }) =>
+      theme.breakpoints.md}) {
     width: 49%;
     height: 400px;
     min-width: 49%;
@@ -77,7 +79,7 @@ export const Description = styled.p`
   width: 100%;
   font-size: 12px;
   line-height: 16px;
-  color: ${({theme}) => theme.colors.bluishGrey};
+  color: ${({ theme }) => theme.colors.bluishGrey};
 `;
 
 export const Wrapper = styled.div`
@@ -96,7 +98,7 @@ export const ReviewWrapper = styled.div`
 `;
 
 export const Hr = styled.div`
-  border-left: 1px solid ${({theme}) => theme.colors.lightSilver};
+  border-left: 1px solid ${({ theme }) => theme.colors.lightSilver};
   height: 21px;
   margin: 0 9px 0 12px;
 `;

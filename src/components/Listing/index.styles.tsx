@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   display: flex;
   width: 100%;
   align-items: flex-start;
-  padding: 0 60px 100px;
+  padding: 0 40px 100px;
   box-sizing: border-box;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
@@ -23,12 +23,18 @@ export const Wrapper = styled.div`
 export const FiltersWrapper = styled.aside`
   max-width: 275px;
   width: 22%;
+  border-radius: 10px;
+  margin-top: 12px;
   border: 1.5px solid ${({ theme }) => theme.colors.lightPastelBlue};
+  box-shadow: 0 2px 5px ${({ theme }) => theme.colors.transparentDark};
+  cursor: pointer;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     border: none;
     width: 100%;
     max-width: 100%;
+    border-radius: 0px;
+    margin-top: 0px;
   }
 
   @media (min-width: ${({ theme }) =>
