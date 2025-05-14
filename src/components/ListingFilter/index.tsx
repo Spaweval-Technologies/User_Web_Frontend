@@ -25,14 +25,14 @@ const ListingFilter = () => {
         <Title>Filters</Title>
         {filterList &&
           filterList.map((list, id) => (
-            <Fragment key={list.title + id}>
+            <Fragment key={list.title + id + "filter"}>
               <Hr />
               <FilterSection>
                 <Collapse title={list.title}>
                   <List>
                     {list?.options &&
                       list.options.map((option, id) => (
-                        <ListItem>
+                        <ListItem key={option.label + id + "sort"}>
                           {list.type === "checkbox" && (
                             <StyledCheckbox
                               checked={option.selected}

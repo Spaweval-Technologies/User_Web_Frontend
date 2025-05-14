@@ -36,6 +36,8 @@ import UpArrow from "./UpBlack.svg";
 import Wallet from "./Wallet.svg";
 import WhiteClose from "./WhiteClose.svg";
 import WhiteStar from "./WhiteStar.svg";
+import WhiteLeftArrow from "./WhiteLeftArrow.svg";
+import WhiteRightArrow from "./WhiteRightArrow.svg";
 
 /**
  * Icons component
@@ -80,6 +82,8 @@ const Icons = {
   Wallet,
   WhiteClose,
   WhiteStar,
+  WhiteLeftArrow,
+  WhiteRightArrow,
 };
 
 export default Icons;

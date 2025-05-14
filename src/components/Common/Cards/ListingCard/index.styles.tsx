@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import styled from "styled-components";
+import { CarouselWrapper } from "../../Carousel/Carousel/index.styles";
 
 export const ListingCardWrapper = styled.div`
   display: flex;

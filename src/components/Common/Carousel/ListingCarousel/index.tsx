@@ -75,7 +75,7 @@ const ListingCarousel = ({ spaList }: ListingCarouselProps) => {
         {paginatedList &&
           paginatedList.map((spa, id) => (
             <ListingCard
-              key={spa.title + id}
+              key={spa.title + id + "listing"}
               title={spa.title}
               description={spa.description}
               imgSrc={spa.imgSrc}
@@ -101,7 +101,7 @@ const ListingCarousel = ({ spaList }: ListingCarouselProps) => {
           <PageNumberWrapper>
             {getPageNumbers().map((num) => (
               <PageNumber
-                key={num}
+                key={num + "pagination"}
                 onClick={() => setCurrentPage(num)}
                 isActive={num === currentPage}>
                 {num}
@@ -125,7 +125,8 @@ const ListingCarousel = ({ spaList }: ListingCarouselProps) => {
             {spaList &&
               spaList.map((spa, id) => (
                 <ListingCard
-                  title={spa.title + id}
+                  key={"listing-cards-mb" + spa.title + id}
+                  title={spa.title}
                   description={spa.description}
                   imgSrc={spa.imgSrc}
                   imgAlt={spa.imgAlt}
