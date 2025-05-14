@@ -1,4 +1,5 @@
 "use client";
+import { Gradient } from "@/components/Categories/index.styles";
 import styled from "styled-components";
 
 export const ListingCarouselWrapper = styled.div`
@@ -52,31 +53,16 @@ export const PageNumber = styled.button<{ isActive?: boolean }>`
 `;
 
 export const WrapperMb = styled.div`
-  width: 100%;
-  max-width: 100%;
+  position: relative;
   overflow-y: auto;
-  max-height: 620px;
-  overscroll-behavior: contain;
-  overscroll-behavior-y: auto;
-  -ms-overflow-style: none; /* Internet Explorer and Edge */
-  scrollbar-width: none; /* Firefox */
+  max-height: 500px;
+  min-height: 500px;
+  height: 500px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 
   &::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, and Opera */
-  }
-
-  .gradient {
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    width: 100%;
-    height: 20%;
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0) 12.65%,
-      ${({ theme }) => theme.colors.background} 59.34%
-    );
-    z-index: 1;
+    display: none;
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
@@ -90,4 +76,13 @@ export const ListingWrapperMb = styled.section`
   width: 100%;
   max-width: 100%;
   gap: 12px;
+`;
+
+export const StyledGradient = styled(Gradient)`
+  left: 0;
+  width: 100%;
+`;
+
+export const Wrapper = styled.div`
+  position: relative;
 `;
