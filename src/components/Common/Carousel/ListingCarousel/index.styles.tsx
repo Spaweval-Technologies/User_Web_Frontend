@@ -50,3 +50,44 @@ export const PageNumber = styled.button<{ isActive?: boolean }>`
       isActive ? theme.colors.contrastBg : theme.colors.whiteLightGray};
   }
 `;
+
+export const WrapperMb = styled.div`
+  width: 100%;
+  max-width: 100%;
+  overflow-y: auto;
+  max-height: 620px;
+  overscroll-behavior: contain;
+  overscroll-behavior-y: auto;
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+  }
+
+  .gradient {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 12.65%,
+      ${({ theme }) => theme.colors.background} 59.34%
+    );
+    z-index: 1;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    display: none;
+  }
+`;
+
+export const ListingWrapperMb = styled.section`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  gap: 12px;
+`;
