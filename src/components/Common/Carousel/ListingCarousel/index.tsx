@@ -1,10 +1,9 @@
 "use client";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 
 import ListingCard from "../../Cards/ListingCard";
 import Icon from "../../Icon";
 import Icons from "@/Icons";
-import MobileCarousel from "../MobileCarousel";
 
 //props
 import ListingCarouselProps from "./index.d";
@@ -12,9 +11,11 @@ import ListingCarouselProps from "./index.d";
 //css
 import {
   ListingCarouselWrapper,
+  ListingWrapperMb,
   PageNumber,
   PageNumberWrapper,
   PaginationWrapper,
+  WrapperMb,
 } from "./index.styles";
 
 /**
@@ -118,23 +119,27 @@ const ListingCarousel = ({ spaList }: ListingCarouselProps) => {
           )}
         </PaginationWrapper>
       )}
-      <MobileCarousel>
-        {spaList &&
-          spaList.map((spa, id) => (
-            <div className="keen-slider__slide" key={spa.title + id}>
-              <ListingCard
-                title={spa.title}
-                description={spa.description}
-                imgSrc={spa.imgSrc}
-                imgAlt={spa.imgAlt}
-                rating={spa.rating}
-                saved={spa.saved}
-                reviews={spa.reviews}
-                discount={spa.discount}
-              />
-            </div>
-          ))}
-      </MobileCarousel>
+      <WrapperMb>
+        <ListingWrapperMb>
+          <Fragment>
+            {spaList &&
+              spaList.map((spa, id) => (
+                <ListingCard
+                  title={spa.title + id}
+                  description={spa.description}
+                  imgSrc={spa.imgSrc}
+                  imgAlt={spa.imgAlt}
+                  rating={spa.rating}
+                  saved={spa.saved}
+                  reviews={spa.reviews}
+                  discount={spa.discount}
+                />
+              ))}
+          </Fragment>
+        </ListingWrapperMb>
+        <div className="gradient" />
+        <Icon src={Icons.DownBlackCircleArrow} alt="downArrow" />
+      </WrapperMb>
     </>
   );
 };

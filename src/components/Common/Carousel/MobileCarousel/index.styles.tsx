@@ -28,7 +28,6 @@ export const CarouselWrapper = styled.div`
   }
 
   .keen-slider {
-    overflow-y: auto;
     display: flex;
     flex-direction: column;
     width: 100%; // adapt to card width

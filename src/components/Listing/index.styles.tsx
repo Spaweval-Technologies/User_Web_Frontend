@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     flex-direction: column;
-    padding: 0 20px 40px;
+    padding: 0 20px 20px;
   }
 
   @media (min-width: ${({ theme }) =>

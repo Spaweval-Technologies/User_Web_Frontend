@@ -27,7 +27,7 @@ const MobileCarousel = ({ children }: MobileCarouselProps) => {
     rubberband: true,
     vertical: true,
     slides: {
-      perView: 1.5,
+      perView: 1,
       spacing: 29,
     },
     slideChanged(slider) {
