@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import styled from "styled-components";
-import { CarouselWrapper } from "../../Carousel/Carousel/index.styles";
 
 export const ListingCardWrapper = styled.div`
   display: flex;
@@ -20,11 +19,11 @@ export const ListingCardWrapper = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     width: 100%;
-    height: 410px;
+    height: 435px;
     min-width: 100%;
     max-width: 100%;
-    min-height: 410px;
-    max-height: 410px;
+    min-height: 435px;
+    max-height: 435px;
   }
 
   @media (min-width: ${({ theme }) =>
