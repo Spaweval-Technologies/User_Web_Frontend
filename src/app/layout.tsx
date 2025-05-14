@@ -55,8 +55,7 @@ const RootLayout = ({
         />
       </head>
       <body
-        className={`${raleway.className} ${dmSerif.className}antialised ${oswald.className}antialiased ${popins.className}antialiased`}
-      >
+        className={`${raleway.className} ${dmSerif.className}antialised ${oswald.className}antialiased ${popins.className}antialiased`}>
         <ThemeProvider>
           <Toast />
           <Container>{children}</Container>

@@ -5,6 +5,7 @@ import Icons from "@/Icons";
 import StyledSelect from "../Common/Select";
 import StyledModal from "../Common/Modal";
 import timeOptions from "./data";
+import { PickDateBtn } from "../DatePicker/index.styles";
 
 //css
 import {
@@ -14,7 +15,6 @@ import {
   TimePickerContainer,
   TimeSelectWrapper,
 } from "./index.styles";
-import { PickDateBtn } from "../DatePicker/index.styles";
 
 /**
  * TimePicker component

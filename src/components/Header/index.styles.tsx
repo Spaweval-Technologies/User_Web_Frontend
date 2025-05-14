@@ -34,7 +34,7 @@ export const Header = styled.header`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 50px 60px;
+  padding: 25px 60px;
   box-sizing: border-box;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
