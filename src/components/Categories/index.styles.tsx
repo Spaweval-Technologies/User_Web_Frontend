@@ -57,7 +57,7 @@ export const Wrapper = styled.section`
 `;
 
 export const Gradient = styled.div`
-  diplay: none;
+  display: none;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     display: block;
@@ -71,6 +71,7 @@ export const Gradient = styled.div`
       rgba(255, 255, 255, 0) 12.65%,
       ${({ theme }) => theme.colors.background} 59.34%
     );
-    z-index: 10;
+    z-index: 11;
+    pointer-events: none;
   }
 `;

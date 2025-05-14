@@ -63,7 +63,7 @@ const ListingFilterMb = () => {
                 onChange={() => console.log("check")}
                 label={option.label}
                 position="right"
-                key={option.value + id}
+                key={option.value + id + "sort-mb"}
               />
             ))}
         </SortSlider>
@@ -88,7 +88,7 @@ const ListingFilterMb = () => {
               {filterList &&
                 filterList.map((filter, id) => (
                   <FiltersListItem
-                    key={filter.title + id}
+                    key={filter.title + id + "filter-mb"}
                     activeFilter={
                       currentFilter.toLowerCase() === filter.title.toLowerCase()
                     }
@@ -105,7 +105,8 @@ const ListingFilterMb = () => {
                   (list, id) =>
                     list.title.toLowerCase() ===
                       currentFilter.toLowerCase() && (
-                      <SelectFilterList key={list.title + id}>
+                      <SelectFilterList
+                        key={list.title + id + "filter-options-mb"}>
                         {list.options &&
                           list.options.map((option, id) => (
                             <SelectCategoriesListItem key={option.value + id}>
@@ -122,7 +123,6 @@ const ListingFilterMb = () => {
             </FiltersContent>
           </FiltersTypes>
         </Filters>
-
         <Buttons>
           <Results>21 Results</Results>
           <Apply>Apply</Apply>

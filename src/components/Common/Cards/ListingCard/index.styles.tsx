@@ -19,11 +19,11 @@ export const ListingCardWrapper = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     width: 100%;
-    height: 410px;
+    height: 435px;
     min-width: 100%;
     max-width: 100%;
-    min-height: 410px;
-    max-height: 410px;
+    min-height: 435px;
+    max-height: 435px;
   }
 
   @media (min-width: ${({ theme }) =>
