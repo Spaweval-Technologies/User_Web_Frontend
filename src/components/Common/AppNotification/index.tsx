@@ -24,7 +24,45 @@ import {
  * @param {() => void} props.onClose - Callback triggered when the close icon is clicked.
  * @returns {JSX.Element} The rendered mobile app notification banner component.
  */
-const AppNotificationMb = ({show, onClose}: NotificationProps) => {
+const AppNotificationMb = ({
+  show,
+  onClose,
+  appRating = 5,
+}: NotificationProps) => {
+  const filledStars = Math.floor(appRating);
+  const hasHalfStar = appRating - filledStars >= 0.5;
+  const totalStars = 5;
+
+  const stars = [];
+
+  for (let i = 0; i < totalStars; i++) {
+    if (i < filledStars) {
+      stars.push(
+        <Icon
+          key={i}
+          src={Icons.WhiteStar}
+          alt="filled star white"
+          width={15}
+          height={15}
+        />
+      );
+    }
+    // else if (i === filledStars && hasHalfStar) {
+    //     stars.push(<Icon key={i} src={Icons.StarHalf} alt="half" width={20} height={20} />);
+    // }
+    else {
+      stars.push(
+        <Icon
+          key={i}
+          src={Icons.StarGray}
+          alt="empty - star"
+          width={15}
+          height={15}
+        />
+      );
+    }
+  }
+
   return (
     <NotificationWrapper show={show}>
       <Wrapper>
@@ -33,18 +71,18 @@ const AppNotificationMb = ({show, onClose}: NotificationProps) => {
         </LogoWrapper>
         <TextContainer>
           <Text>Download the Spawn app</Text>
-          <Stars>
-            <Icon src={Icons.WhiteStar} alt="star" width={15} height={15} />
-            <Icon src={Icons.WhiteStar} alt="star" width={15} height={15} />
-            <Icon src={Icons.WhiteStar} alt="star" width={15} height={15} />
-            <Icon src={Icons.WhiteStar} alt="star" width={15} height={15} />
-            <Icon src={Icons.WhiteStar} alt="star" width={15} height={15} />
-          </Stars>
+          <Stars>{stars}</Stars>
         </TextContainer>
       </Wrapper>
       <Wrapper>
         <InstallBtn>Install</InstallBtn>
-        <Icon onClick={onClose} src={Icons.WhiteClose} width={13} height={13} alt="white close" />
+        <Icon
+          onClick={onClose}
+          src={Icons.WhiteClose}
+          width={13}
+          height={13}
+          alt="white close"
+        />
       </Wrapper>
     </NotificationWrapper>
   );

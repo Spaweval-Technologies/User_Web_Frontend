@@ -62,8 +62,7 @@ const MobileHeader = () => {
         iconPosition="right"
         iconAlt="app"
         iconWidth={20}
-        iconHeight={20}
-      >
+        iconHeight={20}>
         Get the App
       </GettheApp>
     </MobileHeaderWrapper>

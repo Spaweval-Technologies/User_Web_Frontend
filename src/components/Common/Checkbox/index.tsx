@@ -1,4 +1,6 @@
 //props
+import Icons from "@/Icons";
+import Icon from "../Icon";
 import CheckboxProps from "./index.d";
 
 //css
@@ -31,33 +33,23 @@ const StyledCheckbox = ({
       />
       {position === "left" && (
         <StyledBox checked={checked}>
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="white"
-            strokeWidth="3"
-            strokeLinecap="round"
-            strokeLinejoin="round">
-            <polyline points="20 6 9 17 4 12" />
-          </svg>
+          <Icon
+            src={Icons.CheckboxTickMark}
+            alt="tick mark"
+            width={14}
+            height={14}
+          />
         </StyledBox>
       )}
       <LabelText>{label}</LabelText>
       {position === "right" && (
         <StyledBox checked={checked}>
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="white"
-            strokeWidth="3"
-            strokeLinecap="round"
-            strokeLinejoin="round">
-            <polyline points="20 6 9 17 4 12" />
-          </svg>
+          <Icon
+            src={Icons.CheckboxTickMark}
+            alt="tick mark"
+            width={14}
+            height={14}
+          />
         </StyledBox>
       )}
     </CheckboxWrapper>

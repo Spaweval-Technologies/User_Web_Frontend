@@ -45,6 +45,7 @@ const Home = () => {
       <AppNotificationMb
         show={showNotification}
         onClose={onCloseNotification}
+        appRating={4.2}
       />
       <WrapperBg>
         <StyledHeader />
