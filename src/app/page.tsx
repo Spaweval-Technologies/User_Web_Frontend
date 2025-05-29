@@ -1,7 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import jwt from "jsonwebtoken";
 
+import { useAppDispatch, useAppSelector } from "@/redux/store/hooks";
+import { getUserByEmail, setUserInfo } from "@/redux/actions/userSlice";
 import StyledHeader from "@/components/Header";
 import MobileHeader from "@/components/MobileHeader";
 import CardCarousel from "@/components/Common/Carousel/SpaCardsCarousel";
@@ -12,8 +15,12 @@ import ReviewCarousel from "@/components/Common/Carousel/ReviewCardsCarousel";
 import reviewDetails from "@/components/Common/Carousel/ReviewCardsCarousel/data";
 import SpaBusiness from "@/components/SpaBusiness";
 import Footer from "@/components/Footer";
-import Images from "../../public/Images";
 import AppNotificationMb from "@/components/Common/AppNotification";
+import Images from "../../public/Images";
+import { getItemWithExpiry } from "@/library/helperFunctions";
+
+//props
+import TokenPayload from "./home/index.d";
 
 //css
 import { PageWrapper, Wrapper, WrapperBg } from "./home/index.styles";
@@ -26,6 +33,40 @@ import { PageWrapper, Wrapper, WrapperBg } from "./home/index.styles";
  */
 const Home = () => {
   const [showNotification, setShowNotification] = useState<boolean>(false);
+  const user = useAppSelector((state) => state.user);
+  const dispatch = useAppDispatch();
+
+  const getUser = async (token: string, email: string) => {
+    try {
+      const response = await dispatch(
+        getUserByEmail({ email, auth_token: token })
+      );
+      if (response.meta.requestStatus === "fulfilled") {
+        const userData = response.payload;
+        if (userData) {
+          // Set user data in the Redux store
+          dispatch(setUserInfo(userData));
+        } else {
+          console.error("No user data found for the provided token.");
+        }
+      } else if (response.meta.requestStatus === "rejected") {
+        console.error("Failed to fetch user data:", response.payload?.error);
+      }
+    } catch (error) {
+      console.error("Error fetching user data:", error);
+    }
+  };
+
+  useEffect(() => {
+    if (!user?.email) {
+      const token = getItemWithExpiry("auth_token");
+
+      if (token) {
+        const decoded = jwt.decode(token) as TokenPayload;
+        getUser(token, decoded?.email);
+      }
+    }
+  }, []);
 
   useEffect(() => {
     toast.success("Welcome to the app!", {

@@ -3,6 +3,7 @@ import { Raleway, Oswald, Poppins, DM_Serif_Display } from "next/font/google";
 
 import Toast from "@/components/Common/Toast";
 import ThemeProvider from "@/Providers/ThemeProvider";
+import { Providers } from "@/redux/store/provider";
 
 //css
 import "./globals.css";
@@ -57,8 +58,11 @@ const RootLayout = ({
       <body
         className={`${raleway.className} ${dmSerif.className}antialised ${oswald.className}antialiased ${popins.className}antialiased`}>
         <ThemeProvider>
-          <Toast />
-          <Container>{children}</Container>
+          <Providers>
+            <Toast />
+            <Toast />
+            <Container>{children}</Container>
+          </Providers>
         </ThemeProvider>
       </body>
     </html>
