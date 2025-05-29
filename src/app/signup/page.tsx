@@ -14,7 +14,6 @@ const Signup = () => {
     <Wrapper>
       {/* Sign-up form component */}
       <SignupForm />
-      {/* <SignupOtpVerify /> */}
       {/* Decorative background image */}
       <Img src={Images.SignUpBg} alt="signupbg" />
     </Wrapper>
