@@ -6,6 +6,7 @@ import { useState } from "react";
 import menuOptions from "@/components/Header/data";
 import StyledListing from "@/components/Listing";
 import menuOptionsMb from "@/components/MobileHeader/data";
+import { useAppSelector } from "@/redux/store/hooks";
 
 //css
 import { Border, HeaderWrapperMb } from "./index.styles";
@@ -18,6 +19,7 @@ import { PageWrapper, Wrapper } from "../home/index.styles";
  */
 const Listing = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
+  const user = useAppSelector((state) => state.user);
 
   const onCloseMenu = () => {
     setShowMenu(false);
