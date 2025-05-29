@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
 import jwt from "jsonwebtoken";
 
@@ -35,6 +35,7 @@ const Home = () => {
   const [showNotification, setShowNotification] = useState<boolean>(false);
   const user = useAppSelector((state) => state.user);
   const dispatch = useAppDispatch();
+  const calledRef = useRef(false);
 
   const getUser = async (token: string, email: string) => {
     try {
@@ -58,15 +59,16 @@ const Home = () => {
   };
 
   useEffect(() => {
-    if (!user?.email) {
+    if (!calledRef.current && !user?.email) {
       const token = getItemWithExpiry("auth_token");
 
       if (token) {
         const decoded = jwt.decode(token) as TokenPayload;
         getUser(token, decoded?.email);
+        calledRef.current = true;
       }
     }
-  }, []);
+  }, [user?.email]);
 
   useEffect(() => {
     toast.success("Welcome to the app!", {
