@@ -71,13 +71,6 @@ const Home = () => {
   }, [user?.email]);
 
   useEffect(() => {
-    toast.success("Welcome to the app!", {
-      duration: 2000,
-      style: {
-        background: "#333",
-        color: "#fff",
-      },
-    });
     setShowNotification(true);
   }, []);
 

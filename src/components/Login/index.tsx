@@ -82,7 +82,7 @@ const LoginForm = () => {
     try {
       const encryptedPassword = CryptoJS.AES.encrypt(
         password,
-        "spaweval-password"
+        process.env.NEXT_PUBLIC_PASSWORD_SECRET!
       ).toString();
       const response = await dispatch(
         loginUser({ email: emailOrPhone, password: encryptedPassword })

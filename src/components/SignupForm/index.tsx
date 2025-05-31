@@ -69,7 +69,7 @@ const SignupForm = () => {
       if (validateForm(userDetails).valid) {
         const encryptedPassword = CryptoJS.AES.encrypt(
           userDetails.password,
-          "spaweval-password"
+          process.env.NEXT_PUBLIC_PASSWORD_SECRET!
         ).toString();
 
         const response = await dispatch(
