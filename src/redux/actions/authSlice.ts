@@ -26,7 +26,7 @@ export const signupUser = createAsyncThunk(
     async (payload: SignupPayload, { rejectWithValue }) => {
         try {
             const res = await axios.post(
-                `http://localhost:5500/api/auth/signup`,
+                `${process.env.API_URL}/api/auth/signup`,
                 payload,
                 { headers: { 'Content-Type': 'application/json' } }
             );
@@ -45,7 +45,7 @@ export const signupTokenAuthenticate = createAsyncThunk(
     async (payload: { token: string }, { rejectWithValue }) => {
         try {
             const res = await axios.get(
-                `http://localhost:5500/api/auth/signup/verify-token`,
+                `${process.env.API_URL}/api/auth/signup/verify-token`,
                 { headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${payload.token}` } }
             );
             if (res.status !== 200) {
@@ -63,7 +63,7 @@ export const verifySignupOtp = createAsyncThunk(
     async ({ email, otp }: { email: string; otp: string }, { rejectWithValue }) => {
         try {
             const res = await axios.post(
-                `http://localhost:5500/api/auth/signup/verify/otp`,
+                `${process.env.API_URL}/api/auth/signup/verify/otp`,
                 { email, otp },
                 { headers: { 'Content-Type': 'application/json' } }
             );
@@ -81,7 +81,7 @@ export const loginUser = createAsyncThunk(
     "auth/loginUser",
     async ({ email, password }: { email: string; password: string }, { rejectWithValue }) => {
         try {
-            const res = await axios.post("http://localhost:5500/api/auth/login", { email, password }, {
+            const res = await axios.post(`${process.env.API_URL}/api/auth/login`, { email, password }, {
                 headers: { 'Content-Type': 'application/json' }
             });
 

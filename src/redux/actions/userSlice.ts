@@ -30,7 +30,7 @@ export const getUserByEmail = createAsyncThunk(
     async (payload: { auth_token: string, email: string }, { rejectWithValue }) => {
         try {
             const response = await axios.get(
-                `http://localhost:5500/api/user/${payload.email}`,
+                `${process.env.API_URL}/api/user/${payload.email}`,
                 {
                     headers: {
                         'Content-Type': 'application/json',
