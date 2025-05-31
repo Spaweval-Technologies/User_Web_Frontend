@@ -7,6 +7,14 @@ export const RememberPasswordWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   margin: 0px 0 18px;
+  width: 100%;
+  max-width: fit-content;
+  gap: 8px;
+  min-width: -webkit-fill-available;
+
+  & > *:first-child {
+    width: fit-content;
+  }
 `;
 
 export const ForgetPasswordLink = styled(Link)`
