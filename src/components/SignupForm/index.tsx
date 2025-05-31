@@ -66,6 +66,8 @@ const SignupForm = () => {
     e.preventDefault();
     setError(null);
     try {
+      console.log(process.env.NEXT_PUBLIC_PASSWORD_SECRET);
+      console.log(process.env.NEXT_PUBLIC_API_URL);
       if (validateForm(userDetails).valid) {
         const encryptedPassword = CryptoJS.AES.encrypt(
           userDetails.password,
