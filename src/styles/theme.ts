@@ -33,7 +33,11 @@ export const lightTheme = {
     neutralGray: '#d8d8d8',
     melon: '#ffb6b6',
     darkBlue: '#02059D',
-    whiteLightGray: '#f0f0f0'
+    whiteLightGray: '#f0f0f0',
+    error: '#ff4d4d',
+    success: '#4CAF50',
+    warning: '#ff9800',
+    info: '#2196F3',
   },
   fontWeights: {
     lighter: 300,

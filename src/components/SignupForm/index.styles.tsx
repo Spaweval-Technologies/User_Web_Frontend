@@ -4,7 +4,7 @@ import IconButton from "../Common/Buttons/IconButton";
 import Button from "../Common/Buttons/Button";
 import Link from "next/link";
 
-export const FormContainer = styled.div`
+export const FormContainer = styled.form`
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -106,7 +106,7 @@ export const Field = styled.div`
   flex-direction: column;
   gap: 9px;
   width: 100%;
-  margin: 0;
+  margin-top: 10px;
 `;
 
 export const Label = styled.label`
@@ -218,4 +218,12 @@ export const ReferalCodeInput = styled.input`
   &::placeholder {
     color: ${({ theme }) => theme.colors.bluishGrey};
   }
+`;
+
+export const CommonError = styled.p`
+  color: ${({ theme }) => theme.colors.error};
+  font-size: 14px;
+  margin: 12px 0;
+  font-weight: ${({ theme }) => theme.fontWeights.medium};
+  align-self: flex-start;
 `;
