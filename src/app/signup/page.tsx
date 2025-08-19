@@ -1,8 +1,8 @@
-import SignupForm from "@/components/SignupForm";
-import Images from "../../../public/Images";
+import SignupForm from '@/components/SignupForm';
+import Images from '../../../public/Images';
 
 //css
-import { Img, Wrapper } from "./index.styles";
+import { Img, Wrapper } from './index.styles';
 
 /**
  * Signup page component that displays the user registration form

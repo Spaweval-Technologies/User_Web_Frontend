@@ -1,6 +1,6 @@
-"use client";
-import { MobileHeaderWrapper } from "@/components/MobileHeader/index.styles";
-import styled from "styled-components";
+'use client';
+import { MobileHeaderWrapper } from '@/components/MobileHeader/index.styles';
+import styled from 'styled-components';
 
 export const HeaderWrapperMb = styled(MobileHeaderWrapper)`
   border-bottom: 2px solid ${({ theme }) => theme.colors.lightPastelBlue};

@@ -1,14 +1,14 @@
-import Icons from "@/Icons";
-import Icon from "../Common/Icon";
-import SliderMb from "../Common/SliderMb";
-import MenuOptions from "./MenuOptions";
-import ListingSearch from "../ListingSearch";
+import Icons from '@/Icons';
+import Icon from '../Common/Icon';
+import SliderMb from '../Common/SliderMb';
+import MenuOptions from './MenuOptions';
+import ListingSearch from '../ListingSearch';
 
 //props
-import { StaticHeaderMbProps } from "./index.d";
+import { StaticHeaderMbProps } from './index.d';
 
 //css
-import { MbHeader } from "./index.styles";
+import { MbHeader } from './index.styles';
 
 /**
  * StaticHeaderMb - A static mobile header component with a logo and menu icon.
@@ -39,13 +39,7 @@ const StaticHeaderMb = ({
           mobileheight={37}
         />
         {showSearch && <ListingSearch />}
-        <Icon
-          onClick={onMenuClick}
-          src={Icons.Menu}
-          alt="menu"
-          width={32}
-          height={32}
-        />
+        <Icon onClick={onMenuClick} src={Icons.Menu} alt="menu" width={32} height={32} />
       </MbHeader>
       <SliderMb showSlider={showMenu} onClose={onMenuClose}>
         <MenuOptions menuOptions={menuOptions} />

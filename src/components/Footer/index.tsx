@@ -1,6 +1,6 @@
-import Icons from "@/Icons";
-import Icon from "../Common/Icon";
-import footerLinks, { socialMediaLinks } from "./data";
+import Icons from '@/Icons';
+import Icon from '../Common/Icon';
+import footerLinks, { socialMediaLinks } from './data';
 
 //css
 import {
@@ -22,7 +22,7 @@ import {
   SocialMediaIcon,
   SocialMediaWrapper,
   Wrapper,
-} from "./index.styles";
+} from './index.styles';
 
 /**
  * Footer Component
@@ -36,23 +36,20 @@ const Footer = () => {
         <LogoContentWrapper>
           <Icon src={Icons.Logo} alt="logo" width={50} height={36} />
           <Description>
-            A good spa description might be: “Indulge in the ultimate relaxation
-            experience at our serene spa oasis. From luxurious treatments to
-            tranquil ambiance, our expert therapists tailor every experience to
-            rejuvenate the mind, body, and spirit.
+            A good spa description might be: “Indulge in the ultimate relaxation experience at our
+            serene spa oasis. From luxurious treatments to tranquil ambiance, our expert therapists
+            tailor every experience to rejuvenate the mind, body, and spirit.
           </Description>
         </LogoContentWrapper>
         <Wrapper>
           {footerLinks &&
             footerLinks.map((list, id) => (
-              <List key={list.title + id + "link-footer"}>
+              <List key={list.title + id + 'link-footer'}>
                 <ListTitle>{list.title}</ListTitle>
                 {list?.links &&
                   list.links.map((linkItem, id) => (
                     <ListItem key={linkItem.name + id}>
-                      <ListItemLink href={linkItem.href}>
-                        {linkItem.name}
-                      </ListItemLink>
+                      <ListItemLink href={linkItem.href}>{linkItem.name}</ListItemLink>
                     </ListItem>
                   ))}
               </List>
@@ -60,12 +57,7 @@ const Footer = () => {
           <GetApp>
             Get the App
             <IconsWrapper>
-              <Icon
-                src={Icons.AndroidSolid}
-                alt="android"
-                width={24}
-                height={24}
-              />
+              <Icon src={Icons.AndroidSolid} alt="android" width={24} height={24} />
               <Icon src={Icons.AppleSolid} alt="apple" width={24} height={24} />
             </IconsWrapper>
           </GetApp>
@@ -75,7 +67,7 @@ const Footer = () => {
               {socialMediaLinks &&
                 socialMediaLinks.map((socialMedia, id) => (
                   <SocialMediaIcon
-                    key={socialMedia.alt + id + "social-media"}
+                    key={socialMedia.alt + id + 'social-media'}
                     src={socialMedia.icon}
                     alt={socialMedia.alt}
                     width={16}
@@ -87,31 +79,20 @@ const Footer = () => {
             </SocialMediaWrapper>
             <HR />
             <SocialMediaWrapper>
-              <SocialMediaIcon
-                src={Icons.AndroidSolid}
-                alt="android"
-                width={26}
-                height={26}
-              />
-              <SocialMediaIcon
-                src={Icons.AppleSolid}
-                alt="apple"
-                width={26}
-                height={26}
-              />
+              <SocialMediaIcon src={Icons.AndroidSolid} alt="android" width={26} height={26} />
+              <SocialMediaIcon src={Icons.AppleSolid} alt="apple" width={26} height={26} />
             </SocialMediaWrapper>
           </List>
         </Wrapper>
       </FooterContent>
       <CopyRightContainer>
         <Disclaimer>
-          WEBSITE DISCLAIMER: Spawn services are not intended to treat,
-          diagnose, cure, or prevent any disease.
+          WEBSITE DISCLAIMER: Spawn services are not intended to treat, diagnose, cure, or prevent
+          any disease.
         </Disclaimer>
         <CopyRightText>
           Copyright © 2024
-          <CopyRightLink href="#"> www.spawn.com</CopyRightLink>. All Rights
-          Reserved.
+          <CopyRightLink href="#"> www.spawn.com</CopyRightLink>. All Rights Reserved.
         </CopyRightText>
       </CopyRightContainer>
     </FooterWrapper>

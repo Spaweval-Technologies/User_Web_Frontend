@@ -3,10 +3,10 @@ import userReducer from '../actions/userSlice';
 import authReducer from '../actions/authSlice';
 
 export const store = configureStore({
-    reducer: {
-        user: userReducer,
-        auth: authReducer
-    },
+  reducer: {
+    user: userReducer,
+    auth: authReducer,
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;

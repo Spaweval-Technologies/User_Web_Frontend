@@ -1,12 +1,12 @@
-"use client";
-import styled from "styled-components";
+'use client';
+import styled from 'styled-components';
 
 export const SearchWrapper = styled.div`
-  outline: 6px solid ${({theme}) => theme.colors.transparentWhite};
+  outline: 6px solid ${({ theme }) => theme.colors.transparentWhite};
   border-radius: 50px;
   max-width: 1030px;
   width: 100%;
-  box-shadow: 1px 4px 20px 0px ${({theme}) => theme.colors.transparentGrey};
+  box-shadow: 1px 4px 20px 0px ${({ theme }) => theme.colors.transparentGrey};
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -32,8 +32,7 @@ export const Wrapper = styled.div`
     width: 28%;
   }
 
-  @media (min-width: ${({ theme }) =>
-      theme.breakpoints.md}) and (max-width: ${({ theme }) =>
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) and (max-width: ${({ theme }) =>
       theme.breakpoints.lg}) {
     width: 80%;
     min-width: 80%;

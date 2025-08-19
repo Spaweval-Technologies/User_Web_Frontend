@@ -1,10 +1,10 @@
-import { useState } from "react";
-import Icons from "../../Icons";
-import Icon from "../Common/Icon";
-import Search from "../Search";
-import StyledQrCode from "../Common/QrCode";
-import StaticHeader from "./Header";
-import menuOptions from "./data";
+import { useState } from 'react';
+import Icons from '../../Icons';
+import Icon from '../Common/Icon';
+import Search from '../Search';
+import StyledQrCode from '../Common/QrCode';
+import StaticHeader from './Header';
+import menuOptions from './data';
 
 //css
 import {
@@ -15,7 +15,7 @@ import {
   SubTitle,
   Title,
   TitleContainer,
-} from "./index.styles";
+} from './index.styles';
 
 /**
  * StyledHeader component
@@ -51,7 +51,7 @@ const StyledHeader = () => {
           ) : (
             <StyledQrCode
               onMouseLeave={() => setShowQRCode(false)}
-              content={"Scan to Download"}
+              content={'Scan to Download'}
               value="check"
             />
           )}

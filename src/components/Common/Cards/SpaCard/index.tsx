@@ -1,8 +1,8 @@
-import RatingStars from "../../RatingStars";
-import Images from "../../../../../public/Images";
+import RatingStars from '../../RatingStars';
+import Images from '../../../../../public/Images';
 
 //props
-import SpaCardProps from "./index.d";
+import SpaCardProps from './index.d';
 
 //css
 import {
@@ -14,7 +14,7 @@ import {
   Ratting,
   ReviewCount,
   Wrapper,
-} from "./index.styles";
+} from './index.styles';
 
 /**
  * Spa Card
@@ -27,19 +27,12 @@ import {
  * @param {number} props.ratting - Average rating for the spa (e.g., 4.5).
  * @returns {JSX.Element} A styled spa card component.
  */
-const SpaCard = ({
-  title,
-  description,
-  img,
-  alt,
-  numReviews,
-  ratting,
-}: SpaCardProps) => {
+const SpaCard = ({ title, description, img, alt, numReviews, ratting }: SpaCardProps) => {
   return (
     <CardWrapper>
       <CardImage
         src={img ?? Images.DestinationSpa}
-        alt={alt ?? "spa"}
+        alt={alt ?? 'spa'}
         width="100"
         height="100"
         loading="lazy"
@@ -48,7 +41,14 @@ const SpaCard = ({
         <CardTitle>{title}</CardTitle>
         <Wrapper>
           <Ratting>{ratting}</Ratting>
-           <RatingStars mobileheight={13} mobilewidth={13} iconHeight={15} iconWidth={15} rating={ratting} totalRating={1} />
+          <RatingStars
+            mobileheight={13}
+            mobilewidth={13}
+            iconHeight={15}
+            iconWidth={15}
+            rating={ratting}
+            totalRating={1}
+          />
           <ReviewCount>({numReviews} Reviews)</ReviewCount>
         </Wrapper>
         <CardDescription>{description}</CardDescription>

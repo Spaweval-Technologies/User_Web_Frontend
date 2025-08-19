@@ -1,8 +1,8 @@
-"use client";
-import styled from "styled-components";
-import IconButton from "../Common/Buttons/IconButton";
-import { OutlinedButton } from "../Common/Buttons/OutlinedButton/index.styles";
-import { Button } from "../TimePicker/index.styles";
+'use client';
+import styled from 'styled-components';
+import IconButton from '../Common/Buttons/IconButton';
+import { OutlinedButton } from '../Common/Buttons/OutlinedButton/index.styles';
+import { Button } from '../TimePicker/index.styles';
 
 export const FiltersContainer = styled.div`
   display: flex;

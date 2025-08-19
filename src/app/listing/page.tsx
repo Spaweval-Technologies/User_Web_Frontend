@@ -1,16 +1,16 @@
-"use client";
-import Footer from "@/components/Footer";
-import StaticHeader from "@/components/Header/Header";
-import StaticHeaderMb from "@/components/MobileHeader/HeaderMb";
-import { useState } from "react";
-import menuOptions from "@/components/Header/data";
-import StyledListing from "@/components/Listing";
-import menuOptionsMb from "@/components/MobileHeader/data";
-import { useAppSelector } from "@/redux/store/hooks";
+'use client';
+import Footer from '@/components/Footer';
+import StaticHeader from '@/components/Header/Header';
+import StaticHeaderMb from '@/components/MobileHeader/HeaderMb';
+import { useEffect, useState } from 'react';
+import menuOptions from '@/components/Header/data';
+import StyledListing from '@/components/Listing';
+import { useAppSelector } from '@/redux/store/hooks';
 
 //css
-import { Border, HeaderWrapperMb } from "./index.styles";
-import { PageWrapper, Wrapper } from "../home/index.styles";
+import { Border, HeaderWrapperMb } from './index.styles';
+import { PageWrapper, Wrapper } from '../home/index.styles';
+import getMenuOptionsMb from '@/components/MobileHeader/data';
 
 /**
  * React functional component that renders a page with a header, mobile header, listing, and footer.
@@ -24,6 +24,8 @@ const Listing = () => {
   const onCloseMenu = () => {
     setShowMenu(false);
   };
+
+  const menuOptionsMb = getMenuOptionsMb(user.name || 'Guest');
 
   return (
     <PageWrapper>

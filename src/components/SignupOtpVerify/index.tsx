@@ -1,15 +1,15 @@
-"use client";
-import { useEffect, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
-import { useAppDispatch } from "@/redux/store/hooks";
-import { verifySignupOtp } from "@/redux/actions/authSlice";
+'use client';
+import { useEffect, useRef, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { useAppDispatch } from '@/redux/store/hooks';
+import { verifySignupOtp } from '@/redux/actions/authSlice';
 
 //props
-import SignupVerifyOtpProps from "./index.d";
+import SignupVerifyOtpProps from './index.d';
 
 // CSS
-import { FormContainer, Submit, Text, Title } from "../SignupForm/index.styles";
-import { CodeInput, Input, Resend, SentCode, Timer } from "./index.styles";
+import { FormContainer, Submit, Text, Title } from '../SignupForm/index.styles';
+import { CodeInput, Input, Resend, SentCode, Timer } from './index.styles';
 
 /**
  * SignupOtpVerify component renders the OTP verification screen
@@ -19,7 +19,7 @@ import { CodeInput, Input, Resend, SentCode, Timer } from "./index.styles";
  */
 const SignupOtpVerify = ({ email, token }: SignupVerifyOtpProps) => {
   const dispatch = useAppDispatch();
-  const [otp, setOtp] = useState<string[]>(["", "", "", "", "", ""]);
+  const [otp, setOtp] = useState<string[]>(['', '', '', '', '', '']);
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
   const [otpError, setOtpError] = useState<string | null>(null);
   const [timer, setTimer] = useState<number>(120); // 2 minutes = 120 seconds
@@ -38,15 +38,12 @@ const SignupOtpVerify = ({ email, token }: SignupVerifyOtpProps) => {
   }, [timer]);
 
   const formatTime = (seconds: number): string => {
-    const min = String(Math.floor(seconds / 60)).padStart(2, "0");
-    const sec = String(seconds % 60).padStart(2, "0");
+    const min = String(Math.floor(seconds / 60)).padStart(2, '0');
+    const sec = String(seconds % 60).padStart(2, '0');
     return `${min}:${sec}`;
   };
 
-  const handleChange = (
-    index: number,
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleChange = (index: number, e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     if (/^\d?$/.test(value)) {
       const updatedOtp = [...otp];
@@ -59,11 +56,8 @@ const SignupOtpVerify = ({ email, token }: SignupVerifyOtpProps) => {
     }
   };
 
-  const handleKeyDown = (
-    index: number,
-    e: React.KeyboardEvent<HTMLInputElement>
-  ) => {
-    if (e.key === "Backspace" && !otp[index] && index > 0) {
+  const handleKeyDown = (index: number, e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Backspace' && !otp[index] && index > 0) {
       inputRefs.current[index - 1]?.focus();
     }
   };
@@ -71,9 +65,9 @@ const SignupOtpVerify = ({ email, token }: SignupVerifyOtpProps) => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setOtpError(null);
-    const fullOtp = otp.join("");
+    const fullOtp = otp.join('');
     if (fullOtp.length !== 6 && email) {
-      setOtpError("Please enter a valid 6-digit OTP");
+      setOtpError('Please enter a valid 6-digit OTP');
       return;
     }
 
@@ -83,12 +77,12 @@ const SignupOtpVerify = ({ email, token }: SignupVerifyOtpProps) => {
 
       if (response.payload?.error) {
         setOtpError(response.payload.error.message);
-      } else if (response.meta?.requestStatus === "fulfilled") {
-        localStorage.setItem("signup_success", "true");
-        router.push("/login");
+      } else if (response.meta?.requestStatus === 'fulfilled') {
+        localStorage.setItem('signup_success', 'true');
+        router.push('/login');
       }
     } catch (error) {
-      setOtpError("Error verifying OTP");
+      setOtpError('Error verifying OTP');
     }
   };
 

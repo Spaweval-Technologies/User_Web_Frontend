@@ -1,8 +1,8 @@
 //props
-import IconProps from "./index.d";
+import IconProps from './index.d';
 
 //css
-import { IconWrapper } from "./index.styles";
+import { IconWrapper } from './index.styles';
 
 /**
   Icon component
@@ -15,6 +15,7 @@ import { IconWrapper } from "./index.styles";
   @param {string} color - The color of the icon.
   @param {number} mobilewidth - The width of the icon image on mobile.
   @param {number} mobileheight - The height of the icon image on mobile.
+  @param {string} title - The title attribute for the icon.
   @returns {JSX.Element} - An image element with specified properties.
 */
 const Icon = ({
@@ -27,11 +28,12 @@ const Icon = ({
   color,
   mobilewidth,
   mobileheight,
+  title,
 }: IconProps) => {
   return (
     <IconWrapper
       src={src}
-      alt={alt ?? "Logo"}
+      alt={alt ?? 'Logo'}
       width={width ?? 24}
       height={height ?? 24}
       className={className}
@@ -39,6 +41,7 @@ const Icon = ({
       color={color}
       mobilewidth={mobilewidth}
       mobileheight={mobileheight}
+      title={title}
     />
   );
 };

@@ -1,10 +1,10 @@
-"use client";
-import { useEffect, useRef, useState } from "react";
+'use client';
+import { useEffect, useRef, useState } from 'react';
 
-import Icons from "@/Icons";
+import Icons from '@/Icons';
 
 //props
-import StyledSelectProps from "./index.d";
+import StyledSelectProps from './index.d';
 
 //css
 import {
@@ -16,7 +16,8 @@ import {
   GroupLabel,
   GroupOptions,
   Hr,
-} from "./index.styles";
+} from './index.styles';
+import { StyledIconBtn } from '@/components/MobileHeader/index.styles';
 
 /**
  * StyledSelect component
@@ -36,18 +37,18 @@ const StyledSelect = ({
   disabled,
   options,
   defaultText,
-  position = "left",
+  position = 'left',
 }: StyledSelectProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const selectedOptionLabel = (() => {
+  const selectedOption = (() => {
     for (const option of options) {
-      if ("options" in option) {
+      if ('options' in option) {
         const found = option.options.find((opt) => opt.value === value);
-        if (found) return found.label;
+        if (found) return found;
       } else if (option.value === value) {
-        return option.label;
+        return option;
       }
     }
     return null;
@@ -55,15 +56,12 @@ const StyledSelect = ({
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsOpen(false);
       }
     };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   const handleSelect = (val: string) => {
@@ -80,7 +78,19 @@ const StyledSelect = ({
   return (
     <DropdownWrapper ref={dropdownRef} disabled={disabled}>
       <SelectedValue onClick={handleOpen}>
-        {selectedOptionLabel || defaultText}
+        {selectedOption && selectedOption?.icon ? (
+          <StyledIconBtn
+            iconSrc={selectedOption.icon}
+            iconAlt={selectedOption.label}
+            iconWidth={22}
+            iconHeight={22}
+            iconPosition="left"
+          >
+            {selectedOption?.label}
+          </StyledIconBtn>
+        ) : (
+          selectedOption?.label || defaultText
+        )}
         <ArrowIcon
           src={isOpen ? Icons.UpArrow : Icons.DownArrow}
           alt="arrow"
@@ -91,7 +101,7 @@ const StyledSelect = ({
       {isOpen && (
         <DropdownList direction={position}>
           {options.map((optGroupOrOption) => {
-            if ("options" in optGroupOrOption) {
+            if ('options' in optGroupOrOption) {
               return (
                 <GroupOptions key={optGroupOrOption.label}>
                   <GroupLabel>{optGroupOrOption.label}</GroupLabel>
@@ -101,7 +111,21 @@ const StyledSelect = ({
                       key={opt.value}
                       onClick={() => handleSelect(opt.value)}
                     >
-                      {opt.child ? opt.child : opt.label}
+                      {opt.icon ? (
+                        <StyledIconBtn
+                          iconSrc={opt.icon}
+                          iconAlt={opt.label}
+                          iconWidth={22}
+                          iconHeight={22}
+                          iconPosition="left"
+                        >
+                          {opt.label}
+                        </StyledIconBtn>
+                      ) : opt.child ? (
+                        opt.child
+                      ) : (
+                        opt.label
+                      )}
                     </DropdownItem>
                   ))}
                   <Hr />
@@ -114,9 +138,21 @@ const StyledSelect = ({
                   key={optGroupOrOption.value}
                   onClick={() => handleSelect(optGroupOrOption.value)}
                 >
-                  {optGroupOrOption.child
-                    ? optGroupOrOption.child
-                    : optGroupOrOption.label}
+                  {optGroupOrOption.icon ? (
+                    <StyledIconBtn
+                      iconSrc={optGroupOrOption.icon}
+                      iconAlt={optGroupOrOption.label}
+                      iconWidth={22}
+                      iconHeight={22}
+                      iconPosition="left"
+                    >
+                      {optGroupOrOption.label}
+                    </StyledIconBtn>
+                  ) : optGroupOrOption.child ? (
+                    optGroupOrOption.child
+                  ) : (
+                    optGroupOrOption.label
+                  )}
                 </DropdownItem>
               );
             }

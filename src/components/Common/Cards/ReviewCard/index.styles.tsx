@@ -1,6 +1,6 @@
-"use client";
-import styled from "styled-components";
-import Icon from "../../Icon";
+'use client';
+import styled from 'styled-components';
+import Icon from '../../Icon';
 
 export const CardWrapper = styled.div`
   cursor: pointer;

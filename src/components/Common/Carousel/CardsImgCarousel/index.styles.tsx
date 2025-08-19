@@ -1,6 +1,6 @@
-"use client";
-import styled from "styled-components";
-import { CarouselWrapper } from "../Carousel/index.styles";
+'use client';
+import styled from 'styled-components';
+import { CarouselWrapper } from '../Carousel/index.styles';
 
 export const CardsCarousel = styled(CarouselWrapper)`
   padding: 0;

@@ -1,6 +1,6 @@
-"use client";
-import Image from "next/image";
-import styled from "styled-components";
+'use client';
+import Image from 'next/image';
+import styled from 'styled-components';
 
 export const CardWrapper = styled.div`
   display: flex;

@@ -1,8 +1,8 @@
-"use client";
-import styled from "styled-components";
-import StyledQrCode from "../Common/QrCode";
-import Image from "next/image";
-import { GettheApp } from "../Header/index.styles";
+'use client';
+import styled from 'styled-components';
+import StyledQrCode from '../Common/QrCode';
+import Image from 'next/image';
+import { GettheApp } from '../Header/index.styles';
 
 export const Container = styled.div`
   display: flex;
@@ -17,8 +17,7 @@ export const Container = styled.div`
     width: 58%;
   }
 
-  @media (min-width: ${({ theme }) =>
-      theme.breakpoints.md}) and (max-width: ${({ theme }) =>
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) and (max-width: ${({ theme }) =>
       theme.breakpoints.xl}) {
     & > img {
       width: 48%;
@@ -43,8 +42,7 @@ export const Content = styled.div`
   width: 39%;
   box-sizing: border-box;
 
-  @media (min-width: ${({ theme }) =>
-      theme.breakpoints.md}) and (max-width: ${({ theme }) =>
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) and (max-width: ${({ theme }) =>
       theme.breakpoints.xl}) {
     width: 48%;
   }

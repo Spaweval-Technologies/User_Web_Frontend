@@ -1,7 +1,7 @@
-"use client";
-import Link from "next/link";
-import styled from "styled-components";
-import Button from "../Buttons/Button";
+'use client';
+import Link from 'next/link';
+import styled from 'styled-components';
+import Button from '../Buttons/Button';
 
 export const NotificationWrapper = styled.div<{ show?: boolean }>`
   width: 100%;
@@ -11,7 +11,7 @@ export const NotificationWrapper = styled.div<{ show?: boolean }>`
   padding: 22px 20px 23px;
   box-sizing: border-box;
   background: ${({ theme }) => theme.colors.darkBlue};
-  display: ${({ show }) => (show ? "flex" : "none")};
+  display: ${({ show }) => (show ? 'flex' : 'none')};
   align-items: center;
   justify-content: space-between;
 

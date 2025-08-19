@@ -1,20 +1,14 @@
-"use client";
-import { useState } from "react";
-import Icons from "@/Icons";
+'use client';
+import { useState } from 'react';
+import Icons from '@/Icons';
 
-import StyledSelect from "../Common/Select";
-import StyledModal from "../Common/Modal";
-import timeOptions from "./data";
-import { PickDateBtn } from "../DatePicker/index.styles";
+import StyledSelect from '../Common/Select';
+import StyledModal from '../Common/Modal';
+import timeOptions from './data';
+import { PickDateBtn } from '../DatePicker/index.styles';
 
 //css
-import {
-  Button,
-  Container,
-  Tags,
-  TimePickerContainer,
-  TimeSelectWrapper,
-} from "./index.styles";
+import { Button, Container, Tags, TimePickerContainer, TimeSelectWrapper } from './index.styles';
 
 /**
  * TimePicker component
@@ -48,8 +42,9 @@ const TimePicker = () => {
         iconSrc={Icons.Clock}
         iconAlt="clock"
         iconHeight={24}
-        iconWidth={24}>
-        {startTime ?? "Any Time"}
+        iconWidth={24}
+      >
+        {startTime ?? 'Any Time'}
       </PickDateBtn>
       {open && (
         <StyledModal isOpen={open} onClose={handleClose}>
@@ -64,13 +59,13 @@ const TimePicker = () => {
               <StyledSelect
                 position="right"
                 defaultText="From"
-                value={startTime ?? ""}
+                value={startTime ?? ''}
                 onChange={(time) => handleStartTimeSelect(time)}
                 options={timeOptions}
               />
               <StyledSelect
                 defaultText="To"
-                value={endTime ?? ""}
+                value={endTime ?? ''}
                 onChange={(time) => handleEndTimeSelect(time)}
                 options={timeOptions}
               />

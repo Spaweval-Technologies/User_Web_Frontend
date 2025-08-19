@@ -1,8 +1,8 @@
-"use client";
-import styled from "styled-components";
-import Icon from "../Common/Icon";
-import IconButton from "../Common/Buttons/IconButton";
-import { DayPicker } from "react-day-picker";
+'use client';
+import styled from 'styled-components';
+import Icon from '../Common/Icon';
+import IconButton from '../Common/Buttons/IconButton';
+import { DayPicker } from 'react-day-picker';
 
 export const DatePickerWrapper = styled.div`
   position: relative;
@@ -36,7 +36,7 @@ export const PickDateBtn = styled(IconButton)`
     width: 100%;
   }
 
-  @media (max-width: ${({theme}) => theme.breakpoints.vsm}){
+  @media (max-width: ${({ theme }) => theme.breakpoints.vsm}){
     padding: 7px 10px;
     max-width: 100%;
     font-size: 14px;

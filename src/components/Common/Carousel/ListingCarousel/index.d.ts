@@ -1,7 +1,7 @@
-import ListingCardProps from "../../Cards/ListingCard/index.d";
+import ListingCardProps from '../../Cards/ListingCard/index.d';
 
 type ListingCarouselProps = {
-  spaList: ListingCardProps[]
-}
+  spaList: ListingCardProps[];
+};
 
 export default ListingCarouselProps;

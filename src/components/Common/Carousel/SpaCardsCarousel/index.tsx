@@ -1,11 +1,11 @@
-import SpaCard from "../../Cards/SpaCard";
+import SpaCard from '../../Cards/SpaCard';
 
 //props
-import SpaCardCarouselProps from "./index.d";
+import SpaCardCarouselProps from './index.d';
 
 //css
-import { CarouselMobileWrapper, TitleWrapper, Wrapper } from "./index.styles";
-import Carousel from "../Carousel";
+import { CarouselMobileWrapper, TitleWrapper, Wrapper } from './index.styles';
+import Carousel from '../Carousel';
 
 /**
  * CardCarousel component
@@ -14,7 +14,7 @@ import Carousel from "../Carousel";
 const CardCarousel = ({ title, spaDetails }: SpaCardCarouselProps) => {
   return (
     <Wrapper>
-      <TitleWrapper>{title ?? "New to Spwan"}</TitleWrapper>
+      <TitleWrapper>{title ?? 'New to Spwan'}</TitleWrapper>
       <Carousel id="spaCarousel">
         {spaDetails &&
           spaDetails.map((spa) => (

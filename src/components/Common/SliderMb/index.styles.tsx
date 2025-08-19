@@ -1,8 +1,8 @@
-"use client";
-import styled from "styled-components";
+'use client';
+import styled from 'styled-components';
 
 export const SliderWrapper = styled.section<{ showSlider?: boolean }>`
-  display: ${({ showSlider }) => (showSlider ? "flex" : "none")};
+  display: ${({ showSlider }) => (showSlider ? 'flex' : 'none')};
   flex-direction: column;
   width: 80%;
   height: 100vh;
@@ -25,7 +25,7 @@ export const SliderWrapper = styled.section<{ showSlider?: boolean }>`
 `;
 
 export const Backdrop = styled.div<{ showSlider?: boolean }>`
-  display: ${({ showSlider }) => (showSlider ? "block" : "none")};
+  display: ${({ showSlider }) => (showSlider ? 'block' : 'none')};
   position: fixed;
   top: 0;
   left: 0;

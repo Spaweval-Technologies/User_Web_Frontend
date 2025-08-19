@@ -1,8 +1,8 @@
-import SpaCardProps from "../../Cards/SpaCard/index.d";
+import SpaCardProps from '../../Cards/SpaCard/index.d';
 
 type SpaCardsCarouselProps = {
-    title: string,
-    spaDetails: SpaCardProps[]
-}
+  title: string;
+  spaDetails: SpaCardProps[];
+};
 
 export default SpaCardsCarouselProps;

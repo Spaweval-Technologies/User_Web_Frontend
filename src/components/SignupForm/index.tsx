@@ -1,16 +1,16 @@
-"use client";
-import { useState } from "react";
-import CryptoJS from "crypto-js";
-import { useRouter } from "next/navigation";
+'use client';
+import { useState } from 'react';
+import CryptoJS from 'crypto-js';
+import { useRouter } from 'next/navigation';
 
-import { useAppDispatch } from "@/redux/store/hooks";
-import { setUserInfo } from "@/redux/actions/userSlice";
-import { signupUser } from "@/redux/actions/authSlice";
-import Icons from "@/Icons";
-import validateForm from "./validateForm";
+import { useAppDispatch } from '@/redux/store/hooks';
+import { setUserInfo } from '@/redux/actions/userSlice';
+import { signupUser } from '@/redux/actions/authSlice';
+import Icons from '@/Icons';
+import validateForm from './validateForm';
 
 //props
-import UserDetails from "./index.d";
+import UserDetails from './index.d';
 
 //css
 import {
@@ -35,7 +35,7 @@ import {
   Title,
   Use,
   Wrapper,
-} from "./index.styles";
+} from './index.styles';
 
 /**
  * Renders a sign-up form for creating a new user account.
@@ -47,12 +47,12 @@ const SignupForm = () => {
   const router = useRouter();
 
   const [userDetails, setUserDetails] = useState<UserDetails>({
-    email: "",
-    firstName: "",
-    lastName: "",
-    password: "",
-    mobile_number: "",
-    referal_code: "",
+    email: '',
+    firstName: '',
+    lastName: '',
+    password: '',
+    mobile_number: '',
+    referal_code: '',
   });
 
   const [error, setError] = useState<string | null>(null);
@@ -66,8 +66,6 @@ const SignupForm = () => {
     e.preventDefault();
     setError(null);
     try {
-      console.log(process.env.NEXT_PUBLIC_PASSWORD_SECRET);
-      console.log(process.env.NEXT_PUBLIC_API_URL);
       if (validateForm(userDetails).valid) {
         const encryptedPassword = CryptoJS.AES.encrypt(
           userDetails.password,
@@ -83,19 +81,19 @@ const SignupForm = () => {
             referal_code: userDetails.referal_code,
           })
         );
-        if (response.meta.requestStatus === "rejected") {
+        if (response.meta.requestStatus === 'rejected') {
           setError(response.payload.error); // assuming error comes like this
-        } else if (response.meta.requestStatus === "fulfilled") {
+        } else if (response.meta.requestStatus === 'fulfilled') {
           dispatch(setUserInfo(response.payload));
-          router.push("/signup/submit");
+          router.push('/signup/submit');
         } else {
-          setError("Something went wrong. Please try again.");
+          setError('Something went wrong. Please try again.');
         }
       } else {
         setError(validateForm(userDetails).message);
       }
     } catch (error) {
-      setError("Signup failed. Please try again.");
+      setError('Signup failed. Please try again.');
     }
   };
 
@@ -104,18 +102,10 @@ const SignupForm = () => {
       <Title>Create an account</Title>
       {/* Social sign-up buttons */}
       <Wrapper>
-        <SignUpWith
-          iconSrc={Icons.Google}
-          iconAlt="google"
-          iconWidth={24}
-          iconHeight={24}>
+        <SignUpWith iconSrc={Icons.Google} iconAlt="google" iconWidth={24} iconHeight={24}>
           Sign up with Google
         </SignUpWith>
-        <SignUpWith
-          iconSrc={Icons.AppleSolid}
-          iconAlt="apple"
-          iconWidth={24}
-          iconHeight={24}>
+        <SignUpWith iconSrc={Icons.AppleSolid} iconAlt="apple" iconWidth={24} iconHeight={24}>
           Sign up with Apple
         </SignUpWith>
       </Wrapper>
@@ -176,7 +166,7 @@ const SignupForm = () => {
           placeholder="Enter your Mobile No."
           type="tel"
           id="mobile_number"
-          value={userDetails?.mobile_number ?? ""}
+          value={userDetails?.mobile_number ?? ''}
           onChange={handleInputChange}
           minLength={10}
           required

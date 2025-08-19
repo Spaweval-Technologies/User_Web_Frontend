@@ -1,12 +1,12 @@
-"use client";
-import { useState } from "react";
+'use client';
+import { useState } from 'react';
 
-import ListingCard from "../../Cards/ListingCard";
-import Icon from "../../Icon";
-import Icons from "@/Icons";
+import ListingCard from '../../Cards/ListingCard';
+import Icon from '../../Icon';
+import Icons from '@/Icons';
 
 //props
-import ListingCarouselProps from "./index.d";
+import ListingCarouselProps from './index.d';
 
 //css
 import {
@@ -18,7 +18,7 @@ import {
   StyledGradient,
   Wrapper,
   WrapperMb,
-} from "./index.styles";
+} from './index.styles';
 
 /**
  * ListingCarousel Component
@@ -42,10 +42,7 @@ const ListingCarousel = ({ spaList }: ListingCarouselProps) => {
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  const paginatedList = spaList.slice(
-    (currentPage - 1) * cardsPerPage,
-    currentPage * cardsPerPage
-  );
+  const paginatedList = spaList.slice((currentPage - 1) * cardsPerPage, currentPage * cardsPerPage);
 
   const handlePrev = () => {
     if (currentPage > 1) setCurrentPage((prev) => prev - 1);
@@ -77,7 +74,7 @@ const ListingCarousel = ({ spaList }: ListingCarouselProps) => {
         {paginatedList &&
           paginatedList.map((spa, id) => (
             <ListingCard
-              key={spa.title + id + "listing"}
+              key={spa.title + id + 'listing'}
               title={spa.title}
               description={spa.description}
               imgSrc={spa.imgSrc}
@@ -103,9 +100,10 @@ const ListingCarousel = ({ spaList }: ListingCarouselProps) => {
           <PageNumberWrapper>
             {getPageNumbers().map((num) => (
               <PageNumber
-                key={num + "pagination"}
+                key={num + 'pagination'}
                 onClick={() => setCurrentPage(num)}
-                isActive={num === currentPage}>
+                isActive={num === currentPage}
+              >
                 {num}
               </PageNumber>
             ))}
@@ -126,7 +124,7 @@ const ListingCarousel = ({ spaList }: ListingCarouselProps) => {
           {spaList &&
             spaList.map((spa, id) => (
               <ListingCard
-                key={"listing-cards-mb" + spa.title + id}
+                key={'listing-cards-mb' + spa.title + id}
                 title={spa.title}
                 description={spa.description}
                 imgSrc={spa.imgSrc}

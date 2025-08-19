@@ -1,10 +1,10 @@
-import Icons from "@/Icons";
+import Icons from '@/Icons';
 
-import RatingStars from "../Common/RatingStars";
-import Images from "../../../public/Images";
+import RatingStars from '../Common/RatingStars';
+import Images from '../../../public/Images';
 
 //props
-import SpaBusinessProps from "./index.d";
+import SpaBusinessProps from './index.d';
 
 //css
 import {
@@ -17,7 +17,7 @@ import {
   Review,
   Title,
   Wrapper,
-} from "./index.styles";
+} from './index.styles';
 
 /**
  * SpaBusiness Component
@@ -54,7 +54,8 @@ const SpaBusiness = ({
           iconAlt="white right arrow circle"
           iconWidth={20}
           iconHeight={20}
-          iconPosition="right">
+          iconPosition="right"
+        >
           Find out More
         </FindMore>
         <Ratting>Excellent {rating}/5</Ratting>

@@ -1,7 +1,7 @@
-"use client";
-import Image from "next/image";
-import styled from "styled-components";
-import { OutlinedButton } from "../../Buttons/OutlinedButton/index.styles";
+'use client';
+import Image from 'next/image';
+import styled from 'styled-components';
+import { OutlinedButton } from '../../Buttons/OutlinedButton/index.styles';
 
 export const CategoryCardWrapper = styled.div`
   display: flex;
@@ -57,14 +57,14 @@ export const Title = styled.h3<{ color?: string }>`
   line-height: 50px;
   font-weight: ${({ theme }) => theme.fontWeights.regular};
   color: ${({ theme, color }) =>
-    color === "black" ? theme.colors.text : theme.colors.textSecondary};
+    color === 'black' ? theme.colors.text : theme.colors.textSecondary};
   z-index: 2;
 `;
 
 export const Description = styled.p<{ color?: string }>`
   font-size: 15px;
   color: ${({ theme, color }) =>
-    color === "black" ? theme.colors.text : theme.colors.textSecondary};
+    color === 'black' ? theme.colors.text : theme.colors.textSecondary};
   line-height: 1;
   font-weight: ${({ theme }) => theme.fontWeights.regular};
   z-index: 2;
@@ -80,18 +80,17 @@ export const BookNow = styled(OutlinedButton)<{ color?: string }>`
   padding: 10px 20px;
   font-weight: ${({ theme }) => theme.fontWeights.bolder};
   color: ${({ theme, color }) =>
-    color === "black" ? theme.colors.text : theme.colors.textSecondary};
+    color === 'black' ? theme.colors.text : theme.colors.textSecondary};
   border: 1px solid
-    ${({ theme, color }) =>
-      color === "black" ? theme.colors.text : theme.colors.textSecondary};
+    ${({ theme, color }) => (color === 'black' ? theme.colors.text : theme.colors.textSecondary)};
 
   &:hover,
   &:active,
   &:focus {
     background-color: ${({ theme, color }) =>
-      color === "black" ? theme.colors.contrastBg : theme.colors.background};
+      color === 'black' ? theme.colors.contrastBg : theme.colors.background};
     color: ${({ theme, color }) =>
-      color === "black" ? theme.colors.textSecondary : theme.colors.text};
+      color === 'black' ? theme.colors.textSecondary : theme.colors.text};
     border: none;
   }
 

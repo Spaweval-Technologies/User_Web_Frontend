@@ -1,8 +1,8 @@
-import Icons from "@/Icons";
-import Icon from "../Common/Icon";
+import Icons from '@/Icons';
+import Icon from '../Common/Icon';
 
 //css
-import { Input, SearchWrapper } from "./index.styles";
+import { Input, SearchWrapper } from './index.styles';
 
 /**
  * ListingSearch component.

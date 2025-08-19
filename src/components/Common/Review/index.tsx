@@ -1,10 +1,10 @@
-import RatingStars from "../RatingStars";
+import RatingStars from '../RatingStars';
 
 //props
-import ReviewProps from "./index.d";
+import ReviewProps from './index.d';
 
 //css
-import { Ratting, ReviewCount, ReviewWrapper } from "./index.styles";
+import { Ratting, ReviewCount, ReviewWrapper } from './index.styles';
 
 /**
  * Review Component

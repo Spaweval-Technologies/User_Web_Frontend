@@ -1,7 +1,7 @@
-"use clients";
-import styled from "styled-components";
-import IconButton from "../Common/Buttons/IconButton";
-import Image from "next/image";
+'use clients';
+import styled from 'styled-components';
+import IconButton from '../Common/Buttons/IconButton';
+import Image from 'next/image';
 
 export const Wrapper = styled.section`
   width: 100%;
@@ -17,8 +17,7 @@ export const Wrapper = styled.section`
     height: 700px;
   }
 
-  @media (min-width: ${({ theme }) =>
-      theme.breakpoints.md}) and (max-width: ${({ theme }) =>
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) and (max-width: ${({ theme }) =>
       theme.breakpoints.xl}) {
     & > img {
       width: 50%;
@@ -42,8 +41,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media (min-width: ${({ theme }) =>
-      theme.breakpoints.md}) and (max-width: ${({ theme }) =>
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) and (max-width: ${({ theme }) =>
       theme.breakpoints.xl}) {
     width: 50%;
   }

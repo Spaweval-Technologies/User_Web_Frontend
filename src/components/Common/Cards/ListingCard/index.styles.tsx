@@ -1,6 +1,6 @@
-"use client";
-import Image from "next/image";
-import styled from "styled-components";
+'use client';
+import Image from 'next/image';
+import styled from 'styled-components';
 
 export const ListingCardWrapper = styled.div`
   display: flex;
@@ -26,8 +26,7 @@ export const ListingCardWrapper = styled.div`
     max-height: 435px;
   }
 
-  @media (min-width: ${({ theme }) =>
-      theme.breakpoints.sm}) and (max-width: ${({ theme }) =>
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) and (max-width: ${({ theme }) =>
       theme.breakpoints.md}) {
     width: 49%;
     height: 400px;

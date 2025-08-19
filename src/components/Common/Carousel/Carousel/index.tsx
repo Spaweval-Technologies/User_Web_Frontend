@@ -1,13 +1,13 @@
-import { useState } from "react";
-import { useKeenSlider } from "keen-slider/react";
-import Icons from "@/Icons";
-import Icon from "../../Icon";
+import { useState } from 'react';
+import { useKeenSlider } from 'keen-slider/react';
+import Icons from '@/Icons';
+import Icon from '../../Icon';
 
 //props
-import CarouselProps from "./index.d";
+import CarouselProps from './index.d';
 
 //css
-import { CarouselWrapper } from "./index.styles";
+import { CarouselWrapper } from './index.styles';
 
 /**
  * Carousel Component using Keen Slider.
@@ -25,7 +25,7 @@ const Carousel = ({ children, id }: CarouselProps) => {
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     initial: 0,
     slides: {
-      perView: "auto",
+      perView: 'auto',
       spacing: 31,
     },
     loop: true,
@@ -39,7 +39,7 @@ const Carousel = ({ children, id }: CarouselProps) => {
 
   return (
     <CarouselWrapper>
-      <div id={id ?? "Carousel"} ref={sliderRef} className="keen-slider">
+      <div id={id ?? 'Carousel'} ref={sliderRef} className="keen-slider">
         {children}
       </div>
       {loaded && instanceRef.current && (
@@ -51,9 +51,7 @@ const Carousel = ({ children, id }: CarouselProps) => {
                 instanceRef.current.prev();
               }
             }}
-            className={`arrow left-arrow ${
-              currentSlide === 0 && "arrow--disabled"
-            }`}
+            className={`arrow left-arrow ${currentSlide === 0 && 'arrow--disabled'}`}
             width={48}
             height={48}
             src={Icons.LeftArrow}

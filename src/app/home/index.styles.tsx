@@ -1,5 +1,5 @@
-"use client";
-import styled from "styled-components";
+'use client';
+import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
@@ -36,14 +36,14 @@ export const WrapperBg = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-image: url("/Images/Top_colors.png");
+  background-image: url('/Images/Top_colors.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     max-width: 100%;
-    background-image: url("/Images/HeaderMbBg.png");
+    background-image: url('/Images/HeaderMbBg.png');
   }
 `;
 
@@ -51,12 +51,12 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-image: url("/Images/Bottom_colors.png");
+  background-image: url('/Images/Bottom_colors.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    background-image: url("/Images/FooterMbBg.png");
+    background-image: url('/Images/FooterMbBg.png');
   }
 `;

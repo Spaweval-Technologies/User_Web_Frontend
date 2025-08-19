@@ -1,6 +1,6 @@
-"use client";
-import styled from "styled-components";
-import { OutlinedButton } from "../Common/Buttons/OutlinedButton/index.styles";
+'use client';
+import styled from 'styled-components';
+import { OutlinedButton } from '../Common/Buttons/OutlinedButton/index.styles';
 
 export const TimePickerContainer = styled.div`
   position: relative;

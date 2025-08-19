@@ -1,6 +1,6 @@
-"use client";
-import styled, { css } from "styled-components";
-import Icon from "../Icon";
+'use client';
+import styled, { css } from 'styled-components';
+import Icon from '../Icon';
 
 const transitionStyles = css`
   transition: all 0.3s ease;
@@ -27,12 +27,17 @@ export const GroupLabel = styled.div`
   color: ${({ theme }) => theme.colors.secondary};
   background-color: ${({ theme }) => theme.colors.background};
   pointer-events: none;
+
+  &: hover {
+    background-color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.text};
+  }
 `;
 
 export const DropdownWrapper = styled.div<{ disabled?: boolean }>`
   position: relative;
   width: 100%;
-  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
 `;
 
 export const SelectedValue = styled.div`
@@ -50,19 +55,19 @@ export const SelectedValue = styled.div`
   ${transitionStyles}
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.background};
+    background-color: ${({ theme }) => theme.colors.primary}20;
     color: ${({ theme }) => theme.colors.text};
   }
 `;
 
-export const DropdownList = styled.ul<{ direction?: "left" | "right" }>`
+export const DropdownList = styled.ul<{ direction?: 'left' | 'right' }>`
   position: absolute;
   left: auto;
   min-width: 100%;
   width: max-content;
   max-width: max-content;
   margin-top: 8px;
-  ${(props) => (props.direction === "left" ? "left: 0;" : "right: 0;")}
+  ${(props) => (props.direction === 'left' ? 'left: 0;' : 'right: 0;')}
   background-color: ${({ theme }) => theme.colors.background};
   border: 1px solid ${({ theme }) => theme.colors.secondary};
   border-radius: 12px;
@@ -72,10 +77,13 @@ export const DropdownList = styled.ul<{ direction?: "left" | "right" }>`
   overflow-y: auto;
   z-index: 1000;
   ${transitionStyles}
+  overflow-y: auto;
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+  scrollbar-width: none; /* Firefox */
 `;
 
 export const DropdownItem = styled.li<{ child?: boolean }>`
-  padding: ${(props) => (props.child ? "0 12px" : "12px 16px")};
+  padding: ${(props) => (props.child ? '0 12px' : '12px 16px')};
   font-size: 16px;
   font-weight: ${({ theme }) => theme.fontWeights.regular};
   color: ${({ theme }) => theme.colors.secondary};
@@ -83,7 +91,7 @@ export const DropdownItem = styled.li<{ child?: boolean }>`
   ${transitionStyles}
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.secondary};
+    background-color: ${({ theme }) => theme.colors.primary};
     color: ${({ theme }) => theme.colors.textSecondary};
   }
 `;

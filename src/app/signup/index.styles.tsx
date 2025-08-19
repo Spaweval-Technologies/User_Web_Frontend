@@ -1,9 +1,9 @@
-"use client";
-import Image from "next/image";
-import styled from "styled-components";
+'use client';
+import Image from 'next/image';
+import styled from 'styled-components';
 
 export const Wrapper = styled.main`
-  overflow: hidden auto;
+  overflow: hidden;
   max-width: 1440px;
   width: 100vw;
   margin: 0 auto;
@@ -22,8 +22,7 @@ export const Wrapper = styled.main`
     align-items: center;
   }
 
-  @media (min-width: ${({ theme }) =>
-      theme.breakpoints.md}) and (max-width: ${({ theme }) =>
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) and (max-width: ${({ theme }) =>
       theme.breakpoints.lg}) {
     flex-direction: column;
     overflow-y: auto;
@@ -45,8 +44,7 @@ export const Img = styled(Image)`
   width: 50%;
   height: 100%;
 
-  @media (min-width: ${({ theme }) =>
-      theme.breakpoints.md}) and (max-width: ${({ theme }) =>
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) and (max-width: ${({ theme }) =>
       theme.breakpoints.lg}) {
     width: 100%;
     max-width: 100%;

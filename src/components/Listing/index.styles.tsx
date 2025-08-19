@@ -1,5 +1,5 @@
-"use client";
-import styled from "styled-components";
+'use client';
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -13,8 +13,7 @@ export const Wrapper = styled.div`
     padding: 0 20px 20px;
   }
 
-  @media (min-width: ${({ theme }) =>
-      theme.breakpoints.md}) and (max-width: ${({ theme }) =>
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) and (max-width: ${({ theme }) =>
       theme.breakpoints.lg}) {
     padding: 0 40px 60px;
   }
@@ -37,8 +36,7 @@ export const FiltersWrapper = styled.aside`
     margin-top: 0px;
   }
 
-  @media (min-width: ${({ theme }) =>
-      theme.breakpoints.md}) and (max-width: ${({ theme }) =>
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) and (max-width: ${({ theme }) =>
       theme.breakpoints.lg}) {
     width: 28%;
     max-width: 28%;
@@ -58,8 +56,7 @@ export const ListingContainer = styled.section`
     padding: 25px 0 0;
   }
 
-  @media (min-width: ${({ theme }) =>
-      theme.breakpoints.md}) and (max-width: ${({ theme }) =>
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) and (max-width: ${({ theme }) =>
       theme.breakpoints.lg}) {
     width: 72%;
     max-width: 72%;
@@ -114,8 +111,7 @@ export const FilteredTitle = styled.text`
     font-size: 16px;
   }
 
-  @media (min-width: ${({ theme }) =>
-      theme.breakpoints.md}) and (max-width: ${({ theme }) =>
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) and (max-width: ${({ theme }) =>
       theme.breakpoints.lg}) {
     font-size: 18px;
   }

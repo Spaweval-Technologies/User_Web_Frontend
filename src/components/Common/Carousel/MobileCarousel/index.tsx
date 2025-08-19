@@ -1,15 +1,15 @@
-import { useEffect, useRef, useState } from "react";
-import { useKeenSlider } from "keen-slider/react";
+import { useEffect, useRef, useState } from 'react';
+import { useKeenSlider } from 'keen-slider/react';
 
-import Icons from "@/Icons";
-import Icon from "../../Icon";
+import Icons from '@/Icons';
+import Icon from '../../Icon';
 
 //props
-import MobileCarouselProps from "./index.d";
+import MobileCarouselProps from './index.d';
 
 //css
-import { CarouselWrapper } from "./index.styles";
-import "keen-slider/keen-slider.min.css";
+import { CarouselWrapper } from './index.styles';
+import 'keen-slider/keen-slider.min.css';
 
 /**
  * MobileCarousel component
@@ -48,21 +48,20 @@ const MobileCarousel = ({ children }: MobileCarouselProps) => {
     const handleWheel = (e: WheelEvent) => {
       const isOnLastSlide = currentSlide === lastSlideIndex;
       const isScrolledToBottom =
-        keenSlider.scrollTop + keenSlider.clientHeight >=
-        keenSlider.scrollHeight;
+        keenSlider.scrollTop + keenSlider.clientHeight >= keenSlider.scrollHeight;
 
       if (isOnLastSlide && isScrolledToBottom && e.deltaY > 0) {
         e.preventDefault();
         // Allow page to scroll by moving focus out
         container.blur();
-        window.scrollTo({ top: window.scrollY + 100, behavior: "smooth" });
+        window.scrollTo({ top: window.scrollY + 100, behavior: 'smooth' });
       }
     };
 
-    keenSlider.addEventListener("wheel", handleWheel, { passive: false });
+    keenSlider.addEventListener('wheel', handleWheel, { passive: false });
 
     return () => {
-      keenSlider.removeEventListener("wheel", handleWheel);
+      keenSlider.removeEventListener('wheel', handleWheel);
     };
   }, [currentSlide]);
 
@@ -73,34 +72,28 @@ const MobileCarousel = ({ children }: MobileCarouselProps) => {
           keenSliderRef.current = ref;
           sliderRef(ref);
         }}
-        className="keen-slider">
+        className="keen-slider"
+      >
         {children}
       </div>
       <div className="gradient" />
       {loaded && instanceRef.current && (
         <>
           <Icon
-            onClick={(e: any) =>
-              e.stopPropagation() || instanceRef.current?.prev()
-            }
-            className={`arrow top-arrow ${
-              currentSlide === 0 && "arrow--disabled"
-            }`}
+            onClick={(e: any) => e.stopPropagation() || instanceRef.current?.prev()}
+            className={`arrow top-arrow ${currentSlide === 0 && 'arrow--disabled'}`}
             width={48}
             height={48}
             src={Icons.LeftArrow}
           />
           <Icon
             className={`arrow bottom-arrow ${
-              currentSlide ===
-                instanceRef.current.track.details.slides.length - 1 &&
-              "arrow--disabled"
+              currentSlide === instanceRef.current.track.details.slides.length - 1 &&
+              'arrow--disabled'
             }`}
             width={48}
             height={48}
-            onClick={(e: any) =>
-              e.stopPropagation() || instanceRef.current?.next()
-            }
+            onClick={(e: any) => e.stopPropagation() || instanceRef.current?.next()}
             src={Icons.DownBlackCircleArrow}
           />
         </>

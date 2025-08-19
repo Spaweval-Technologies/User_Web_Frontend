@@ -1,11 +1,11 @@
-import { useEffect, useRef } from "react";
-import Icons from "@/Icons";
+import { useEffect, useRef } from 'react';
+import Icons from '@/Icons';
 
 //props
-import ModalProps from "./index.d";
+import ModalProps from './index.d';
 
 //css
-import { CloseButton, ModalWrapper } from "./index.styles";
+import { CloseButton, ModalWrapper } from './index.styles';
 
 /**
  * StyledModal component
@@ -21,29 +21,20 @@ const StyledModal = ({ isOpen, onClose, children }: ModalProps) => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (
-        modalRef.current &&
-        !modalRef.current.contains(event.target as Node)
-      ) {
+      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
         onClose();
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [onClose]);
 
   return (
-    <ModalWrapper ref={modalRef} style={{display: isOpen ? 'flex': 'none'}} onClick={onClose}>
-        <CloseButton
-          src={Icons.Close}
-          onClick={onClose}
-          width={14}
-          height={14}
-          alt="close"
-        />
-        {children}
-     </ModalWrapper>
+    <ModalWrapper ref={modalRef} style={{ display: isOpen ? 'flex' : 'none' }} onClick={onClose}>
+      <CloseButton src={Icons.Close} onClick={onClose} width={14} height={14} alt="close" />
+      {children}
+    </ModalWrapper>
   );
 };
 

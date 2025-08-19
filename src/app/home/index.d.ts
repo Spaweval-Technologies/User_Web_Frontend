@@ -1,8 +1,8 @@
 type TokenPayload = {
-    email: string;
-    name?: string;
-    iat?: number;
-    exp?: number;
+  email: string;
+  name?: string;
+  iat?: number;
+  exp?: number;
 };
 
 export default TokenPayload;

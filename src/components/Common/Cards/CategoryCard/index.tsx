@@ -1,7 +1,7 @@
-import Images from "../../../../../public/Images";
+import Images from '../../../../../public/Images';
 
 //props
-import CategoryCardProps from "./index.d";
+import CategoryCardProps from './index.d';
 
 //css
 import {
@@ -10,7 +10,7 @@ import {
   CategoryCardWrapper,
   Description,
   Title,
-} from "./index.styles";
+} from './index.styles';
 
 /**
  * Category Card
@@ -38,8 +38,8 @@ const CategoryCard = ({
     <CategoryCardWrapper onClick={onClick} className={className} style={style}>
       <CategoryCardImage
         src={img ?? Images.Swedish}
-        alt={alt ?? "swedish"}
-        width={"100"}
+        alt={alt ?? 'swedish'}
+        width={'100'}
         height="100"
         loading="lazy"
       />

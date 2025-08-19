@@ -1,6 +1,6 @@
-"use client";
-import styled from "styled-components";
-import "keen-slider/keen-slider.min.css";
+'use client';
+import styled from 'styled-components';
+import 'keen-slider/keen-slider.min.css';
 
 export const Wrapper = styled.div`
   display: flex;

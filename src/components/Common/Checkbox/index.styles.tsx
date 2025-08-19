@@ -1,5 +1,5 @@
-"use client";
-import styled from "styled-components";
+'use client';
+import styled from 'styled-components';
 
 export const CheckboxWrapper = styled.div`
   display: inline-flex;
@@ -12,7 +12,7 @@ export const CheckboxWrapper = styled.div`
   }
 `;
 
-export const HiddenCheckbox = styled.input.attrs({ type: "checkbox" })`
+export const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
   border: 0;
   clip: rect(0 0 0 0);
   clippath: inset(50%);
@@ -38,7 +38,7 @@ export const StyledBox = styled.div<{ checked: boolean }>`
   justify-content: center;
 
   svg {
-    visibility: ${(props) => (props.checked ? "visible" : "hidden")};
+    visibility: ${(props) => (props.checked ? 'visible' : 'hidden')};
   }
 `;
 

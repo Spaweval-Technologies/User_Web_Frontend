@@ -1,7 +1,7 @@
 type Props = {
-    params: {
-        token: string;
-    };
-}
+  params: {
+    token: string;
+  };
+};
 
 export default Props;

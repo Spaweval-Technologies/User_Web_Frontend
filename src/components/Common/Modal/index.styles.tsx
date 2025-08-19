@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import Icon from "../Icon";
+import styled from 'styled-components';
+import Icon from '../Icon';
 
 export const ModalWrapper = styled.div`
   position: absolute;
@@ -9,10 +9,10 @@ export const ModalWrapper = styled.div`
   border-radius: 8px;
   z-index: 1;
   padding: 12px 16px;
-  border: 1px solid ${({theme}) => theme.colors.gray80};
+  border: 1px solid ${({ theme }) => theme.colors.gray80};
   display: flex;
   flex-direction: column;
-  box-shadow: 0px 4px 20px ${({theme}) => theme.colors.transparentGrey};
+  box-shadow: 0px 4px 20px ${({ theme }) => theme.colors.transparentGrey};
   width: max-content;
   gap: 8px;
   box-sizing: border-box;

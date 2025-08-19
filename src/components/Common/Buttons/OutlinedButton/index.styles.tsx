@@ -11,7 +11,9 @@ export const OutlinedButton = styled.button`
   font-size: 16px;
   min-width: max-content;
   font-weight: ${({ theme }) => theme.fontWeights.bold};
-  transition: ${({theme}) => theme.colors.secondary} 0.3s ease, color 0.3s ease;
+  transition:
+    ${({ theme }) => theme.colors.secondary} 0.3s ease,
+    color 0.3s ease;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.secondary};

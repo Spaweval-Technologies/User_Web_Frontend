@@ -1,28 +1,29 @@
-import { GroupedOptions, OptionItem } from "../Common/Select/index.d";
-import { BusinessButton } from "./index.styles";
-import Icons from "@/Icons";
+import { GroupedOptions, OptionItem } from '../Common/Select/index.d';
+import { BusinessButton } from './index.styles';
+import Icons from '@/Icons';
 
 const menuOptions: (GroupedOptions | OptionItem)[] = [
   {
-    label: "For Customers",
+    label: 'For Customers',
+    value: 'for customers',
     options: [
       {
-        label: "Login or Sign up",
-        value: "login or sign up",
+        label: 'Login or Sign up',
+        value: 'login or sign up',
       },
       {
-        label: "Download the app",
-        value: "download the app",
+        label: 'Download the app',
+        value: 'download the app',
       },
       {
-        label: "Help and Support",
-        value: "help and support",
+        label: 'Help and Support',
+        value: 'help and support',
       },
     ],
   },
   {
-    label: "For business",
-    value: "for business",
+    label: 'For business',
+    value: 'for business',
     child: (
       <BusinessButton
         iconHeight={24}

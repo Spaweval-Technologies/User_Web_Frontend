@@ -1,7 +1,7 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 //props
-import ImageProps from "./index.d";
+import ImageProps from './index.d';
 
 /**
  * StyledImage component
@@ -17,10 +17,10 @@ const StyledImage = ({ src, alt, width, height, className }: ImageProps) => {
     <div className="flex items-center justify-center">
       <Image
         src={src}
-        alt={alt ?? "Background"}
+        alt={alt ?? 'Background'}
         width={width ?? 100}
         height={height ?? 100}
-        className={className} 
+        className={className}
       />
     </div>
   );

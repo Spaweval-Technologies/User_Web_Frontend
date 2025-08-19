@@ -1,9 +1,9 @@
-"use client";
+'use client';
 //props
-import ButtonProps from "./index.d";
+import ButtonProps from './index.d';
 
 //css
-import StyledButton from "./index.styles";
+import StyledButton from './index.styles';
 
 /**
   Button component
@@ -16,7 +16,7 @@ import StyledButton from "./index.styles";
 */
 const Button = ({ children, className, onClick, disabled, type }: ButtonProps) => {
   return (
-    <StyledButton className={className} onClick={onClick} disabled={disabled} type={type} >
+    <StyledButton className={className} onClick={onClick} disabled={disabled} type={type}>
       {children}
     </StyledButton>
   );

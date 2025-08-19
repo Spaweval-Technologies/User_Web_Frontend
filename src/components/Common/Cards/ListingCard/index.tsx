@@ -1,10 +1,10 @@
-import Icons from "@/Icons";
-import Images from "../../../../../public/Images";
-import Icon from "../../Icon";
-import RatingStars from "../../RatingStars";
+import Icons from '@/Icons';
+import Images from '../../../../../public/Images';
+import Icon from '../../Icon';
+import RatingStars from '../../RatingStars';
 
 //props
-import ListingCardProps from "./index.d";
+import ListingCardProps from './index.d';
 
 //css
 import {
@@ -18,8 +18,8 @@ import {
   Title,
   TitleWrapper,
   Wrapper,
-} from "./index.styles";
-import CardsImgCarousel from "../../Carousel/CardsImgCarousel";
+} from './index.styles';
+import CardsImgCarousel from '../../Carousel/CardsImgCarousel';
 
 /**
  * ListingCard Component
@@ -49,31 +49,31 @@ const ListingCard = ({
   return (
     <ListingCardWrapper>
       <CardsImgCarousel id="listing-cards-img">
-        <div className="keen-slider__slide" key={title + imgAlt + "0"}>
+        <div className="keen-slider__slide" key={title + imgAlt + '0'}>
           <CardImage
             src={imgSrc ?? Images.DestinationSpa1}
             height={266}
             width={325}
             loading="lazy"
-            alt={imgAlt ?? "destination spa"}
+            alt={imgAlt ?? 'destination spa'}
           />
         </div>
-        <div className="keen-slider__slide" key={title + imgAlt + "1"}>
+        <div className="keen-slider__slide" key={title + imgAlt + '1'}>
           <CardImage
             src={imgSrc ?? Images.DestinationSpa1}
             height={266}
             width={325}
             loading="lazy"
-            alt={imgAlt ?? "destination spa"}
+            alt={imgAlt ?? 'destination spa'}
           />
         </div>
-        <div className="keen-slider__slide" key={title + imgAlt + "2"}>
+        <div className="keen-slider__slide" key={title + imgAlt + '2'}>
           <CardImage
             src={imgSrc ?? Images.DestinationSpa1}
             height={266}
             width={325}
             loading="lazy"
-            alt={imgAlt ?? "destination spa"}
+            alt={imgAlt ?? 'destination spa'}
           />
         </div>
       </CardsImgCarousel>

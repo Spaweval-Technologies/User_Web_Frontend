@@ -1,6 +1,6 @@
 type SignupVerifyOtpProps = {
-    email: string;
-    token: string
-}
+  email: string;
+  token: string;
+};
 
 export default SignupVerifyOtpProps;

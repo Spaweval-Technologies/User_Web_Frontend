@@ -1,8 +1,8 @@
-"use client";
-import styled from "styled-components";
-import Button from "../Common/Buttons/Button";
-import Link from "next/link";
-import IconButton from "../Common/Buttons/IconButton";
+'use client';
+import styled from 'styled-components';
+import Button from '../Common/Buttons/Button';
+import Link from 'next/link';
+import IconButton from '../Common/Buttons/IconButton';
 
 export const MobileHeaderWrapper = styled.div`
   display: flex;
@@ -33,7 +33,7 @@ export const SearchContainer = styled.section`
   outline: 4px solid rgba(255, 255, 255, 0.8);
   border-radius: 5px;
   background: ${({ theme }) => theme.colors.background};
-  box-shadow: 1px 4px 20px 0px ${({theme}) => theme.colors.transparentDark};
+  box-shadow: 1px 4px 20px 0px ${({ theme }) => theme.colors.transparentDark};
   padding: 24px 20px;
   box-sizing: border-box;
 `;
@@ -56,13 +56,16 @@ export const List = styled.ul`
   display: flex;
   flex-direction: column;
   list-style-type: none;
+  padding: 0 20px;
+  box-sizing: border-box;
+  width: 100%;
 `;
 
 export const ListTitle = styled.text`
-  colors: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.secondary};
   font-size: 22px;
   font-weight: ${({ theme }) => theme.fontWeights.bolder};
-  margin: 30px 0 6px;
+  margin: 15px 0 6px;
 `;
 
 export const ListItem = styled.li`

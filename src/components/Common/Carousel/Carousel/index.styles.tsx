@@ -1,5 +1,5 @@
-"use client";
-import styled from "styled-components";
+'use client';
+import styled from 'styled-components';
 
 export const CarouselWrapper = styled.div`
   margin: 34px 0 62px;

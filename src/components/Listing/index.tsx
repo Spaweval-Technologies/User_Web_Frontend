@@ -1,8 +1,8 @@
-import ListingCarousel from "../Common/Carousel/ListingCarousel";
-import StyledSelect from "../Common/Select";
-import ListingFilter from "../ListingFilter";
-import ListingSearch from "../ListingSearch";
-import listingData, { sortOptions } from "./data";
+import ListingCarousel from '../Common/Carousel/ListingCarousel';
+import StyledSelect from '../Common/Select';
+import ListingFilter from '../ListingFilter';
+import ListingSearch from '../ListingSearch';
+import listingData, { sortOptions } from './data';
 
 //css
 import {
@@ -13,7 +13,7 @@ import {
   SubTitle,
   TitleWrapper,
   Wrapper,
-} from "./index.styles";
+} from './index.styles';
 
 /**
  * StyledListing Component

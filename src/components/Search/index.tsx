@@ -1,11 +1,11 @@
-import Button from "../Common/Buttons/Button";
-import DatePicker from "../DatePicker";
-import SearchableSelect from "../SearchableSelect";
-import TimePicker from "../TimePicker";
-import VerticalSeperator from "../Common/VerticalSeperator";
+import Button from '../Common/Buttons/Button';
+import DatePicker from '../DatePicker';
+import SearchableSelect from '../SearchableSelect';
+import TimePicker from '../TimePicker';
+import VerticalSeperator from '../Common/VerticalSeperator';
 
 //css
-import { SearchWrapper, Wrapper } from "./index.styles";
+import { SearchWrapper, Wrapper } from './index.styles';
 
 /**
  * Search component
@@ -16,9 +16,9 @@ const Search = () => {
     <SearchWrapper>
       <Wrapper>
         <SearchableSelect />
-        <VerticalSeperator height={"38px"} />
+        <VerticalSeperator height={'38px'} />
         <DatePicker />
-        <VerticalSeperator height={"38px"} />
+        <VerticalSeperator height={'38px'} />
         <TimePicker />
       </Wrapper>
       <Button>Search</Button>

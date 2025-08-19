@@ -1,5 +1,5 @@
-"use client";
-import styled from "styled-components";
+'use client';
+import styled from 'styled-components';
 
 export const SearchWrapper = styled.div`
   display: flex;
@@ -16,14 +16,12 @@ export const SearchWrapper = styled.div`
     padding: 7px 13px 6px 8px;
   }
 
-  @media (min-width: ${({ theme }) =>
-      theme.breakpoints.md}) and (max-width: ${({ theme }) =>
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) and (max-width: ${({ theme }) =>
       theme.breakpoints.lg}) {
     min-width: 150px;
   }
 
-  @media (min-width: ${({ theme }) =>
-      theme.breakpoints.lg}) and (max-width: ${({ theme }) =>
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) and (max-width: ${({ theme }) =>
       theme.breakpoints.xl}) {
     min-width: 50%;
   }

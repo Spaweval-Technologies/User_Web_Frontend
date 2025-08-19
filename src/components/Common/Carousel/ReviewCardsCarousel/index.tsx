@@ -1,15 +1,11 @@
-import ReviewCard from "../../Cards/ReviewCard";
-import Carousel from "../Carousel";
+import ReviewCard from '../../Cards/ReviewCard';
+import Carousel from '../Carousel';
 
 //props
-import ReviewCarouselProps from "./index.d";
+import ReviewCarouselProps from './index.d';
 
 //css
-import {
-  CarouselMobileWrapper,
-  TitleWrapper,
-  Wrapper,
-} from "../SpaCardsCarousel/index.styles";
+import { CarouselMobileWrapper, TitleWrapper, Wrapper } from '../SpaCardsCarousel/index.styles';
 
 /**
  * ReviewCarousel Component
@@ -29,7 +25,7 @@ import {
 const ReviewCarousel = ({ title, reviewDetails }: ReviewCarouselProps) => {
   return (
     <Wrapper>
-      <TitleWrapper>{title ?? "Reviews"}</TitleWrapper>
+      <TitleWrapper>{title ?? 'Reviews'}</TitleWrapper>
       <Carousel id="reviewCarousel">
         {reviewDetails &&
           reviewDetails.map((review, id) => (

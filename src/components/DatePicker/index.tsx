@@ -1,17 +1,12 @@
-"use client";
-import { useState } from "react";
+'use client';
+import { useState } from 'react';
 
-import Icons from "@/Icons";
-import StyledModal from "../Common/Modal";
+import Icons from '@/Icons';
+import StyledModal from '../Common/Modal';
 
 //css
-import "react-day-picker/style.css";
-import {
-  CalendarWrapper,
-  DatePickerWrapper,
-  DaySelector,
-  PickDateBtn,
-} from "./index.styles";
+import 'react-day-picker/style.css';
+import { CalendarWrapper, DatePickerWrapper, DaySelector, PickDateBtn } from './index.styles';
 
 /**
  * DatePicker component
@@ -43,7 +38,7 @@ const DatePicker = () => {
         iconWidth={20}
         iconHeight={20}
       >
-        {selected?.toDateString() ?? "Any Date"}
+        {selected?.toDateString() ?? 'Any Date'}
       </PickDateBtn>
       <StyledModal isOpen={open} onClose={handleClose}>
         <CalendarWrapper>

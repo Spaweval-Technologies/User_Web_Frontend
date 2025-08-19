@@ -1,10 +1,10 @@
-import Icon from "@/components/Common/Icon";
+import Icon from '@/components/Common/Icon';
 
 //props
-import IconButtonProps from "./index.d"
+import IconButtonProps from './index.d';
 
 //css
-import { StyledIconButton } from "./index.styles";
+import { StyledIconButton } from './index.styles';
 
 /**
   IconButton component
@@ -32,14 +32,36 @@ const IconButton = ({
   iconAlt,
   iconWidth,
   iconHeight,
-  iconPosition = "left",
-  onMouseEnter
+  iconPosition = 'left',
+  onMouseEnter,
 }: IconButtonProps) => {
   return (
-    <StyledIconButton disabled={disabled} type={type} onClick={onClick} className={className} onMouseEnter={onMouseEnter}>
-      {iconPosition === "left" && <Icon src={iconSrc} alt={iconAlt} width={iconWidth} height={iconHeight} className={iconClassName} />}
+    <StyledIconButton
+      disabled={disabled}
+      type={type}
+      onClick={onClick}
+      className={className}
+      onMouseEnter={onMouseEnter}
+    >
+      {iconPosition === 'left' && (
+        <Icon
+          src={iconSrc}
+          alt={iconAlt}
+          width={iconWidth}
+          height={iconHeight}
+          className={iconClassName}
+        />
+      )}
       {children}
-      {iconPosition === "right" && <Icon src={iconSrc} alt={iconAlt} width={iconWidth} height={iconHeight} className={iconClassName} />}
+      {iconPosition === 'right' && (
+        <Icon
+          src={iconSrc}
+          alt={iconAlt}
+          width={iconWidth}
+          height={iconHeight}
+          className={iconClassName}
+        />
+      )}
     </StyledIconButton>
   );
 };

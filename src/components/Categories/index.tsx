@@ -1,8 +1,8 @@
-import CategoryCard from "../Common/Cards/CategoryCard";
-import categories from "./data";
+import CategoryCard from '../Common/Cards/CategoryCard';
+import categories from './data';
 
 //css
-import { CategoriesWrapper, Gradient, Wrapper } from "./index.styles";
+import { CategoriesWrapper, Gradient, Wrapper } from './index.styles';
 
 /**
  * Categories component

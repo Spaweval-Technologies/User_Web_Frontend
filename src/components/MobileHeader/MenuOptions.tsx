@@ -1,16 +1,10 @@
-import { Fragment } from "react";
+import { Fragment } from 'react';
 
 //props
-import { MenuListProps } from "./index.d";
+import { MenuListProps } from './index.d';
 
 //css
-import {
-  List,
-  ListItem,
-  ListItemLink,
-  ListTitle,
-  StyledIconBtn,
-} from "./index.styles";
+import { List, ListItem, ListItemLink, ListTitle, StyledIconBtn } from './index.styles';
 
 /**
  * MenuOptions Component
@@ -21,34 +15,36 @@ import {
 const MenuOptions = ({ menuOptions }: MenuListProps) => {
   return (
     <List>
-      {menuOptions.map((grpOptionOrOption, id) => {
-        if ("options" in grpOptionOrOption) {
-          return (
-            <Fragment key={grpOptionOrOption.label + id}>
-              <ListTitle>{grpOptionOrOption.label}</ListTitle>
-              {grpOptionOrOption?.options &&
-                grpOptionOrOption.options.map((opt, id) => (
-                  <ListItem key={opt.label + id}>
-                    <ListItemLink href="#">
-                      {opt?.icon ? (
-                        <StyledIconBtn
-                          iconSrc={opt.icon}
-                          iconAlt="profile Icon"
-                          iconWidth={22}
-                          iconHeight={22}
-                        >
-                          {opt.label}
-                        </StyledIconBtn>
-                      ) : (
-                        <Fragment>{opt.label}</Fragment>
-                      )}
-                    </ListItemLink>
-                  </ListItem>
-                ))}
-            </Fragment>
-          );
-        }
-      })}
+      {menuOptions &&
+        menuOptions.length > 0 &&
+        menuOptions?.map((grpOptionOrOption, id) => {
+          if ('options' in grpOptionOrOption) {
+            return (
+              <Fragment key={grpOptionOrOption.label + id}>
+                <ListTitle>{grpOptionOrOption.label}</ListTitle>
+                {grpOptionOrOption?.options &&
+                  grpOptionOrOption.options.map((opt, id) => (
+                    <ListItem key={opt.label + id}>
+                      <ListItemLink href="#">
+                        {opt?.icon ? (
+                          <StyledIconBtn
+                            iconSrc={opt.icon}
+                            iconAlt="profile Icon"
+                            iconWidth={22}
+                            iconHeight={22}
+                          >
+                            {opt.label}
+                          </StyledIconBtn>
+                        ) : (
+                          <Fragment>{opt.label}</Fragment>
+                        )}
+                      </ListItemLink>
+                    </ListItem>
+                  ))}
+              </Fragment>
+            );
+          }
+        })}
     </List>
   );
 };

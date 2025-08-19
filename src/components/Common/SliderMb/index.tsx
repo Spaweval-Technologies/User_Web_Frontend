@@ -1,11 +1,11 @@
-import Icons from "@/Icons";
-import Icon from "../Icon";
+import Icons from '@/Icons';
+import Icon from '../Icon';
 
 //props
-import SliderProps from "./index.d";
+import SliderProps from './index.d';
 
 //css
-import { Backdrop, SliderWrapper } from "./index.styles";
+import { Backdrop, SliderWrapper } from './index.styles';
 
 /**
  * SliderMb (Mobile Slider) component.
@@ -18,12 +18,7 @@ import { Backdrop, SliderWrapper } from "./index.styles";
  * @param {string} [props.className] - Optional additional class name(s) for styling
  * @returns {JSX.Element} A mobile-friendly slide-in panel with backdrop
  */
-const SliderMb = ({
-  children,
-  showSlider,
-  onClose,
-  className,
-}: SliderProps) => {
+const SliderMb = ({ children, showSlider, onClose, className }: SliderProps) => {
   return (
     <>
       <Backdrop showSlider={showSlider} onClick={onClose} />

@@ -1,8 +1,8 @@
 //props
-import  VerticalSeperatorProps from "./index.d";
+import VerticalSeperatorProps from './index.d';
 
 //css
-import { Hr } from "./index.styles";
+import { Hr } from './index.styles';
 
 /**
  * VerticalSeperator component

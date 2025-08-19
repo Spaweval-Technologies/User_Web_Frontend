@@ -1,6 +1,6 @@
-"use client";
-import styled from "styled-components";
-import { OutlinedButton } from "../Buttons/OutlinedButton/index.styles";
+'use client';
+import styled from 'styled-components';
+import { OutlinedButton } from '../Buttons/OutlinedButton/index.styles';
 
 export const CollapseWrapper = styled.div`
   display: flex;
@@ -9,8 +9,7 @@ export const CollapseWrapper = styled.div`
   padding: 14px 40px 14px 8px;
   box-sizing: border-box;
 
-  @media (min-width: ${({ theme }) =>
-      theme.breakpoints.md}) and (max-width: ${({ theme }) =>
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) and (max-width: ${({ theme }) =>
       theme.breakpoints.xl}) {
     padding: 14px 16px;
   }

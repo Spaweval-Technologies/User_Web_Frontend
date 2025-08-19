@@ -1,29 +1,21 @@
-"use client";
-import React, { useEffect, useRef, useState } from "react";
-import toast from "react-hot-toast";
-import jwt from "jsonwebtoken";
+'use client';
+import React, { useEffect, useState } from 'react';
 
-import { useAppDispatch, useAppSelector } from "@/redux/store/hooks";
-import { getUserByEmail, setUserInfo } from "@/redux/actions/userSlice";
-import StyledHeader from "@/components/Header";
-import MobileHeader from "@/components/MobileHeader";
-import CardCarousel from "@/components/Common/Carousel/SpaCardsCarousel";
-import Categories from "@/components/Categories";
-import spaDetails from "@/components/Common/Carousel/SpaCardsCarousel/data";
-import DownloadApp from "@/components/DownloadApp";
-import ReviewCarousel from "@/components/Common/Carousel/ReviewCardsCarousel";
-import reviewDetails from "@/components/Common/Carousel/ReviewCardsCarousel/data";
-import SpaBusiness from "@/components/SpaBusiness";
-import Footer from "@/components/Footer";
-import AppNotificationMb from "@/components/Common/AppNotification";
-import Images from "../../public/Images";
-import { getItemWithExpiry } from "@/library/helperFunctions";
-
-//props
-import TokenPayload from "./home/index.d";
+import StyledHeader from '@/components/Header';
+import MobileHeader from '@/components/MobileHeader';
+import CardCarousel from '@/components/Common/Carousel/SpaCardsCarousel';
+import Categories from '@/components/Categories';
+import spaDetails from '@/components/Common/Carousel/SpaCardsCarousel/data';
+import DownloadApp from '@/components/DownloadApp';
+import ReviewCarousel from '@/components/Common/Carousel/ReviewCardsCarousel';
+import reviewDetails from '@/components/Common/Carousel/ReviewCardsCarousel/data';
+import SpaBusiness from '@/components/SpaBusiness';
+import Footer from '@/components/Footer';
+import AppNotificationMb from '@/components/Common/AppNotification';
+import Images from '../../public/Images';
 
 //css
-import { PageWrapper, Wrapper, WrapperBg } from "./home/index.styles";
+import { PageWrapper, Wrapper, WrapperBg } from './home/index.styles';
 
 /**
  * Home Page Component
@@ -33,42 +25,6 @@ import { PageWrapper, Wrapper, WrapperBg } from "./home/index.styles";
  */
 const Home = () => {
   const [showNotification, setShowNotification] = useState<boolean>(false);
-  const user = useAppSelector((state) => state.user);
-  const dispatch = useAppDispatch();
-  const calledRef = useRef(false);
-
-  const getUser = async (token: string, email: string) => {
-    try {
-      const response = await dispatch(
-        getUserByEmail({ email, auth_token: token })
-      );
-      if (response.meta.requestStatus === "fulfilled") {
-        const userData = response.payload;
-        if (userData) {
-          // Set user data in the Redux store
-          dispatch(setUserInfo(userData));
-        } else {
-          console.error("No user data found for the provided token.");
-        }
-      } else if (response.meta.requestStatus === "rejected") {
-        console.error("Failed to fetch user data:", response.payload?.error);
-      }
-    } catch (error) {
-      console.error("Error fetching user data:", error);
-    }
-  };
-
-  useEffect(() => {
-    if (!calledRef.current && !user?.email) {
-      const token = getItemWithExpiry("auth_token");
-
-      if (token) {
-        const decoded = jwt.decode(token) as TokenPayload;
-        getUser(token, decoded?.email);
-        calledRef.current = true;
-      }
-    }
-  }, [user?.email]);
 
   useEffect(() => {
     setShowNotification(true);
@@ -78,23 +34,19 @@ const Home = () => {
 
   return (
     <PageWrapper>
-      <AppNotificationMb
-        show={showNotification}
-        onClose={onCloseNotification}
-        appRating={4.2}
-      />
+      <AppNotificationMb show={showNotification} onClose={onCloseNotification} appRating={4.2} />
       <WrapperBg>
         <StyledHeader />
         <MobileHeader />
         <Categories />
       </WrapperBg>
-      <CardCarousel title={"New to Spawn"} spaDetails={spaDetails} />
-      <CardCarousel title={"Recommended"} spaDetails={spaDetails} />
+      <CardCarousel title={'New to Spawn'} spaDetails={spaDetails} />
+      <CardCarousel title={'Recommended'} spaDetails={spaDetails} />
       <DownloadApp />
       <ReviewCarousel title="Reviews" reviewDetails={reviewDetails} />
       <Wrapper>
         <SpaBusiness
-          title={"Spawn for Business"}
+          title={'Spawn for Business'}
           description="Here's how to effortlessly fill those gaps with our new online booking
           optimisation tool. Booking your salon appointments is as easy as a few
           taps on your device. It's quick, convenient, and hassle-free."
@@ -104,7 +56,7 @@ const Home = () => {
           reviews={1241}
           findMoreUrl="check"
           imgSrc={Images.BusinessLaptopBg}
-          alt={"business laptop bg"}
+          alt={'business laptop bg'}
         />
         <Footer />
       </Wrapper>

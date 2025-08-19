@@ -43,7 +43,7 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    environment: 
+    environment:
       name: ${{ github.ref == 'refs/heads/main' && 'production' || github.ref == 'refs/heads/qa' && 'qa' || 'development' }}
     steps:
       - name: Checkout repository
@@ -82,8 +82,8 @@ jobs:
 
   post-merge-build:
     runs-on: ubuntu-latest
-    needs: deploy  # This will only run after the deploy job succeeds
-    if: github.event_name == 'push' && (github.ref == 'refs/heads/qa' || github.ref == 'refs/heads/main')  # Only for merges to qa and main
+    needs: deploy # This will only run after the deploy job succeeds
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/qa' || github.ref == 'refs/heads/main') # Only for merges to qa and main
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3

@@ -1,8 +1,8 @@
-"use client";
-import Link from "next/link";
-import styled from "styled-components";
-import Icon from "../Common/Icon";
-import Button from "../Common/Buttons/Button";
+'use client';
+import Link from 'next/link';
+import styled from 'styled-components';
+import Icon from '../Common/Icon';
+import Button from '../Common/Buttons/Button';
 
 export const FooterWrapper = styled.footer`
   display: flex;
@@ -21,8 +21,7 @@ export const FooterContent = styled.div`
   box-sizing: border-box;
   gap: 28px;
 
-  @media (min-width: ${({ theme }) =>
-      theme.breakpoints.md}) and (max-width: ${({ theme }) =>
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) and (max-width: ${({ theme }) =>
       theme.breakpoints.xl}) {
     gap: 32px;
     flex-direction: column;
@@ -50,14 +49,12 @@ export const Description = styled.p`
   color: ${({ theme }) => theme.colors.secondary};
   max-width: 396px;
 
-  @media (min-width: ${({ theme }) =>
-      theme.breakpoints.lg}) and (max-width: ${({ theme }) =>
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) and (max-width: ${({ theme }) =>
       theme.breakpoints.xl}) {
     max-width: 60%;
   }
 
-  @media (min-width: ${({ theme }) =>
-      theme.breakpoints.md}) and (max-width: ${({ theme }) =>
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) and (max-width: ${({ theme }) =>
       theme.breakpoints.lg}) {
     max-width: 100%;
   }

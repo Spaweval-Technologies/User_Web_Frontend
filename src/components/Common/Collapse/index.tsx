@@ -1,13 +1,13 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import Icon from "../Icon";
-import Icons from "@/Icons";
+import Icon from '../Icon';
+import Icons from '@/Icons';
 
 //props
-import CollapseProps from "./index.d";
+import CollapseProps from './index.d';
 
 //css
-import { Button, CollapseWrapper } from "./index.styles";
+import { Button, CollapseWrapper } from './index.styles';
 
 /**
  * Collapse component to toggle the visibility of its children content.

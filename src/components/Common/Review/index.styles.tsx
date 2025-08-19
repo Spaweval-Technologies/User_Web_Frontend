@@ -1,5 +1,5 @@
-"use client";
-import styled from "styled-components";
+'use client';
+import styled from 'styled-components';
 
 export const ReviewWrapper = styled.div`
   display: flex;
@@ -11,6 +11,8 @@ export const ReviewCount = styled.span`
   align-items: center;
   margin-left: 6px;
   color: ${({ theme }) => theme.colors.deepViolet};
+  font-size: 20px;
+  font-weight: ${({ theme }) => theme.fontWeights.regular};
 `;
 
 export const Ratting = styled.span`

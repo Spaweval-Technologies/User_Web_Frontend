@@ -1,7 +1,7 @@
-import Images from "../../../public/Images";
+import Images from '../../../public/Images';
 
-import Icon from "../Common/Icon";
-import Icons from "@/Icons";
+import Icon from '../Common/Icon';
+import Icons from '@/Icons';
 
 //css
 import {
@@ -15,7 +15,7 @@ import {
   SubTitle,
   SubTitleText,
   Title,
-} from "./index.styles";
+} from './index.styles';
 
 /**
  * Download App component
@@ -32,11 +32,10 @@ const DownloadApp = () => {
         </SubTitle>
         <Title>Install the Spawn app</Title>
         <Description>
-          Spas offer numerous benefits, including stress reduction, improved
-          sleep, pain relief, and enhanced skin health, all contributing to
-          overall you can get in this mobile app
+          Spas offer numerous benefits, including stress reduction, improved sleep, pain relief, and
+          enhanced skin health, all contributing to overall you can get in this mobile app
         </Description>
-        <DownloadQr value={"check"} />
+        <DownloadQr value={'check'} />
         <GetAppButton
           iconSrc={Icons.ScanBarcode}
           iconAlt="get app"

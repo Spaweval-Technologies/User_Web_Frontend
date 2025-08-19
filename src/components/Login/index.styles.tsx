@@ -1,12 +1,12 @@
-"use client";
-import Link from "next/link";
-import styled from "styled-components";
+'use client';
+import Link from 'next/link';
+import styled from 'styled-components';
 
 export const RememberPasswordWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0px 0 18px;
+  margin: 8px 0 18px;
   width: 100%;
   max-width: fit-content;
   gap: 8px;

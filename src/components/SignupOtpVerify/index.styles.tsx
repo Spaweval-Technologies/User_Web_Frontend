@@ -1,6 +1,6 @@
-"use client";
-import styled from "styled-components";
-import { OutlinedButton } from "../Common/Buttons/OutlinedButton/index.styles";
+'use client';
+import styled from 'styled-components';
+import { OutlinedButton } from '../Common/Buttons/OutlinedButton/index.styles';
 
 export const SentCode = styled.span`
   font-size: 16px;
@@ -33,13 +33,13 @@ export const Input = styled.input`
   width: fit-content;
   max-width: 48px;
   box-sizing: border-box;
-  &[type="number"]::-webkit-inner-spin-button,
-  &[type="number"]::-webkit-outer-spin-button {
+  &[type='number']::-webkit-inner-spin-button,
+  &[type='number']::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
   }
 
-  &[type="number"] {
+  &[type='number'] {
     -moz-appearance: textfield;
   }
 
@@ -57,16 +57,16 @@ export const Timer = styled.text`
   text-align: center;
   margin: 28px 0;
 
-  @media (max-width: ${({theme})=> theme.breakpoints.md}){
-   margin: 28px 0 23px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    margin: 28px 0 23px;
   }
 `;
 
 export const Resend = styled(OutlinedButton)`
   border-radius: 10px;
   border: 1px solid ${({ theme }) => theme.colors.blueGrey};
-  width:100%;
-   
+  width: 100%;
+
   &:focus {
     outline: 4px solid ${({ theme }) => theme.colors.transparentDark};
   }

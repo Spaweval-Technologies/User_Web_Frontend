@@ -1,6 +1,6 @@
-"use client";
-import { Gradient } from "@/components/Categories/index.styles";
-import styled from "styled-components";
+'use client';
+import { Gradient } from '@/components/Categories/index.styles';
+import styled from 'styled-components';
 
 export const ListingCarouselWrapper = styled.div`
   display: flex;

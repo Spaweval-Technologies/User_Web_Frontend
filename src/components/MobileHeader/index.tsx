@@ -1,38 +1,31 @@
-"use client";
-import { useState } from "react";
-import Icons from "@/Icons";
+'use client';
+import { useState } from 'react';
+import { useAppSelector } from '@/redux/store/hooks';
 
-import Icon from "../Common/Icon";
-import SearchableSelect from "../SearchableSelect";
-import DatePicker from "../DatePicker";
-import TimePicker from "../TimePicker";
-import menuOptionsMb from "./data";
-import StaticHeaderMb from "./HeaderMb";
+import Icons from '@/Icons';
+import getMenuOptionsMb from './data';
+import Icon from '../Common/Icon';
+import SearchableSelect from '../SearchableSelect';
+import DatePicker from '../DatePicker';
+import TimePicker from '../TimePicker';
+import StaticHeaderMb from './HeaderMb';
 
 //css
-import {
-  MobileHeaderWrapper,
-  SearchBtn,
-  SearchContainer,
-  Wrapper,
-} from "./index.styles";
-import {
-  TitleContainer,
-  Title,
-  SubTitle,
-  GettheApp,
-} from "../Header/index.styles";
-
+import { MobileHeaderWrapper, SearchBtn, SearchContainer, Wrapper } from './index.styles';
+import { TitleContainer, Title, SubTitle, GettheApp } from '../Header/index.styles';
 /**
  * MobileHeader component
  * @returns {JSX.Element} - A mobile header component with a logo, title, and search functionality.
  */
 const MobileHeader = () => {
+  const user = useAppSelector((state) => state.user);
   const [showMenu, setShowMenu] = useState<boolean>(false);
 
   const onCloseMenu = () => {
     setShowMenu(false);
   };
+
+  const menuOptionsMb = getMenuOptionsMb(user?.name || 'Guest');
 
   return (
     <MobileHeaderWrapper>
@@ -62,7 +55,8 @@ const MobileHeader = () => {
         iconPosition="right"
         iconAlt="app"
         iconWidth={20}
-        iconHeight={20}>
+        iconHeight={20}
+      >
         Get the App
       </GettheApp>
     </MobileHeaderWrapper>

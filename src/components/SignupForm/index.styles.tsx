@@ -1,17 +1,18 @@
-"use client";
-import styled from "styled-components";
-import IconButton from "../Common/Buttons/IconButton";
-import Button from "../Common/Buttons/Button";
-import Link from "next/link";
+'use client';
+import styled from 'styled-components';
+import IconButton from '../Common/Buttons/IconButton';
+import Button from '../Common/Buttons/Button';
+import Link from 'next/link';
 
 export const FormContainer = styled.form`
   width: 50%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   padding: 43px 116px 75px;
   box-sizing: border-box;
   justify-content: flex-start;
-  overflow-y: hidden;
+  overflow-y: auto;
   -ms-overflow-style: none; /* Internet Explorer and Edge */
   scrollbar-width: none; /* Firefox */
 
@@ -19,8 +20,7 @@ export const FormContainer = styled.form`
     display: none; /* Chrome, Safari, and Opera */
   }
 
-  @media (min-width: ${({ theme }) =>
-      theme.breakpoints.md}) and (max-width: ${({ theme }) =>
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) and (max-width: ${({ theme }) =>
       theme.breakpoints.lg}) {
     width: 100%;
     padding: 60px;
@@ -28,8 +28,7 @@ export const FormContainer = styled.form`
     min-height: max-content;
   }
 
-  @media (min-width: ${({ theme }) =>
-      theme.breakpoints.lg}) and (max-width: ${({ theme }) =>
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) and (max-width: ${({ theme }) =>
       theme.breakpoints.xl}) {
     padding: 40px 80px;
   }
@@ -99,6 +98,10 @@ export const FieldsContainer = styled.div`
   align-items: center;
   gap: 10px;
   width: 100%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.vsm}) {
+    flex-direction: column;
+  }
 `;
 
 export const Field = styled.div`
@@ -131,12 +134,16 @@ export const Input = styled.input`
 
 export const Error = styled.span`
   font-size: 13px;
-  color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.error};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
 `;
 
 export const NameField = styled(Field)`
   width: 50%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.vsm}) {
+    width: 100%;
+  }
 `;
 
 export const Submit = styled(Button)`

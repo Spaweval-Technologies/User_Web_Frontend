@@ -1,11 +1,11 @@
-import Icons from "@/Icons";
-import Icon from "../Icon";
+import Icons from '@/Icons';
+import Icon from '../Icon';
 
 //props
-import RatingStarsProps from "./index.d";
+import RatingStarsProps from './index.d';
 
 //css
-import { Stars } from "./index.styles";
+import { Stars } from './index.styles';
 
 /**
  * RatingStars Component

@@ -1,8 +1,8 @@
-import Icons from "@/Icons";
-import Review from "../../Review";
+import Icons from '@/Icons';
+import Review from '../../Review';
 
 //props
-import ReviewCardProps from "./index.d";
+import ReviewCardProps from './index.d';
 
 //css
 import {
@@ -13,7 +13,7 @@ import {
   Name,
   ProfileContainer,
   ProfileImg,
-} from "./index.styles";
+} from './index.styles';
 
 /**
  * ReviewCard Component
@@ -42,12 +42,7 @@ const ReviewCard = ({
   return (
     <CardWrapper>
       <ProfileContainer>
-        <ProfileImg
-          src={img ?? Icons.ProfileImg}
-          alt={alt ?? "profile"}
-          width={61}
-          height={61}
-        />
+        <ProfileImg src={img ?? Icons.ProfileImg} alt={alt ?? 'profile'} width={61} height={61} />
         <Review
           starCount={totalRating ?? 5}
           rating={rating ?? 4.2}

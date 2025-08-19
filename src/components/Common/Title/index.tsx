@@ -1,8 +1,8 @@
 //props
-import TitleProps from "./index.d";
+import TitleProps from './index.d';
 
 //css
-import { TitleWrapper } from "./index.styles";
+import { TitleWrapper } from './index.styles';
 
 /**
  * Title component

@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { useKeenSlider } from "keen-slider/react";
-import { CardsCarousel } from "./index.styles";
-import Icon from "../../Icon";
-import Icons from "@/Icons";
-import CarouselProps from "../Carousel/index.d";
+import { useState } from 'react';
+import { useKeenSlider } from 'keen-slider/react';
+import { CardsCarousel } from './index.styles';
+import Icon from '../../Icon';
+import Icons from '@/Icons';
+import CarouselProps from '../Carousel/index.d';
 
 const CardsImgCarousel = ({ children, id }: CarouselProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -26,7 +26,7 @@ const CardsImgCarousel = ({ children, id }: CarouselProps) => {
 
   return (
     <CardsCarousel>
-      <div id={id ?? "Carousel"} ref={sliderRef} className="keen-slider">
+      <div id={id ?? 'Carousel'} ref={sliderRef} className="keen-slider">
         {children}
       </div>
       {loaded && instanceRef.current && (
@@ -38,9 +38,7 @@ const CardsImgCarousel = ({ children, id }: CarouselProps) => {
                 instanceRef.current.prev();
               }
             }}
-            className={`arrow left-arrow ${
-              currentSlide === 0 && "arrow--disabled"
-            }`}
+            className={`arrow left-arrow ${currentSlide === 0 && 'arrow--disabled'}`}
             width={21}
             height={21}
             src={Icons.WhiteLeftArrow}

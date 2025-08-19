@@ -1,18 +1,19 @@
-"use client";
-import toast from "react-hot-toast";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import CryptoJS from "crypto-js";
+'use client';
+import toast from 'react-hot-toast';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import CryptoJS from 'crypto-js';
+import jwt from 'jsonwebtoken';
 
-import { useAppDispatch } from "@/redux/store/hooks";
-import { loginUser } from "@/redux/actions/authSlice";
-import StyledCheckbox from "../Common/Checkbox";
-import { setUserInfo } from "@/redux/actions/userSlice";
-import Icons from "@/Icons";
-import { setItemWithExpiry } from "@/library/helperFunctions";
+import { useAppDispatch } from '@/redux/store/hooks';
+import { loginUser, logout } from '@/redux/actions/authSlice';
+import StyledCheckbox from '../Common/Checkbox';
+import { clearUser, setUserInfo } from '@/redux/actions/userSlice';
+import Icons from '@/Icons';
+import { setItemWithExpiry } from '@/library/helperFunctions';
 
 //css
-import { ForgetPasswordLink, RememberPasswordWrapper } from "./index.styles";
+import { ForgetPasswordLink, RememberPasswordWrapper } from './index.styles';
 import {
   Container,
   Error,
@@ -29,7 +30,7 @@ import {
   TextContainer,
   Title,
   Wrapper,
-} from "../SignupForm/index.styles";
+} from '../SignupForm/index.styles';
 
 /**
  * LoginForm Component
@@ -42,42 +43,49 @@ const LoginForm = () => {
   const dispatch = useAppDispatch();
   const router = useRouter();
 
-  const [emailOrPhone, setEmailOrPhone] = useState("");
-  const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState<{
-    emailOrPhone?: string;
-    password?: string;
-  }>({});
+  const [emailOrPhone, setEmailOrPhone] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState<string | null>(null);
   const [remember, setRemember] = useState<boolean>(false);
 
   useEffect(() => {
-    const signupSuccess = localStorage.getItem("signup_success");
+    const signupSuccess = localStorage.getItem('signup_success');
     if (signupSuccess) {
-      toast.success("Signup successful! 🎉", {
+      toast.success('Signup successful! 🎉', {
         duration: 2000,
-        position: "top-right",
+        position: 'top-right',
       });
-      localStorage.removeItem("signup_success"); // Clean up after showing
+      localStorage.removeItem('signup_success'); // Clean up after showing
     }
   }, []);
 
   const validateForm = () => {
-    const errs: typeof errors = {};
     if (!emailOrPhone) {
-      errs.emailOrPhone = "Email or Phone is required";
+      setError('Email or Phone is required');
+      return false;
     }
     if (!password) {
-      errs.password = "Password is required";
+      setError('Password is required');
+      return false;
     } else if (password.length < 8) {
-      errs.password = "Password must be at least 8 characters.";
+      setError('Password must be at least 8 characters.');
+      return false;
     }
-    setErrors(errs);
-    return Object.keys(errs).length === 0;
+    setError(null); // Clear any previous errors
+    return true;
+  };
+
+  const logoutUser = (token: string) => {
+    const decoded = jwt.decode(token) as { email: string } | null; // Decode token to get email
+    dispatch(logout({ email: decoded?.email || '', auth_token: token })); // Call logout action with email or phone and token
+    dispatch(clearUser()); // Clear user info in the store
+    router.push('/login'); // Redirect to login page
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateForm()) return;
+    setError(null);
 
     try {
       const encryptedPassword = CryptoJS.AES.encrypt(
@@ -88,10 +96,13 @@ const LoginForm = () => {
         loginUser({ email: emailOrPhone, password: encryptedPassword })
       );
 
-      if (response.meta.requestStatus === "rejected") {
-        console.error(response.payload.error);
-      } else if (response.meta?.requestStatus === "fulfilled") {
-        setItemWithExpiry("auth_token", response.payload.token, 3600000); // Store token for 30 days
+      if (response.meta.requestStatus === 'rejected') {
+        setError(response.payload?.error);
+      } else if (response.meta?.requestStatus === 'fulfilled') {
+        const tokenExpiryMs = 3600000; // 1 hour in milliseconds
+        const logoutBuffer = 60000; // 1 minute buffer before expiry
+
+        setItemWithExpiry('auth_token', response.payload.token, tokenExpiryMs); // Store token for 30 days
         dispatch(
           setUserInfo({
             auth_token: response.payload.token,
@@ -102,9 +113,14 @@ const LoginForm = () => {
             id: response.payload.user.id,
           })
         );
-        router.push("/listing"); // or wherever the user should land
+        setTimeout(
+          () => logoutUser(response.payload.token), // Ensure token is not null
+          tokenExpiryMs - logoutBuffer
+        ); // Schedule logout before expiry
+        router.push('/listing'); // or wherever the user should land
       }
     } catch (err) {
+      setError('Login failed. Please try again.');
       console.error(err);
     }
   };
@@ -113,18 +129,10 @@ const LoginForm = () => {
     <FormContainer>
       <Title>Login with</Title>
       <Wrapper>
-        <SignUpWith
-          iconSrc={Icons.Google}
-          iconAlt="google"
-          iconWidth={24}
-          iconHeight={24}>
+        <SignUpWith iconSrc={Icons.Google} iconAlt="google" iconWidth={24} iconHeight={24}>
           Sign In with Google
         </SignUpWith>
-        <SignUpWith
-          iconSrc={Icons.AppleSolid}
-          iconAlt="apple"
-          iconWidth={24}
-          iconHeight={24}>
+        <SignUpWith iconSrc={Icons.AppleSolid} iconAlt="apple" iconWidth={24} iconHeight={24}>
           Sign In with Apple
         </SignUpWith>
       </Wrapper>
@@ -146,7 +154,6 @@ const LoginForm = () => {
           value={emailOrPhone}
           onChange={(e) => setEmailOrPhone(e.target.value)}
         />
-        {errors.emailOrPhone && <Error>{errors.emailOrPhone}</Error>}
       </Field>
       <Field>
         <Label htmlFor="password">
@@ -159,9 +166,8 @@ const LoginForm = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        {errors.password && <Error>{errors.password}</Error>}
-        <Error>Must be at least 8 characters.</Error>
       </Field>
+      {error && <Error>{error}</Error>}
       <RememberPasswordWrapper>
         <StyledCheckbox
           checked={remember}

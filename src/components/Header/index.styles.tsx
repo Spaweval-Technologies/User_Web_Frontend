@@ -1,8 +1,8 @@
-"use client";
-import styled from "styled-components";
-import Image from "next/image";
-import IconButton from "../Common/Buttons/IconButton";
-import Icon from "../Common/Icon";
+'use client';
+import styled from 'styled-components';
+import Image from 'next/image';
+import IconButton from '../Common/Buttons/IconButton';
+import Icon from '../Common/Icon';
 
 export const HeaderWrapper = styled.div`
   display: flex;
@@ -59,8 +59,7 @@ export const SearchContainer = styled.section`
   max-width: 1062px;
   padding: 41px 0 177px;
 
-  @media (min-width: ${({ theme }) =>
-      theme.breakpoints.md}) and (max-width: ${({ theme }) =>
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) and (max-width: ${({ theme }) =>
       theme.breakpoints.xl}) {
     max-width: 700px;
   }
@@ -72,8 +71,7 @@ export const TitleContainer = styled.div`
   flex-wrap: wrap;
   margin: 24px 0 119px;
 
-  @media (min-width: ${({ theme }) =>
-      theme.breakpoints.md}) and (max-width: ${({ theme }) =>
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) and (max-width: ${({ theme }) =>
       theme.breakpoints.xl}) {
     margin: 24px 0 80px;
   }
@@ -95,8 +93,7 @@ export const Title = styled.h1`
   text-align: center;
   margin: 0;
 
-  @media (min-width: ${({ theme }) =>
-      theme.breakpoints.md}) and (max-width: ${({ theme }) =>
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) and (max-width: ${({ theme }) =>
       theme.breakpoints.xl}) {
     font-size: 54px;
     line-height: 60px;
@@ -138,8 +135,7 @@ export const AppDetail = styled.div`
   margin: 119px 0 0;
   min-height: 191px;
 
-  @media (min-width: ${({ theme }) =>
-      theme.breakpoints.md}) and (max-width: ${({ theme }) =>
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) and (max-width: ${({ theme }) =>
       theme.breakpoints.xl}) {
     margin: 80px 0 0;
   }
